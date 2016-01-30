@@ -64,7 +64,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ColemanXMLParser.cpp" />
     <ClCompile Include="genetics.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ColemanXMLParser.h" />
+    <ClInclude Include="FileParser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
