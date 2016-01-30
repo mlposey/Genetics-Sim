@@ -18,9 +18,15 @@
     <ClCompile Include="genetics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ColemanXMLParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColemanXMLParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
