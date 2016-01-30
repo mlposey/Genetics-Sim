@@ -1,0 +1,57 @@
+\hypertarget{class_coleman_x_m_l_parser}{}\section{Coleman\+X\+M\+L\+Parser Class Reference}
+\label{class_coleman_x_m_l_parser}\index{Coleman\+X\+M\+L\+Parser@{Coleman\+X\+M\+L\+Parser}}
+
+
+The \hyperlink{class_coleman_x_m_l_parser}{Coleman\+X\+M\+L\+Parser} class acts as a wrapper around Dr. Rick Coleman\textquotesingle{}s genetic xml format and parser.  
+
+
+
+
+{\ttfamily \#include $<$Coleman\+X\+M\+L\+Parser.\+h$>$}
+
+Inheritance diagram for Coleman\+X\+M\+L\+Parser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_coleman_x_m_l_parser}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_coleman_x_m_l_parser_a7b485ea135c4219aacbecfaf637634e4}{parse\+File} (std\+::vector$<$ std\+::string $>$ \&genotypes, int expected\+Count) override
+\begin{DoxyCompactList}\small\item\em Uses Coleman\textquotesingle{}s parser to read genotype information from his xml format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_coleman_x_m_l_parser}{Coleman\+X\+M\+L\+Parser} class acts as a wrapper around Dr. Rick Coleman\textquotesingle{}s genetic xml format and parser. 
+
+\subsection{Member Function Documentation}
+\index{Coleman\+X\+M\+L\+Parser@{Coleman\+X\+M\+L\+Parser}!parse\+File@{parse\+File}}
+\index{parse\+File@{parse\+File}!Coleman\+X\+M\+L\+Parser@{Coleman\+X\+M\+L\+Parser}}
+\subsubsection[{\texorpdfstring{parse\+File(std\+::vector$<$ std\+::string $>$ \&genotypes, int expected\+Count) override}{parseFile(std::vector< std::string > &genotypes, int expectedCount) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Coleman\+X\+M\+L\+Parser\+::parse\+File (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::string $>$ \&}]{genotypes, }
+\item[{int}]{expected\+Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_coleman_x_m_l_parser_a7b485ea135c4219aacbecfaf637634e4}{}\label{class_coleman_x_m_l_parser_a7b485ea135c4219aacbecfaf637634e4}
+
+
+Uses Coleman\textquotesingle{}s parser to read genotype information from his xml format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em genotypes} & The vector to read the genotype from each organism into \\
+\hline
+{\em expected\+Count} & The expected organism count in the data file \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{struct_i_file_parser}{I\+File\+Parser}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Genetics/Coleman\+X\+M\+L\+Parser.\+h\item 
+Genetics/Coleman\+X\+M\+L\+Parser.\+cpp\end{DoxyCompactItemize}
