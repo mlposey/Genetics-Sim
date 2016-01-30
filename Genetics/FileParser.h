@@ -1,5 +1,6 @@
 #include <vector>
 #include <string>
+#include "Organism.h"
 
 /**
  * @brief The IFileParser struct provides an interface for reading
@@ -8,6 +9,6 @@
 struct IFileParser {
 	virtual ~IFileParser() {}
 
-	virtual void parseFile(std::vector<std::string>& genotypes,
+	virtual void parseFile(std::vector<Organism> &organisms,
 		int expectedCount) = 0;
 };

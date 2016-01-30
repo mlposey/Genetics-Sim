@@ -21,7 +21,7 @@ public:
 	 * @param genotypes The vector to read the genotype from each organism into
 	 * @param expectedCount The expected organism count in the data file
 	 */
-	void parseFile(std::vector<std::string>& genotypes,
+	void parseFile(std::vector<Organism>& organisms,
 		int expectedCount) override;
 
 private:
