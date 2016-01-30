@@ -18,8 +18,9 @@ public:
 	 * @brief Uses Coleman's parser to read genotype information from his xml
 	 * format
 	 *
-	 * @param genotypes The vector to read the genotype from each organism into
+	 * @param organisms The vector to store the organisms in
 	 * @param expectedCount The expected organism count in the data file
+	 * @see Organism
 	 */
 	void parseFile(std::vector<Organism>& organisms,
 		int expectedCount) override;
