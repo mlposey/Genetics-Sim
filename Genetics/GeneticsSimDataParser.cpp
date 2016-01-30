@@ -1,6 +1,6 @@
 //====================================================================
 // GeneticsSimDataParser.cpp
-// Implementation file for the data parser.
+// Implementation file for the data _parser.
 // Author: Dr. Rick Coleman
 // Date: December 2009
 //====================================================================

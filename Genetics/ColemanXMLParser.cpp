@@ -2,7 +2,7 @@
 
 
 ColemanXMLParser::ColemanXMLParser(const std::string &filename)
-	: parser(const_cast<char*>(filename.c_str()))
+	: _parser(const_cast<char*>(filename.c_str()))
 {
 }
 

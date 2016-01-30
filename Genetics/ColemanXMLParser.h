@@ -6,7 +6,7 @@
 
 /**
  * @brief The ColemanXMLParser class acts as a wrapper around Dr. Rick Coleman's
- * genetic xml format and parser.
+ * genetic xml format and _parser.
  */
 class ColemanXMLParser : public IFileParser
 {
@@ -15,7 +15,7 @@ public:
 	~ColemanXMLParser();
 
 	/**
-	 * @brief Uses Coleman's parser to read genotype information from his xml
+	 * @brief Uses Coleman's _parser to read genotype information from his xml
 	 * format
 	 *
 	 * @param organisms The vector to store the organisms in
@@ -26,6 +26,6 @@ public:
 		int expectedCount) override;
 
 private:
-	GeneticsSimDataParser parser;
+	GeneticsSimDataParser _parser;
 };
 

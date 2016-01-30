@@ -1,6 +1,6 @@
 //====================================================================
 // GeneticsSimDataParser.h
-// Interface file for the data parser.
+// Interface file for the data _parser.
 // Author: Dr. Rick Coleman
 // Date: December 2009
 //====================================================================
