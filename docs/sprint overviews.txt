@@ -1,0 +1,33 @@
+--------------------Sprint 1------------------------------------
+------Time Frame: 1/30/2016 - 2/1/2016
+
+------Objectives:
+The objectives of this sprint are to build a solid base representation of an organism and associated methods to retrieve genetic data from the specified file format.
+
+* Set up initial configurations
+* * Test Environment
+* * Documentation Tools
+* * Modeling Tools
+* * Version Control
+* Modeling
+* * Create Preliminary Class Diagram for GeneticSim v1
+* * Model Interaction between Organism Building Blocks
+* Design and Implement
+* * Gene
+* * Genotype
+* * Organism
+* * Organism Factory
+* * File Parser
+
+-----Deliverables:
+* Doxygen configuration and internal doc library
+* UML model of the class structure
+* Git repo with corresponding GitHub
+* Visual Studio Tests with 90% Code Coverage over Clas Implementations
+* Fully Coded, Tested, and Documented:
+* * Gene.h/.cpp
+* * Genotype.h/.cpp
+* * Organism.h/.cpp
+* * OrganismFactory.h/.cpp
+* * IFileParser.h/.cpp
+* * ColemanXMLParser.h/.cpp
