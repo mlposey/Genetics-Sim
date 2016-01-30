@@ -21,6 +21,7 @@ GeneticsSimDataParser::GeneticsSimDataParser(char *fileName)
 	m_iNextParentNumber = 0;
 	strcpy(m_sFileName, fileName);
 
+
 	// Open the data file for reading
 	inFile = new ifstream();				// Create an ifstream object
 	inFile->open(fileName, fstream::in);	// Open it
@@ -54,9 +55,10 @@ GeneticsSimDataParser::GeneticsSimDataParser(char *fileName)
 	}
 	else
 	{
+		throw ifstream::failure("Failed to open file");/*
 		cout << "Failed to open file\n";
 		cout << "Program terminated.\n\n";
-		exit(0);
+		exit(0);*/
 	}
 }
 
