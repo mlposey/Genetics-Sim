@@ -1,5 +1,8 @@
 #pragma once
+#include <string>
+
 #include "FileParser.h"
+#include "GeneticsSimDataParser.h"
 
 /**
  * @brief The ColemanXMLParser class acts as a wrapper around Dr. Rick Coleman's
@@ -8,7 +11,7 @@
 class ColemanXMLParser : public IFileParser
 {
 public:
-	ColemanXMLParser();
+	ColemanXMLParser(const std::string &filename);
 	~ColemanXMLParser();
 
 	/**
@@ -20,5 +23,8 @@ public:
 	 */
 	void parseFile(std::vector<std::string>& genotypes,
 		int expectedCount) override;
+
+private:
+	GeneticsSimDataParser parser;
 };
 

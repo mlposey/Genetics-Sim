@@ -1,7 +1,8 @@
 #include "ColemanXMLParser.h"
 
 
-ColemanXMLParser::ColemanXMLParser()
+ColemanXMLParser::ColemanXMLParser(const std::string &filename)
+	: parser(const_cast<char*>(filename.c_str()))
 {
 }
 
