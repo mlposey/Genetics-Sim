@@ -85,11 +85,142 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_allele-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Allele Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="class_allele.html" title="The Allele class models the alleles of a Gene. ">Allele</a> class models the alleles of a <a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a>.  
+ <a href="class_allele.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_allele_8h_source.html">Allele.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a22adf689d715473f8a14fdc2ac80e167"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_allele.html#a22adf689d715473f8a14fdc2ac80e167">Allele</a> (char symbol, const std::string &amp;description)</td></tr>
+<tr class="memdesc:a22adf689d715473f8a14fdc2ac80e167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="class_allele.html" title="The Allele class models the alleles of a Gene. ">Allele</a> object.  <a href="#a22adf689d715473f8a14fdc2ac80e167">More...</a><br /></td></tr>
+<tr class="separator:a22adf689d715473f8a14fdc2ac80e167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6096e43a00dfc291544abd97b4a82c06"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_allele.html#a6096e43a00dfc291544abd97b4a82c06">isDominant</a> () const </td></tr>
+<tr class="separator:a6096e43a00dfc291544abd97b4a82c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc738a4cfcc3e69e07baf2e196570c0a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_allele.html#afc738a4cfcc3e69e07baf2e196570c0a">getSymbol</a> () const </td></tr>
+<tr class="separator:afc738a4cfcc3e69e07baf2e196570c0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a332bec024b1be3eff4ba984320aed490"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_allele.html#a332bec024b1be3eff4ba984320aed490">getDescription</a> () const </td></tr>
+<tr class="separator:a332bec024b1be3eff4ba984320aed490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="class_allele.html" title="The Allele class models the alleles of a Gene. ">Allele</a> class models the alleles of a <a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a>. </p>
+<p>This immutable representation of an allele holds information regarding symbols (e.g. T or t), description of the allele (e.g. tall), and whether the allele is dominant or not. It is an essential part of the <a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a> class. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a> </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a22adf689d715473f8a14fdc2ac80e167"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Allele::Allele </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>symbol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>description</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an <a class="el" href="class_allele.html" title="The Allele class models the alleles of a Gene. ">Allele</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symbol</td><td>The symbol for the allele </td></tr>
+    <tr><td class="paramname">description</td><td>What the allele represents </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a332bec024b1be3eff4ba984320aed490"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Allele::getDescription </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The description of the allele (e.g. "tall" or "short") </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afc738a4cfcc3e69e07baf2e196570c0a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Allele::getSymbol </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The symbol of the allele (e.g. 'T' or 't') </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6096e43a00dfc291544abd97b4a82c06"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Allele::isDominant </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>True if the allele is dominant or false if it is recessive </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Genetics/<a class="el" href="_allele_8h_source.html">Allele.h</a></li>
 <li>Genetics/Allele.cpp</li>

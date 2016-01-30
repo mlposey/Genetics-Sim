@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parsefile',['parseFile',['../class_coleman_x_m_l_parser.html#a8f2949b991e5922734277a56f81c9a77',1,'ColemanXMLParser']]]
+  ['allele',['Allele',['../class_allele.html#a22adf689d715473f8a14fdc2ac80e167',1,'Allele']]]
 ];
