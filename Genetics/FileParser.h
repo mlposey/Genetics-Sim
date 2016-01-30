@@ -2,7 +2,7 @@
 #include <string>
 
 /**
- * The IFileParser struct provides an interface for reading
+ * @brief The IFileParser struct provides an interface for reading
  * genotype information from various file formats.
  */
 struct IFileParser {
