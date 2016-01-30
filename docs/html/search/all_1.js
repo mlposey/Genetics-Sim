@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ifileparser',['IFileParser',['../struct_i_file_parser.html',1,'']]]
+  ['colemanxmlparser',['ColemanXMLParser',['../class_coleman_x_m_l_parser.html',1,'']]]
 ];

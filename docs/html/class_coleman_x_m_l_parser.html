@@ -108,14 +108,17 @@ Inheritance diagram for ColemanXMLParser:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7b485ea135c4219aacbecfaf637634e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coleman_x_m_l_parser.html#a7b485ea135c4219aacbecfaf637634e4">parseFile</a> (std::vector&lt; std::string &gt; &amp;genotypes, int expectedCount) override</td></tr>
-<tr class="memdesc:a7b485ea135c4219aacbecfaf637634e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses Coleman's parser to read genotype information from his xml format.  <a href="#a7b485ea135c4219aacbecfaf637634e4">More...</a><br /></td></tr>
-<tr class="separator:a7b485ea135c4219aacbecfaf637634e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3daa7719b45ab65f0b022c869055f104"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3daa7719b45ab65f0b022c869055f104"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ColemanXMLParser</b> (const std::string &amp;filename)</td></tr>
+<tr class="separator:a3daa7719b45ab65f0b022c869055f104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f2949b991e5922734277a56f81c9a77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coleman_x_m_l_parser.html#a8f2949b991e5922734277a56f81c9a77">parseFile</a> (std::vector&lt; <a class="el" href="class_organism.html">Organism</a> &gt; &amp;organisms, int expectedCount) override</td></tr>
+<tr class="memdesc:a8f2949b991e5922734277a56f81c9a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses Coleman's parser to read genotype information from his xml format.  <a href="#a8f2949b991e5922734277a56f81c9a77">More...</a><br /></td></tr>
+<tr class="separator:a8f2949b991e5922734277a56f81c9a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_coleman_x_m_l_parser.html" title="The ColemanXMLParser class acts as a wrapper around Dr. Rick Coleman&#39;s genetic xml format and parser...">ColemanXMLParser</a> class acts as a wrapper around Dr. Rick Coleman's genetic xml format and parser. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a7b485ea135c4219aacbecfaf637634e4"></a>
+<a class="anchor" id="a8f2949b991e5922734277a56f81c9a77"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -125,8 +128,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void ColemanXMLParser::parseFile </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>genotypes</em>, </td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_organism.html">Organism</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>organisms</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -150,11 +153,12 @@ Public Member Functions</h2></td></tr>
 <p>Uses Coleman's parser to read genotype information from his xml format. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">genotypes</td><td>The vector to read the genotype from each organism into </td></tr>
+    <tr><td class="paramname">organisms</td><td>The vector to store the organisms in </td></tr>
     <tr><td class="paramname">expectedCount</td><td>The expected organism count in the data file </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_organism.html">Organism</a> </dd></dl>
 
 <p>Implements <a class="el" href="struct_i_file_parser.html">IFileParser</a>.</p>
 

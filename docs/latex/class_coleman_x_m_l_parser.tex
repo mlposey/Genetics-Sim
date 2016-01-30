@@ -18,7 +18,10 @@ Inheritance diagram for Coleman\+X\+M\+L\+Parser\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_coleman_x_m_l_parser_a7b485ea135c4219aacbecfaf637634e4}{parse\+File} (std\+::vector$<$ std\+::string $>$ \&genotypes, int expected\+Count) override
+{\bfseries Coleman\+X\+M\+L\+Parser} (const std\+::string \&filename)\hypertarget{class_coleman_x_m_l_parser_a3daa7719b45ab65f0b022c869055f104}{}\label{class_coleman_x_m_l_parser_a3daa7719b45ab65f0b022c869055f104}
+
+\item 
+void \hyperlink{class_coleman_x_m_l_parser_a8f2949b991e5922734277a56f81c9a77}{parse\+File} (std\+::vector$<$ \hyperlink{class_organism}{Organism} $>$ \&organisms, int expected\+Count) override
 \begin{DoxyCompactList}\small\item\em Uses Coleman\textquotesingle{}s parser to read genotype information from his xml format. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -28,23 +31,26 @@ The \hyperlink{class_coleman_x_m_l_parser}{Coleman\+X\+M\+L\+Parser} class acts 
 \subsection{Member Function Documentation}
 \index{Coleman\+X\+M\+L\+Parser@{Coleman\+X\+M\+L\+Parser}!parse\+File@{parse\+File}}
 \index{parse\+File@{parse\+File}!Coleman\+X\+M\+L\+Parser@{Coleman\+X\+M\+L\+Parser}}
-\subsubsection[{\texorpdfstring{parse\+File(std\+::vector$<$ std\+::string $>$ \&genotypes, int expected\+Count) override}{parseFile(std::vector< std::string > &genotypes, int expectedCount) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Coleman\+X\+M\+L\+Parser\+::parse\+File (
+\subsubsection[{\texorpdfstring{parse\+File(std\+::vector$<$ Organism $>$ \&organisms, int expected\+Count) override}{parseFile(std::vector< Organism > &organisms, int expectedCount) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Coleman\+X\+M\+L\+Parser\+::parse\+File (
 \begin{DoxyParamCaption}
-\item[{std\+::vector$<$ std\+::string $>$ \&}]{genotypes, }
+\item[{std\+::vector$<$ {\bf Organism} $>$ \&}]{organisms, }
 \item[{int}]{expected\+Count}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_coleman_x_m_l_parser_a7b485ea135c4219aacbecfaf637634e4}{}\label{class_coleman_x_m_l_parser_a7b485ea135c4219aacbecfaf637634e4}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_coleman_x_m_l_parser_a8f2949b991e5922734277a56f81c9a77}{}\label{class_coleman_x_m_l_parser_a8f2949b991e5922734277a56f81c9a77}
 
 
 Uses Coleman\textquotesingle{}s parser to read genotype information from his xml format. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em genotypes} & The vector to read the genotype from each organism into \\
+{\em organisms} & The vector to store the organisms in \\
 \hline
 {\em expected\+Count} & The expected organism count in the data file \\
 \hline
 \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_organism}{Organism} 
+\end{DoxySeeAlso}
 
 
 Implements \hyperlink{struct_i_file_parser}{I\+File\+Parser}.
