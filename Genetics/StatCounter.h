@@ -9,7 +9,7 @@ using std::string;
 class StatCounter : public IObserver
 {
 public:
-	void notify(void* arg) override;
+	void notify(const string &arg) override;
 
 	int size() const { return _genotypeCounts.size(); }
 
@@ -18,4 +18,3 @@ public:
 private:
 	std::unordered_map<string, int> _genotypeCounts;
 };
-

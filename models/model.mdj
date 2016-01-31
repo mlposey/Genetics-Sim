@@ -3732,7 +3732,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+notify(arg: void*): void",
+											"text": "+notify(arg: string): void",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -4517,7 +4517,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+notify(arg: void*): void",
+											"text": "+notify(arg: string): void",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -9860,7 +9860,7 @@
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "void*",
+									"type": "string",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -10001,7 +10001,7 @@
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "void*",
+									"type": "string",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,

@@ -2,13 +2,12 @@
 #include <memory>
 
 
-void StatCounter::notify(void* arg) {
-	std::shared_ptr<string> tmp(reinterpret_cast<string*>(arg));
-	if (_genotypeCounts.find(*tmp) == _genotypeCounts.end()) {
-		_genotypeCounts[*tmp] = 0;
+void StatCounter::notify(const string &arg) {
+	if (_genotypeCounts.find(arg) == _genotypeCounts.end()) {
+		_genotypeCounts[arg] = 1;
 	}
 	else {
-		_genotypeCounts[*tmp]++;
+		_genotypeCounts[arg]++;
 	}
 }
 
