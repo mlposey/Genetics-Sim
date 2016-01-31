@@ -40,22 +40,27 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms,
 	// e.g. <'t', <Allele(), Color>>
 	std::unordered_map<char, std::pair<Allele, string>> possibleAlleles;
 
-	bool hasNext;
 	// Survey the file to find all possible alleles that a parent may have
-	while (hasNext = _parser.getGeneData(trait, domDesc, &domSymbol, recDesc, &recSymbol)) {
+	while (_parser.getGeneData(trait, domDesc, &domSymbol, recDesc, &recSymbol)) {
 		possibleAlleles[domSymbol] = std::make_pair<Allele, string>(Allele(domSymbol, domDesc), trait);
 		possibleAlleles[recSymbol] = std::make_pair<Allele, string>(Allele(recSymbol, recDesc), trait);
 	}
 
+	// TODO: Please fix this algorithm... It works. It's just bad. So bad...
+
 	char genotype[2][32];
 	Allele al[2];
 	int t = 0;
+	// Load the genotype of each parent into the appropriate parent organisms
 	for (int i = 0; i < 2; ++i) {
 		_parser.getParentGenotype(genotype[i]);
 		int genLength = strlen(genotype[i]);
 		for (int j = 0; j < genLength; ++j) {
 			char c = genotype[i][j];
 			if (c == ' ' || j + 1 == genLength) {
+				if (j + 1 == genLength) {
+					al[t++] = possibleAlleles[c].first;
+				}
 				organisms[i].addGene(Gene(al[0], al[1], possibleAlleles[al[0].getSymbol()].second));
 				t = 0;
 				continue;
