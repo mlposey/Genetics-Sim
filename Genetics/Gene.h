@@ -19,8 +19,9 @@ public:
 	 * @brief Constructs a Gene object
 	 * @param a1 One allele to be part of the gene
 	 * @param a2 One allele to be part of the gene
+	 * @param desc The description of the gene trait
 	 */
-	Gene(const Allele &a1, const Allele &a2);
+	Gene(const Allele &a1, const Allele &a2, const std::string &desc);
 
 	/**
 	 * @brief Picks a random Allele from the pair and returns it
@@ -39,5 +40,6 @@ public:
 
 private:
 	std::vector<Allele> _alleles;
+	std::string _description;
 };
 

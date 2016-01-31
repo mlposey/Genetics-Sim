@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 
+using std::string;
+
 #include "FileParser.h"
 #include "GeneticsSimDataParser.h"
 
@@ -11,7 +13,7 @@
 class ColemanXMLParser : public IFileParser
 {
 public:
-	ColemanXMLParser(const std::string &filename);
+	ColemanXMLParser(const string &filename);
 	~ColemanXMLParser();
 
 	/**
@@ -23,7 +25,7 @@ public:
 	 * @see Organism
 	 */
 	void parseFile(std::vector<Organism>& organisms,
-		int expectedCount) override;
+		int expectedCount = 2) override;
 
 private:
 	GeneticsSimDataParser _parser;
