@@ -12,11 +12,13 @@ public:
 
 	void addGene(const Gene &gene);
 
-	void serveGene(Gene &g) const;
+	void serveGene(Gene &g);
 
 	string toString() const;
 
 private:
+	int _serveCounter;
+
 	string _genus;
 	string _species;
 	string _name;
