@@ -1,21 +1,10 @@
-#include "ColemanXMLParser.h"
-#include "LoveChamber.h"
-#include "StatCounter.h"
+#include "Simulation.h"
 
 int main() {
+	Simulation sim;
+	
+	sim.run();
 
-	ColemanXMLParser parser("GeneticsSim1.xml");
-
-	std::vector<Organism> parents;
-
-	parser.parseFile(parents);
-
-	LoveChamber loveChamber(parents[0], parents[1]);
-
-	StatCounter counter;
-	loveChamber.addObserver(counter);
-
-	loveChamber.mate();
-
+	getchar();
 	return 0;
 }

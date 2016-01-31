@@ -15,6 +15,8 @@ public:
 
 	int count(const string &genotype);
 
+	void printStats();
+
 private:
 	std::unordered_map<string, int> _genotypeCounts;
 };
