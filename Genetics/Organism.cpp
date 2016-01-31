@@ -12,6 +12,9 @@ void Organism::addGene(const Gene& gene) {
 }
 
 void Organism::serveGene(Gene& g) {
+	if (_serveCounter >= _genotype.size()) {
+		_serveCounter = 0;
+	}
 	g = _genotype[_serveCounter++];
 }
 

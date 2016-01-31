@@ -14,6 +14,8 @@ public:
 
 	void serveGene(Gene &g);
 
+	int getGeneCount() const { return _genotype.size(); }
+
 	string toString() const;
 
 private:

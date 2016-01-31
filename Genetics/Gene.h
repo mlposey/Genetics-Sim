@@ -15,6 +15,8 @@
 class Gene
 {
 public:
+	// TODO: Figure out how to not need this
+	Gene(){}
 	/**
 	 * @brief Constructs a Gene object
 	 * @param a1 One allele to be part of the gene

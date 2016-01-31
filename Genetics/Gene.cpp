@@ -1,7 +1,6 @@
 #include "Gene.h"
 #include "Allele.h"
 
-#include <ctime>
 #include <string>
 #include <sstream>
 
@@ -12,8 +11,7 @@ Gene::Gene(const Allele &a1, const Allele &a2, const std::string &desc)
 }
 
 Allele Gene::getRandomAllele() const {
-	srand(time(nullptr));
-	return _alleles[rand() / (RAND_MAX + 1)];
+	return _alleles[rand() % 2];
 }
 
 std::string Gene::toString() const {
