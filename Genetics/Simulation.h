@@ -18,7 +18,7 @@ private:
 	std::vector<Organism> _parents;
 	std::unique_ptr<LoveChamber> _loveChamber;
 
-	StatCounter statCounter;
+	StatCounter _statCounter;
 
 	int _offspringCount;
 };

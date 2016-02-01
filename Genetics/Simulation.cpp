@@ -18,7 +18,7 @@ void Simulation::run() {
 	for (int i = 0; i < _offspringCount; ++i) {
 		_loveChamber->mate();
 	}
-	statCounter.printStats();
+	_statCounter.printStats();
 }
 
 void Simulation::init() {
@@ -35,7 +35,7 @@ void Simulation::init() {
 			parser->parseFile(_parents, 2);
 
 			_loveChamber = std::unique_ptr<LoveChamber>(new LoveChamber(_parents[0], _parents[1]));
-			_loveChamber->addObserver(statCounter);
+			_loveChamber->addObserver(_statCounter);
 
 			break;
 		}
