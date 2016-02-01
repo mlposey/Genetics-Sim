@@ -36,10 +36,8 @@ std::string Gene::getPhenotype() const {
 }
 
 std::string Gene::getZygosity() const {
-	char s1 = _alleles[0].getSymbol(), s2 = _alleles[1].getSymbol();
-
-	if (s1 == s2) {
-		if (islower(s1)) {
+	if (_alleles[0].isDominant() == _alleles[1].isDominant()) {
+		if (!_alleles[0].isDominant()) {
 			return "homozygous recessive";
 		}
 		else {
