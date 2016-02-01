@@ -16,7 +16,11 @@ public:
 
 	int getGeneCount() const { return _genotype.size(); }
 
-	string toString() const;
+	const std::vector<Gene> &getGenotype() const { return _genotype; };
+
+	string getGenus() const { return _genus; }
+	string getSpecies() const { return _species; }
+	string getName() const { return _name; }
 
 private:
 	int _serveCounter;

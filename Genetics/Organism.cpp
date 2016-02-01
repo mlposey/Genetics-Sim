@@ -18,6 +18,3 @@ void Organism::serveGene(Gene& g) {
 	g = _genotype[_serveCounter++];
 }
 
-string Organism::toString() const {
-	return "";
-}

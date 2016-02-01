@@ -37,7 +37,18 @@ public:
 	/// @return The second of two alleles
 	Allele second() const { return _alleles[1]; }
 
+	std::string getDescription() const { return _description; }
+
+	/// @return The phenotype of the gene
+	std::string getPhenotype() const;
+
+	/// @return The zygosity of the gene (i.e. heterozygous, etc)
+	std::string getZygosity() const;
+
 	/// @return The allele pair of the gene as a string
+	std::string allelesAsString() const;
+
+	/// @return The fully qualified description of the gene
 	std::string toString() const;
 
 private:

@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <ctime>
 
+#include "Organism.h"
+
 LoveChamber::LoveChamber(Organism& o1, Organism& o2)
 	: _o1(o1)
 	, _o2(o2) {
@@ -11,24 +13,21 @@ LoveChamber::LoveChamber(Organism& o1, Organism& o2)
 
 void LoveChamber::mate() {
 	int size = _o1.getGeneCount();
-	string offspringGenotype;
 
+	Organism offspring(_o1.getGenus(), _o1.getSpecies(), _o1.getName());
 	Gene gene;
+	Allele al[2];
 	string tmp;
+
 	for (int i = 0; i < size; ++i) {
 		_o1.serveGene(gene);
-		tmp += gene.getRandomAllele().getSymbol();
+		al[0] = gene.getRandomAllele();
 		
 		_o2.serveGene(gene);
-		tmp += gene.getRandomAllele().getSymbol();
+		al[1] = gene.getRandomAllele();
 
-		std::sort(tmp.begin(), tmp.end());
-
-		offspringGenotype += tmp + " ";
-		tmp = "";
+		offspring.addGene(Gene(al[0], al[1], gene.getDescription()));
 	}
-	// chop off trailing space
-	offspringGenotype = offspringGenotype.substr(0, offspringGenotype.size() - 1);
 
-	notifyAll(offspringGenotype);
+	notifyAll(offspring);
 }

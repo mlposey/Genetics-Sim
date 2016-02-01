@@ -3,7 +3,7 @@
 
 class Organism;
 
-class LoveChamber : public IObservable
+class LoveChamber : public IObservable<Organism>
 {
 public:
 	LoveChamber(Organism &o1, Organism &o2);

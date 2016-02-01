@@ -5,29 +5,33 @@
 
 #include "IObserver.h"
 
+template <typename T>
 class IObservable {
 public:
 	virtual ~IObservable(){}
 
-	void addObserver(IObserver &o);
-	void removeObserver(const IObserver &o);
+	void addObserver(IObserver<T> &o);
+	void removeObserver(const IObserver<T> &o);
 
-	void notifyAll(const std::string &arg);
+	void notifyAll(const T &arg);
 
 protected:
-	std::vector<IObserver*> _observers;
+	std::vector<IObserver<T>*> _observers;
 };
 
-inline void IObservable::addObserver(IObserver& o) {
+template <typename T>
+void IObservable<T>::addObserver(IObserver<T>& o) {
 	_observers.push_back(&o);
 }
 
-inline void IObservable::removeObserver(const IObserver& o) {
+template <typename T>
+void IObservable<T>::removeObserver(const IObserver<T>& o) {
 	_observers.erase(std::remove(_observers.begin(), _observers.end(), &o), _observers.end());
 }
 
-inline void IObservable::notifyAll(const std::string& arg) {
-	for (IObserver *o : _observers) {
+template <typename T>
+void IObservable<T>::notifyAll(const T &arg) {
+	for (IObserver<T> *o : _observers) {
 		o->notify(arg);
 	}
 }
