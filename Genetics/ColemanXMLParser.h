@@ -14,7 +14,6 @@ class ColemanXMLParser : public IFileParser
 {
 public:
 	ColemanXMLParser(const string &filename);
-	~ColemanXMLParser();
 
 	/**
 	 * @brief Uses Coleman's _parser to read genotype information from his xml
