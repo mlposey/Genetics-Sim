@@ -1,9 +1,9 @@
 #pragma once
-#include "IObservable.h"
+#include "Observable.h"
 
 class Organism;
 
-class LoveChamber : public IObservable<Organism>
+class LoveChamber : public Observable<Organism>
 {
 public:
 	LoveChamber(Organism &o1, Organism &o2);
