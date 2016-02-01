@@ -26,10 +26,6 @@ void StatCounter::notify(const Organism &arg) {
 	}
 }
 
-int StatCounter::count(const string& genotype) {
-	return _genotypeCounts[genotype];
-}
-
 void StatCounter::printStats() {
 	std::cout << "\n-----------------------Results---------------------\n";
 	

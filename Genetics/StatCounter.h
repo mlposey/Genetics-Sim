@@ -17,10 +17,6 @@ class StatCounter : public IObserver<Organism>
 public:
 	void notify(const Organism &arg) override;
 
-	int size() const { return _genotypeCounts.size(); }
-
-	int count(const string &genotype);
-
 	void printStats();
 
 private:
