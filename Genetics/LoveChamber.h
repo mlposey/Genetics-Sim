@@ -1,17 +1,17 @@
 #pragma once
 #include "Observable.h"
 
-class Organism;
+#include "Organism.h"
 
 class LoveChamber : public Observable<Organism>
 {
 public:
-	LoveChamber(Organism &o1, Organism &o2);
+	LoveChamber(Organism o1, Organism o2);
 
 	void mate();
 
 private:
-	Organism &_o1;
-	Organism &_o2;
+	Organism _o1;
+	Organism _o2;
 };
 

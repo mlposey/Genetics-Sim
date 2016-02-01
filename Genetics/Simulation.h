@@ -15,7 +15,6 @@ public:
 private:
 	void init();
 
-	std::vector<Organism> _parents;
 	std::unique_ptr<LoveChamber> _loveChamber;
 
 	StatCounter _statCounter;

@@ -32,9 +32,12 @@ void Simulation::init() {
 			std::getline(std::cin, input);
 
 			parser = std::unique_ptr<IFileParser>(new ColemanXMLParser(input));
-			parser->parseFile(_parents, 2);
+			
+			std::vector<Organism> parents;
+			parser->parseFile(parents, 2);
 
-			_loveChamber = std::unique_ptr<LoveChamber>(new LoveChamber(_parents[0], _parents[1]));
+			_loveChamber = std::unique_ptr<LoveChamber>(new LoveChamber(parents[0], parents[1]));
+
 			_loveChamber->addObserver(_statCounter);
 
 			break;

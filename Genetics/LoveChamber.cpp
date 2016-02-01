@@ -1,11 +1,8 @@
 #include "LoveChamber.h"
 #include "Organism.h"
-#include <algorithm>
 #include <ctime>
 
-#include "Organism.h"
-
-LoveChamber::LoveChamber(Organism& o1, Organism& o2)
+LoveChamber::LoveChamber(Organism o1, Organism o2)
 	: _o1(o1)
 	, _o2(o2) {
 		srand(time(nullptr));
