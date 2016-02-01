@@ -5111,7 +5111,7 @@
 							"width": 136,
 							"height": 88,
 							"autoResize": false,
-							"text": "Stores and serves information regarding a dominant and recessive allele",
+							"text": "Holds a two-pair of Allele objects and performs analytical tasks on said objects",
 							"wordWrap": true
 						},
 						{
@@ -5131,10 +5131,10 @@
 							"containerExtending": false,
 							"left": 664,
 							"top": 1048,
-							"width": 136,
-							"height": 129,
+							"width": 129,
+							"height": 81,
 							"autoResize": false,
-							"text": "A living thing with a Genotype that is capable of producing offspring with other Organism objects. It should serve the list of Genes, in order, to SexyTime.",
+							"text": "A description and genomic makeup of a living organism",
 							"wordWrap": true
 						},
 						{
@@ -5226,7 +5226,7 @@
 							"width": 136,
 							"height": 90,
 							"autoResize": false,
-							"text": "This class handles breeding between organisms and sends statistical data to appropriate objects",
+							"text": "This class handles breeding between organisms and sends the resulting offspring to its observers",
 							"wordWrap": true
 						},
 						{
@@ -5247,9 +5247,9 @@
 							"left": 1752,
 							"top": 224,
 							"width": 136,
-							"height": 88,
+							"height": 103,
 							"autoResize": false,
-							"text": "Calculates statistical data for all created Genotypes",
+							"text": "Keeps track of the occurances of genotypes and genes for the Organisms that are created in LoveChamber",
 							"wordWrap": true
 						},
 						{
@@ -5272,7 +5272,7 @@
 							"width": 136,
 							"height": 88,
 							"autoResize": false,
-							"text": "An interface for an observable entity",
+							"text": "A base class for an observable object",
 							"wordWrap": true
 						},
 						{
@@ -5344,7 +5344,7 @@
 								"$ref": "AAAAAAFSkKpTpGtNKRs="
 							},
 							"lineStyle": 1,
-							"points": "694:1047;671:1007"
+							"points": "702:1047;677:1007"
 						},
 						{
 							"_type": "UMLNoteLinkView",
@@ -5512,7 +5512,7 @@
 								"$ref": "AAAAAAFSj2G1BkrZjsk="
 							},
 							"lineStyle": 1,
-							"points": "1722:267;1751:267"
+							"points": "1722:273;1751:274"
 						},
 						{
 							"_type": "UMLAssociationView",
