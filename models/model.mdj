@@ -7513,7 +7513,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+symbol(): char",
+											"text": "+getSymbol(): char",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -7541,7 +7541,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+description(): string",
+											"text": "+getDescription(): string",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -10865,7 +10865,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFSkWVmi5L9UA4="
 							},
-							"name": "symbol",
+							"name": "getSymbol",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
@@ -10896,7 +10896,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFSkWVmi5L9UA4="
 							},
-							"name": "description",
+							"name": "getDescription",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
