@@ -3,7 +3,7 @@
 
 using std::string;
 
-#include "FileParser.h"
+#include "IFileParser.h"
 #include "GeneticsSimDataParser.h"
 
 /**
