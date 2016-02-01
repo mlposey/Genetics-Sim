@@ -21,15 +21,17 @@ Allele Gene::getRandomAllele() const {
 }
 
 std::string Gene::getPhenotype() const {
-	char s1 = _alleles[0].getSymbol(), s2 = _alleles[1].getSymbol();
-	if (s1 == s2) {
-		return _alleles[0].getDescription();
+	const Allele &a1 = _alleles[0], &a2 = _alleles[1];
+
+	if (a1.isDominant() == a2.isDominant()) {
+		// They are either both recessive or both dominant
+		return a1.getDescription();
 	}
-	else if (s1 > s2) {
-		return _alleles[1].getDescription();
+	else if (a1.isDominant()) {
+		return a1.getDescription();
 	}
 	else {
-		return _alleles[0].getDescription();
+		return a2.getDescription();
 	}
 }
 
