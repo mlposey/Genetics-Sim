@@ -5,7 +5,7 @@
 void StatCounter::notify(const Organism &arg) {
 	string genotype;
 	for (const Gene &g : arg.getGenotype()) {
-		genotype += g.allelesAsString() + " ";
+		genotype += g.getAllelesString() + " ";
 
 		// Increment the count of each new gene occurance
 		auto &tmp = _geneCounts[g.getDescription()];

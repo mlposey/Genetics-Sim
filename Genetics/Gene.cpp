@@ -49,7 +49,7 @@ std::string Gene::getZygosity() const {
 	}
 }
 
-std::string Gene::allelesAsString() const {
+std::string Gene::getAllelesString() const {
 	std::ostringstream ss;
 	ss << _alleles[0].getSymbol();
 	ss << _alleles[1].getSymbol();
@@ -57,5 +57,5 @@ std::string Gene::allelesAsString() const {
 }
 
 std::string Gene::toString() const {
-	return getZygosity() + " (" + getPhenotype() + " " + allelesAsString() + ")";
+	return getZygosity() + " (" + getPhenotype() + " " + getAllelesString() + ")";
 }

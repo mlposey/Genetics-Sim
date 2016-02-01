@@ -46,7 +46,7 @@ public:
 	std::string getZygosity() const;
 
 	/// @return The allele pair of the gene as a string
-	std::string allelesAsString() const;
+	std::string getAllelesString() const;
 
 	/// @return The fully qualified description of the gene
 	std::string toString() const;
