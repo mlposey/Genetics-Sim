@@ -43,5 +43,5 @@ void StatCounter::printStats() {
 		std::cout << "Offspring count = " << p.second << '\n';
 	}
 
-	std::cout << "\n-----------------------Results---------------------\n";
+	std::cout << "\n---------------------------------------------------\n";
 }

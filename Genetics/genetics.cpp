@@ -5,6 +5,5 @@ int main() {
 	
 	sim.run();
 
-	getchar();
 	return 0;
 }

@@ -19,6 +19,8 @@ void Simulation::run() {
 		_loveChamber->mate();
 	}
 	_statCounter.printStats();
+	std::cout << "\nPress Enter to exit the simulation.\n";
+	getchar();
 }
 
 void Simulation::init() {
