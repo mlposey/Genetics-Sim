@@ -3,14 +3,14 @@
 
 using std::string;
 
-#include "IFileParser.h"
 #include "GeneticsSimDataParser.h"
+#include "Organism.h"
 
 /**
  * @brief The ColemanXMLParser class acts as a wrapper around Dr. Rick Coleman's
  * genetic xml format and _parser.
  */
-class ColemanXMLParser : public IFileParser
+class ColemanXMLParser
 {
 public:
 	ColemanXMLParser(const string &filename);
@@ -23,8 +23,7 @@ public:
 	 * @param expectedCount The expected organism count in the data file
 	 * @see Organism
 	 */
-	void parseFile(std::vector<Organism>& organisms,
-		int expectedCount = 2) override;
+	void parseFile(std::vector<Organism>& organisms, int expectedCount = 2);
 
 private:
 	GeneticsSimDataParser _parser;

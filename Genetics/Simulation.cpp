@@ -24,8 +24,6 @@ void Simulation::run() {
 }
 
 void Simulation::init() {
-	std::unique_ptr<IFileParser> parser;
-
 	string input;
 
 	while (true) {
@@ -33,10 +31,10 @@ void Simulation::init() {
 			cout << "Enter the name of the simulation data file and press Enter: ";
 			std::getline(std::cin, input);
 
-			parser = std::unique_ptr<IFileParser>(new ColemanXMLParser(input));
+			ColemanXMLParser parser(input);
 			
 			std::vector<Organism> parents;
-			parser->parseFile(parents, 2);
+			parser.parseFile(parents, 2);
 
 			_loveChamber = std::unique_ptr<LoveChamber>(new LoveChamber(parents[0], parents[1]));
 
@@ -49,8 +47,6 @@ void Simulation::init() {
 			std::cerr << "Please try another file.\n";
 		}
 	}
-
-	// Print organism info here
 
 	cout << "# of offspring to generate: ";
 	std::getline(std::cin, input);
