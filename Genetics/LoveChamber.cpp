@@ -19,15 +19,15 @@ void LoveChamber::mate() {
 	int size = _o1.getGeneCount();
 
 	Organism offspring(_o1.getGenus(), _o1.getSpecies(), _o1.getName());
-	Gene gene[2];
 	string tmp;
 
 	for (int i = 0; i < size; ++i) {
-		_o1.serveGene(gene[0]);
-		_o2.serveGene(gene[1]);
+		// TODO: Consider making this faster
+		Gene g1(_o1.serveGene());
+		Gene g2(_o2.serveGene());
 
-		offspring.addGene(Gene(gene[0].getRandomAllele(),
-			gene[1].getRandomAllele(), gene[0].getDescription()));
+		offspring.addGene(Gene(g1.getRandomAllele(),
+			g2.getRandomAllele(), g1.getDescription()));
 	}
 
 	notifyAll(offspring);

@@ -16,7 +16,7 @@ The \hyperlink{class_organism}{Organism} class represents a living thing.
 \begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{class_organism}{Organism} with an initial genus, species, name, and blank genotype. \end{DoxyCompactList}\item 
 void \hyperlink{class_organism_a3dd60a8f90366cd02ba10e32bc2aae3c}{add\+Gene} (const \hyperlink{class_gene}{Gene} \&gene)
 \item 
-void \hyperlink{class_organism_aa6d906d352590a2f26f40bd953245e98}{serve\+Gene} (\hyperlink{class_gene}{Gene} \&gene)
+\hyperlink{class_gene}{Gene} \& \hyperlink{class_organism_a8b587d97ced82e377dc7bc9e5c5613fe}{serve\+Gene} ()
 \begin{DoxyCompactList}\small\item\em Retrieves the next \hyperlink{class_gene}{Gene} in the genotype. \end{DoxyCompactList}\item 
 int \hyperlink{class_organism_a9719a5a125a051c2fadffe6f4d9a8bb8}{get\+Gene\+Count} () const \hypertarget{class_organism_a9719a5a125a051c2fadffe6f4d9a8bb8}{}\label{class_organism_a9719a5a125a051c2fadffe6f4d9a8bb8}
 
@@ -83,20 +83,18 @@ Adds a gene to the \hyperlink{class_organism}{Organism}\textquotesingle{}s genot
 \end{DoxyParams}
 \index{Organism@{Organism}!serve\+Gene@{serve\+Gene}}
 \index{serve\+Gene@{serve\+Gene}!Organism@{Organism}}
-\subsubsection[{\texorpdfstring{serve\+Gene(\+Gene \&gene)}{serveGene(Gene &gene)}}]{\setlength{\rightskip}{0pt plus 5cm}void Organism\+::serve\+Gene (
+\subsubsection[{\texorpdfstring{serve\+Gene()}{serveGene()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Gene} \& Organism\+::serve\+Gene (
 \begin{DoxyParamCaption}
-\item[{{\bf Gene} \&}]{gene}
+{}
 \end{DoxyParamCaption}
-)}\hypertarget{class_organism_aa6d906d352590a2f26f40bd953245e98}{}\label{class_organism_aa6d906d352590a2f26f40bd953245e98}
+)}\hypertarget{class_organism_a8b587d97ced82e377dc7bc9e5c5613fe}{}\label{class_organism_a8b587d97ced82e377dc7bc9e5c5613fe}
 
 
 Retrieves the next \hyperlink{class_gene}{Gene} in the genotype. 
 
-Repeated calls to \+::serve\+Gene will iterate through the \hyperlink{class_organism}{Organism}\textquotesingle{}s list of Genes. When the list has been fully traversed, the position returns to zero. 
-\begin{DoxyParams}{Parameters}
-{\em gene} & the location to store the next \hyperlink{class_gene}{Gene} in the genotype \\
-\hline
-\end{DoxyParams}
+Repeated calls to \+::serve\+Gene will iterate through the \hyperlink{class_organism}{Organism}\textquotesingle{}s list of Genes. When the list has been fully traversed, the position returns to zero. \begin{DoxyReturn}{Returns}
+the next gene in the organism\textquotesingle{}s genotype 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -40,9 +40,9 @@ public:
 	 * Repeated calls to ::serveGene will iterate through the Organism's list of
 	 * Genes. When the list has been fully traversed, the position returns to
 	 * zero.
-	 * @param gene the location to store the next Gene in the genotype
+	 * @return the next gene in the organism's genotype
 	 */
-	void serveGene(Gene &gene);
+	Gene &serveGene();
 
 	/// Returns the number of Genes in the Organism's genotype
 	int getGeneCount() const { return _genotype.size(); }

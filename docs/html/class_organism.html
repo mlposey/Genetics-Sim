@@ -104,9 +104,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4e5d98843608364964a6616e630f9c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dd60a8f90366cd02ba10e32bc2aae3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organism.html#a3dd60a8f90366cd02ba10e32bc2aae3c">addGene</a> (const <a class="el" href="class_gene.html">Gene</a> &amp;gene)</td></tr>
 <tr class="separator:a3dd60a8f90366cd02ba10e32bc2aae3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6d906d352590a2f26f40bd953245e98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organism.html#aa6d906d352590a2f26f40bd953245e98">serveGene</a> (<a class="el" href="class_gene.html">Gene</a> &amp;gene)</td></tr>
-<tr class="memdesc:aa6d906d352590a2f26f40bd953245e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the next <a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a> in the genotype.  <a href="#aa6d906d352590a2f26f40bd953245e98">More...</a><br /></td></tr>
-<tr class="separator:aa6d906d352590a2f26f40bd953245e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b587d97ced82e377dc7bc9e5c5613fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_gene.html">Gene</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organism.html#a8b587d97ced82e377dc7bc9e5c5613fe">serveGene</a> ()</td></tr>
+<tr class="memdesc:a8b587d97ced82e377dc7bc9e5c5613fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the next <a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a> in the genotype.  <a href="#a8b587d97ced82e377dc7bc9e5c5613fe">More...</a><br /></td></tr>
+<tr class="separator:a8b587d97ced82e377dc7bc9e5c5613fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9719a5a125a051c2fadffe6f4d9a8bb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9719a5a125a051c2fadffe6f4d9a8bb8"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organism.html#a9719a5a125a051c2fadffe6f4d9a8bb8">getGeneCount</a> () const </td></tr>
 <tr class="memdesc:a9719a5a125a051c2fadffe6f4d9a8bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of Genes in the <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a>'s genotype. <br /></td></tr>
@@ -197,27 +197,21 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 
 </div>
 </div>
-<a class="anchor" id="aa6d906d352590a2f26f40bd953245e98"></a>
+<a class="anchor" id="a8b587d97ced82e377dc7bc9e5c5613fe"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Organism::serveGene </td>
+          <td class="memname"><a class="el" href="class_gene.html">Gene</a> &amp; Organism::serveGene </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_gene.html">Gene</a> &amp;&#160;</td>
-          <td class="paramname"><em>gene</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Retrieves the next <a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a> in the genotype. </p>
-<p>Repeated calls to ::serveGene will iterate through the <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a>'s list of Genes. When the list has been fully traversed, the position returns to zero. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">gene</td><td>the location to store the next <a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a> in the genotype </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Repeated calls to ::serveGene will iterate through the <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a>'s list of Genes. When the list has been fully traversed, the position returns to zero. </p><dl class="section return"><dt>Returns</dt><dd>the next gene in the organism's genotype </dd></dl>
 
 </div>
 </div>

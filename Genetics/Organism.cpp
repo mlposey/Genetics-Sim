@@ -11,10 +11,10 @@ void Organism::addGene(const Gene& gene) {
 	_genotype.push_back(gene);
 }
 
-void Organism::serveGene(Gene& g) {
+Gene &Organism::serveGene() {
 	if (_serveCounter >= _genotype.size()) {
 		_serveCounter = 0;
 	}
-	g = _genotype[_serveCounter++];
+	return _genotype[_serveCounter++];
 }
 
