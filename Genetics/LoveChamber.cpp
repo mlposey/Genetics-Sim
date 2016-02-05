@@ -6,7 +6,8 @@
 LoveChamber::LoveChamber(Organism o1, Organism o2)
 	: _o1(o1)
 	, _o2(o2) {
-		srand(time(nullptr));
+		srand(static_cast<unsigned int>(time(nullptr)));
+
 		// TODO: Put this code in printParentData and make new function printOrganism
 		std::cout << "-----------------------Parent Data-----------------\n";
 		printParentData("Sim parent 1", o1);
