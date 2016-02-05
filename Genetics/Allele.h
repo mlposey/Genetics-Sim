@@ -21,7 +21,7 @@ public:
 	Allele(char symbol, const std::string &description);
 
 	/// @return True if the allele is dominant or false if it is recessive
-	bool isDominant() const { return isupper(_symbol); }
+	bool isDominant() const { return isupper(_symbol) != 0; }
 
 	/// @return The symbol of the allele (e.g. 'T' or 't')
 	char getSymbol() const { return _symbol; }
