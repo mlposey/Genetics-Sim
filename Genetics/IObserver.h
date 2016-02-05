@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 
+/// @brief The IObserver class is an interface for observers
 template <typename T>
 struct IObserver {
 	virtual ~IObserver() {}
