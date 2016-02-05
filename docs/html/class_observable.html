@@ -92,17 +92,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Observable&lt; T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="class_observable.html" title="The Observable class is an interface for observable objects. ">Observable</a> class is an interface for observable objects.  
+ <a href="class_observable.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_observable_8h_source.html">Observable.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5caccd0c60c6e11843be0ee0197d34e1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5caccd0c60c6e11843be0ee0197d34e1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addObserver</b> (<a class="el" href="struct_i_observer.html">IObserver</a>&lt; T &gt; &amp;o)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a5caccd0c60c6e11843be0ee0197d34e1">addObserver</a> (<a class="el" href="struct_i_observer.html">IObserver</a>&lt; T &gt; &amp;o)</td></tr>
+<tr class="memdesc:a5caccd0c60c6e11843be0ee0197d34e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an <a class="el" href="struct_i_observer.html">IObserver</a> to the list of observers. <br /></td></tr>
 <tr class="separator:a5caccd0c60c6e11843be0ee0197d34e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88784c910caefa3a830025209d71adb3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88784c910caefa3a830025209d71adb3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>removeObserver</b> (const <a class="el" href="struct_i_observer.html">IObserver</a>&lt; T &gt; &amp;o)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a88784c910caefa3a830025209d71adb3">removeObserver</a> (const <a class="el" href="struct_i_observer.html">IObserver</a>&lt; T &gt; &amp;o)</td></tr>
+<tr class="memdesc:a88784c910caefa3a830025209d71adb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an <a class="el" href="struct_i_observer.html">IObserver</a> from the list of observers. <br /></td></tr>
 <tr class="separator:a88784c910caefa3a830025209d71adb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f2f224a73edbb6d42f6534ba0d28602"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f2f224a73edbb6d42f6534ba0d28602"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>notifyAll</b> (const T &amp;arg)</td></tr>
+<tr class="memitem:a2f2f224a73edbb6d42f6534ba0d28602"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a2f2f224a73edbb6d42f6534ba0d28602">notifyAll</a> (const T &amp;arg)</td></tr>
 <tr class="separator:a2f2f224a73edbb6d42f6534ba0d28602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -111,6 +117,37 @@ Protected Attributes</h2></td></tr>
 std::vector&lt; <a class="el" href="struct_i_observer.html">IObserver</a>&lt; T &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_observers</b></td></tr>
 <tr class="separator:a21f00b2d8f33fafe8aaa2360998d1d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+class Observable&lt; T &gt;</h3>
+
+<p>The <a class="el" href="class_observable.html" title="The Observable class is an interface for observable objects. ">Observable</a> class is an interface for observable objects. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_i_observer.html">IObserver</a> </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a2f2f224a73edbb6d42f6534ba0d28602"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_observable.html">Observable</a>&lt; T &gt;::notifyAll </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Invokes IObserver::notify on all stored <a class="el" href="struct_i_observer.html">IObserver</a> objects </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>a message to send to all observing objects </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>Genetics/<a class="el" href="_observable_8h_source.html">Observable.h</a></li>
 </ul>

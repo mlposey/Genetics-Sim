@@ -5,14 +5,25 @@
 
 #include "IObserver.h"
 
+/**
+ * @brief The Observable class is an interface for observable objects
+ * @see IObserver
+ */
 template <typename T>
 class Observable {
 public:
 	virtual ~Observable(){}
 
+	/// Adds an IObserver to the list of observers
 	void addObserver(IObserver<T> &o);
+
+	/// Removes an IObserver from the list of observers
 	void removeObserver(const IObserver<T> &o);
 
+	/**
+	 * Invokes IObserver::notify on all stored IObserver objects
+	 * @param arg a message to send to all observing objects
+	 */
 	void notifyAll(const T &arg);
 
 protected:

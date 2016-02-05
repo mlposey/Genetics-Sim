@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['organism',['Organism',['../class_organism.html#a4e5d98843608364964a6616e630f9c3b',1,'Organism']]]
+  ['notifyall',['notifyAll',['../class_observable.html#a2f2f224a73edbb6d42f6534ba0d28602',1,'Observable']]]
 ];
