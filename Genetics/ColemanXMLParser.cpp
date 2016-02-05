@@ -31,36 +31,33 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms,
 
 	// All possible alleles that a parent may have
 	// The key is the symbol of the allele
-	// The pair holds the allele and it's gene trait description
-	// e.g. <'t', <Allele(), Color>>
-	std::unordered_map<char, std::pair<Allele, string>> possibleAlleles;
+	// The pair holds the allele and gene trait description
+	std::unordered_map<char, std::pair<string, string>> possibleAlleles;
 
 	// Survey the file to find all possible alleles that a parent may have
 	while (_parser.getGeneData(trait, domDesc, &domSymbol, recDesc, &recSymbol)) {
-		possibleAlleles[domSymbol] = std::make_pair<Allele, string>(Allele(domSymbol, domDesc), trait);
-		possibleAlleles[recSymbol] = std::make_pair<Allele, string>(Allele(recSymbol, recDesc), trait);
+		possibleAlleles[domSymbol] = std::make_pair<string, string>(domDesc, trait);
+		possibleAlleles[recSymbol] = std::make_pair<string, string>(recDesc, trait);
 	}
 
-	// TODO: Please fix this algorithm... It works. It's just bad. So bad...
-
 	char genotype[2][32];
-	Allele al[2];
-	int t = 0;
+	std::vector<Allele> alleles;
+
 	// Load the genotype of each parent into the appropriate parent organisms
 	for (int i = 0; i < 2; ++i) {
 		_parser.getParentGenotype(genotype[i]);
 		int genLength = strlen(genotype[i]);
-		for (int j = 0; j < genLength; ++j) {
+		// Create alleles from each character and use pairs to create
+		// genes to be added to the organism's genotype
+		for (int j = 0; j < genLength + 1; ++j) {
 			char c = genotype[i][j];
-			if (c == ' ' || j + 1 == genLength) {
-				if (j + 1 == genLength) {
-					al[t++] = possibleAlleles[c].first;
-				}
-				organisms[i].addGene(Gene(al[0], al[1], possibleAlleles[al[0].getSymbol()].second));
-				t = 0;
+			if (alleles.size() == 2) {
+				organisms[i].addGene(Gene(alleles[0], alleles[1],
+					                 possibleAlleles[alleles[0].getSymbol()].second));
+				alleles.clear();
 				continue;
 			}
-			al[t++] = possibleAlleles[c].first;
+			alleles.emplace_back(c, possibleAlleles[c].first);
 		}
 	}
 
