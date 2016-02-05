@@ -5,6 +5,8 @@
 
 #include "IObserver.h"
 
+// TODO: This description isn't quite accurate
+
 /**
  * @brief The Observable class is an interface for observable objects
  * @see IObserver
