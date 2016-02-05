@@ -11,8 +11,7 @@ using std::string;
  * The main purpose of the Organism is to store categorical information,
  * such as scientific name, as well as the genotype. New organisms can be
  * created through use of the LoveChamber class and two parent organisms.
- * @see Gene
- * @see LoveChamber
+ * @see Gene, LoveChamber
  */
 class Organism
 {

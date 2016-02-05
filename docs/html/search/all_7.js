@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['parsefile',['parseFile',['../class_coleman_x_m_l_parser.html#a59121649e42ca29ca640ca0a3bf3e8a1',1,'ColemanXMLParser']]]
+  ['observable',['Observable',['../class_observable.html',1,'']]],
+  ['observable_3c_20organism_20_3e',['Observable&lt; Organism &gt;',['../class_observable.html',1,'']]],
+  ['organism',['Organism',['../class_organism.html',1,'Organism'],['../class_organism.html#a4e5d98843608364964a6616e630f9c3b',1,'Organism::Organism()']]]
 ];
