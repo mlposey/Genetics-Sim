@@ -31,6 +31,8 @@ public:
 	void mate();
 
 private:
+	void printParentData(const std::string &header, const Organism &o);
+
 	Organism _o1;
 	Organism _o2;
 };
