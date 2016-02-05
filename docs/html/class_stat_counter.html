@@ -91,6 +91,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">StatCounter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="class_stat_counter.html" title="The StatCounter class records statistical data of Organisms. ">StatCounter</a> class records statistical data of Organisms.  
+ <a href="class_stat_counter.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_stat_counter_8h_source.html">StatCounter.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for StatCounter:</div>
 <div class="dyncontent">
@@ -104,13 +109,18 @@ Inheritance diagram for StatCounter:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a81f82e98e35f1571565f2e1bc54de471"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81f82e98e35f1571565f2e1bc54de471"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>notify</b> (const <a class="el" href="class_organism.html">Organism</a> &amp;arg) override</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stat_counter.html#a81f82e98e35f1571565f2e1bc54de471">notify</a> (const <a class="el" href="class_organism.html">Organism</a> &amp;arg) override</td></tr>
+<tr class="memdesc:a81f82e98e35f1571565f2e1bc54de471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the stored counts of the genotypes and genes that arg possesses. <br /></td></tr>
 <tr class="separator:a81f82e98e35f1571565f2e1bc54de471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada1a2c28945b0bedd7840068e6cf770f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada1a2c28945b0bedd7840068e6cf770f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>printStats</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_stat_counter.html#ada1a2c28945b0bedd7840068e6cf770f">printStats</a> ()</td></tr>
+<tr class="memdesc:ada1a2c28945b0bedd7840068e6cf770f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the count data for genotypes and genes that have been processed. <br /></td></tr>
 <tr class="separator:ada1a2c28945b0bedd7840068e6cf770f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="class_stat_counter.html" title="The StatCounter class records statistical data of Organisms. ">StatCounter</a> class records statistical data of Organisms. </p>
+<p>This class is meant to observe some other class that provides an implemenation of <a class="el" href="class_observable.html">Observable&lt;Organism&gt;</a>. All Organisms that are sent to <a class="el" href="class_stat_counter.html" title="The StatCounter class records statistical data of Organisms. ">StatCounter</a> have counts of both genotypes and Genes recorded. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_i_observer.html" title="The IObserver class is an interface for observers. ">IObserver</a>, <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a> </dd></dl>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>Genetics/<a class="el" href="_stat_counter_8h_source.html">StatCounter.h</a></li>
 <li>Genetics/StatCounter.cpp</li>
 </ul>
