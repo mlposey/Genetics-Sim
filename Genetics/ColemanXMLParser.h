@@ -13,7 +13,7 @@ using std::string;
 class ColemanXMLParser
 {
 public:
-	ColemanXMLParser(const string &filename);
+	explicit ColemanXMLParser(const string &filename);
 
 	/**
 	 * @brief Uses Coleman's _parser to read genotype information from his xml
