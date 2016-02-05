@@ -1,7 +1,6 @@
 #pragma once
 #include <memory>
 
-#include "Organism.h"
 #include "LoveChamber.h"
 #include "StatCounter.h"
 
