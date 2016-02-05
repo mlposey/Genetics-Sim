@@ -23,7 +23,7 @@ public:
 	 * @param expectedCount The expected organism count in the data file
 	 * @see Organism
 	 */
-	void parseFile(std::vector<Organism>& organisms, int expectedCount = 2);
+	void parseFile(std::vector<Organism>& organisms);
 
 private:
 	GeneticsSimDataParser _parser;

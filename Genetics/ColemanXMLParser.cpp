@@ -9,9 +9,7 @@ ColemanXMLParser::ColemanXMLParser(const std::string &filename)
 {
 }
 
-// TODO: Verify that expectedCount should always be 2 for ColemanXML
-void ColemanXMLParser::parseFile(std::vector<Organism> &organisms,
-								 int expectedCount) {
+void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 
 	string genus(_parser.getGenus());
 	string species(_parser.getSpecies());

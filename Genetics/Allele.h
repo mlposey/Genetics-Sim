@@ -13,9 +13,6 @@
 class Allele
 {
 public:
-	// TODO: This shouldn't have to be used. Fix it.
-	Allele(){}
-
 	/**
 	 * @brief Constructs an Allele object
 	 * @param symbol The symbol for the allele
