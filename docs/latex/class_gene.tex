@@ -7,18 +7,37 @@ The \hyperlink{class_gene}{Gene} class handles pairs of \hyperlink{class_allele}
 
 
 
-{\ttfamily \#include $<$Gene.\+h$>$}
+{\ttfamily \#include $<$Gene-\/a\+Computer.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_gene_a0d332f8028c8b2290de114bf026cb514}{Gene} (const \hyperlink{class_allele}{Allele} \&a1, const \hyperlink{class_allele}{Allele} \&a2)
+\hyperlink{class_gene_a3e8f531d014dd6aa2cfb25c7fed5ae5d}{Gene} (const \hyperlink{class_allele}{Allele} \&a1, const \hyperlink{class_allele}{Allele} \&a2, const std\+::string \&desc)
 \begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{class_gene}{Gene} object. \end{DoxyCompactList}\item 
 \hyperlink{class_allele}{Allele} \hyperlink{class_gene_a7b631b7a53729db7523430049c89e463}{get\+Random\+Allele} () const 
 \begin{DoxyCompactList}\small\item\em Picks a random \hyperlink{class_allele}{Allele} from the pair and returns it. \end{DoxyCompactList}\item 
 \hyperlink{class_allele}{Allele} \hyperlink{class_gene_a935e5f290b1e66b970ed8b52a97b1ae9}{first} () const 
 \item 
 \hyperlink{class_allele}{Allele} \hyperlink{class_gene_a7c744b5c6e8d305c47c1563cc0e2acc8}{second} () const 
+\item 
+std\+::string \hyperlink{class_gene_a3d5569b6329c23acf791ce310735fc5d}{to\+String} () const 
+\item 
+\hyperlink{class_gene_a3e8f531d014dd6aa2cfb25c7fed5ae5d}{Gene} (const \hyperlink{class_allele}{Allele} \&a1, const \hyperlink{class_allele}{Allele} \&a2, const std\+::string \&desc)
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{class_gene}{Gene} object. \end{DoxyCompactList}\item 
+\hyperlink{class_allele}{Allele} \hyperlink{class_gene_a7b631b7a53729db7523430049c89e463}{get\+Random\+Allele} () const 
+\begin{DoxyCompactList}\small\item\em Picks a random \hyperlink{class_allele}{Allele} from the pair and returns it. \end{DoxyCompactList}\item 
+\hyperlink{class_allele}{Allele} \hyperlink{class_gene_a935e5f290b1e66b970ed8b52a97b1ae9}{first} () const 
+\item 
+\hyperlink{class_allele}{Allele} \hyperlink{class_gene_a7c744b5c6e8d305c47c1563cc0e2acc8}{second} () const 
+\item 
+std\+::string {\bfseries get\+Description} () const \hypertarget{class_gene_ad25e29f23ead79aa820a6df83ce37f21}{}\label{class_gene_ad25e29f23ead79aa820a6df83ce37f21}
+
+\item 
+std\+::string \hyperlink{class_gene_a97e77e08f0ade2ebe413aab5a2160007}{get\+Phenotype} () const 
+\item 
+std\+::string \hyperlink{class_gene_a9b88c16c2408458ca43a82cdc4d5cbe3}{get\+Zygosity} () const 
+\item 
+std\+::string \hyperlink{class_gene_ab4b2614b4481851fcbd61860c464406f}{get\+Alleles\+String} () const 
 \item 
 std\+::string \hyperlink{class_gene_a3d5569b6329c23acf791ce310735fc5d}{to\+String} () const 
 \end{DoxyCompactItemize}
@@ -35,12 +54,13 @@ The \hyperlink{class_gene}{Gene} class handles pairs of \hyperlink{class_allele}
 \subsection{Constructor \& Destructor Documentation}
 \index{Gene@{Gene}!Gene@{Gene}}
 \index{Gene@{Gene}!Gene@{Gene}}
-\subsubsection[{\texorpdfstring{Gene(const Allele \&a1, const Allele \&a2)}{Gene(const Allele &a1, const Allele &a2)}}]{\setlength{\rightskip}{0pt plus 5cm}Gene\+::\+Gene (
+\subsubsection[{\texorpdfstring{Gene(const Allele \&a1, const Allele \&a2, const std\+::string \&desc)}{Gene(const Allele &a1, const Allele &a2, const std::string &desc)}}]{\setlength{\rightskip}{0pt plus 5cm}Gene\+::\+Gene (
 \begin{DoxyParamCaption}
 \item[{const {\bf Allele} \&}]{a1, }
-\item[{const {\bf Allele} \&}]{a2}
+\item[{const {\bf Allele} \&}]{a2, }
+\item[{const std\+::string \&}]{desc}
 \end{DoxyParamCaption}
-)}\hypertarget{class_gene_a0d332f8028c8b2290de114bf026cb514}{}\label{class_gene_a0d332f8028c8b2290de114bf026cb514}
+)}\hypertarget{class_gene_a3e8f531d014dd6aa2cfb25c7fed5ae5d}{}\label{class_gene_a3e8f531d014dd6aa2cfb25c7fed5ae5d}
 
 
 Constructs a \hyperlink{class_gene}{Gene} object. 
@@ -50,6 +70,30 @@ Constructs a \hyperlink{class_gene}{Gene} object.
 {\em a1} & One allele to be part of the gene \\
 \hline
 {\em a2} & One allele to be part of the gene \\
+\hline
+{\em desc} & The description of the gene trait \\
+\hline
+\end{DoxyParams}
+\index{Gene@{Gene}!Gene@{Gene}}
+\index{Gene@{Gene}!Gene@{Gene}}
+\subsubsection[{\texorpdfstring{Gene(const Allele \&a1, const Allele \&a2, const std\+::string \&desc)}{Gene(const Allele &a1, const Allele &a2, const std::string &desc)}}]{\setlength{\rightskip}{0pt plus 5cm}Gene\+::\+Gene (
+\begin{DoxyParamCaption}
+\item[{const {\bf Allele} \&}]{a1, }
+\item[{const {\bf Allele} \&}]{a2, }
+\item[{const std\+::string \&}]{desc}
+\end{DoxyParamCaption}
+)}\hypertarget{class_gene_a3e8f531d014dd6aa2cfb25c7fed5ae5d}{}\label{class_gene_a3e8f531d014dd6aa2cfb25c7fed5ae5d}
+
+
+Constructs a \hyperlink{class_gene}{Gene} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a1} & One allele to be part of the gene \\
+\hline
+{\em a2} & One allele to be part of the gene \\
+\hline
+{\em desc} & The description of the gene trait \\
 \hline
 \end{DoxyParams}
 
@@ -65,6 +109,36 @@ Constructs a \hyperlink{class_gene}{Gene} object.
 \begin{DoxyReturn}{Returns}
 The first of two alleles 
 \end{DoxyReturn}
+\index{Gene@{Gene}!first@{first}}
+\index{first@{first}!Gene@{Gene}}
+\subsubsection[{\texorpdfstring{first() const }{first() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Allele} Gene\+::first (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_gene_a935e5f290b1e66b970ed8b52a97b1ae9}{}\label{class_gene_a935e5f290b1e66b970ed8b52a97b1ae9}
+\begin{DoxyReturn}{Returns}
+The first of two alleles 
+\end{DoxyReturn}
+\index{Gene@{Gene}!get\+Alleles\+String@{get\+Alleles\+String}}
+\index{get\+Alleles\+String@{get\+Alleles\+String}!Gene@{Gene}}
+\subsubsection[{\texorpdfstring{get\+Alleles\+String() const }{getAllelesString() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Gene\+::get\+Alleles\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_gene_ab4b2614b4481851fcbd61860c464406f}{}\label{class_gene_ab4b2614b4481851fcbd61860c464406f}
+\begin{DoxyReturn}{Returns}
+The allele pair of the gene as a string 
+\end{DoxyReturn}
+\index{Gene@{Gene}!get\+Phenotype@{get\+Phenotype}}
+\index{get\+Phenotype@{get\+Phenotype}!Gene@{Gene}}
+\subsubsection[{\texorpdfstring{get\+Phenotype() const }{getPhenotype() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Gene\+::get\+Phenotype (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_gene_a97e77e08f0ade2ebe413aab5a2160007}{}\label{class_gene_a97e77e08f0ade2ebe413aab5a2160007}
+\begin{DoxyReturn}{Returns}
+The phenotype of the gene 
+\end{DoxyReturn}
 \index{Gene@{Gene}!get\+Random\+Allele@{get\+Random\+Allele}}
 \index{get\+Random\+Allele@{get\+Random\+Allele}!Gene@{Gene}}
 \subsubsection[{\texorpdfstring{get\+Random\+Allele() const }{getRandomAllele() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Allele} Gene\+::get\+Random\+Allele (
@@ -78,6 +152,40 @@ Picks a random \hyperlink{class_allele}{Allele} from the pair and returns it.
 
 \begin{DoxyReturn}{Returns}
 An \hyperlink{class_allele}{Allele} from the pair 
+\end{DoxyReturn}
+\index{Gene@{Gene}!get\+Random\+Allele@{get\+Random\+Allele}}
+\index{get\+Random\+Allele@{get\+Random\+Allele}!Gene@{Gene}}
+\subsubsection[{\texorpdfstring{get\+Random\+Allele() const }{getRandomAllele() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Allele} Gene\+::get\+Random\+Allele (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_gene_a7b631b7a53729db7523430049c89e463}{}\label{class_gene_a7b631b7a53729db7523430049c89e463}
+
+
+Picks a random \hyperlink{class_allele}{Allele} from the pair and returns it. 
+
+\begin{DoxyReturn}{Returns}
+An \hyperlink{class_allele}{Allele} from the pair 
+\end{DoxyReturn}
+\index{Gene@{Gene}!get\+Zygosity@{get\+Zygosity}}
+\index{get\+Zygosity@{get\+Zygosity}!Gene@{Gene}}
+\subsubsection[{\texorpdfstring{get\+Zygosity() const }{getZygosity() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Gene\+::get\+Zygosity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_gene_a9b88c16c2408458ca43a82cdc4d5cbe3}{}\label{class_gene_a9b88c16c2408458ca43a82cdc4d5cbe3}
+\begin{DoxyReturn}{Returns}
+The zygosity of the gene (i.\+e. heterozygous, etc) 
+\end{DoxyReturn}
+\index{Gene@{Gene}!second@{second}}
+\index{second@{second}!Gene@{Gene}}
+\subsubsection[{\texorpdfstring{second() const }{second() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Allele} Gene\+::second (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_gene_a7c744b5c6e8d305c47c1563cc0e2acc8}{}\label{class_gene_a7c744b5c6e8d305c47c1563cc0e2acc8}
+\begin{DoxyReturn}{Returns}
+The second of two alleles 
 \end{DoxyReturn}
 \index{Gene@{Gene}!second@{second}}
 \index{second@{second}!Gene@{Gene}}
@@ -99,9 +207,21 @@ The second of two alleles
 \begin{DoxyReturn}{Returns}
 The allele pair of the gene as a string 
 \end{DoxyReturn}
+\index{Gene@{Gene}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Gene@{Gene}}
+\subsubsection[{\texorpdfstring{to\+String() const }{toString() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Gene\+::to\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_gene_a3d5569b6329c23acf791ce310735fc5d}{}\label{class_gene_a3d5569b6329c23acf791ce310735fc5d}
+\begin{DoxyReturn}{Returns}
+The fully qualified description of the gene 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
+Genetics/Gene-\/a\+Computer.\+h\item 
 Genetics/Gene.\+h\item 
+Genetics/Gene-\/a\+Computer.\+cpp\item 
 Genetics/Gene.\+cpp\end{DoxyCompactItemize}

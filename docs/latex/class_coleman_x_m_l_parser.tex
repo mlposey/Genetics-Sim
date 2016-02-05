@@ -9,19 +9,13 @@ The \hyperlink{class_coleman_x_m_l_parser}{Coleman\+X\+M\+L\+Parser} class acts 
 
 {\ttfamily \#include $<$Coleman\+X\+M\+L\+Parser.\+h$>$}
 
-Inheritance diagram for Coleman\+X\+M\+L\+Parser\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{class_coleman_x_m_l_parser}
-\end{center}
-\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\bfseries Coleman\+X\+M\+L\+Parser} (const std\+::string \&filename)\hypertarget{class_coleman_x_m_l_parser_a3daa7719b45ab65f0b022c869055f104}{}\label{class_coleman_x_m_l_parser_a3daa7719b45ab65f0b022c869055f104}
+{\bfseries Coleman\+X\+M\+L\+Parser} (const string \&filename)\hypertarget{class_coleman_x_m_l_parser_a8eda751b3cb0b3f94add5a24fddacbc1}{}\label{class_coleman_x_m_l_parser_a8eda751b3cb0b3f94add5a24fddacbc1}
 
 \item 
-void \hyperlink{class_coleman_x_m_l_parser_a8f2949b991e5922734277a56f81c9a77}{parse\+File} (std\+::vector$<$ \hyperlink{class_organism}{Organism} $>$ \&organisms, int expected\+Count) override
+void \hyperlink{class_coleman_x_m_l_parser_a59121649e42ca29ca640ca0a3bf3e8a1}{parse\+File} (std\+::vector$<$ \hyperlink{class_organism}{Organism} $>$ \&organisms, int expected\+Count=2)
 \begin{DoxyCompactList}\small\item\em Uses Coleman\textquotesingle{}s \+\_\+parser to read genotype information from his xml format. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -31,12 +25,12 @@ The \hyperlink{class_coleman_x_m_l_parser}{Coleman\+X\+M\+L\+Parser} class acts 
 \subsection{Member Function Documentation}
 \index{Coleman\+X\+M\+L\+Parser@{Coleman\+X\+M\+L\+Parser}!parse\+File@{parse\+File}}
 \index{parse\+File@{parse\+File}!Coleman\+X\+M\+L\+Parser@{Coleman\+X\+M\+L\+Parser}}
-\subsubsection[{\texorpdfstring{parse\+File(std\+::vector$<$ Organism $>$ \&organisms, int expected\+Count) override}{parseFile(std::vector< Organism > &organisms, int expectedCount) override}}]{\setlength{\rightskip}{0pt plus 5cm}void Coleman\+X\+M\+L\+Parser\+::parse\+File (
+\subsubsection[{\texorpdfstring{parse\+File(std\+::vector$<$ Organism $>$ \&organisms, int expected\+Count=2)}{parseFile(std::vector< Organism > &organisms, int expectedCount=2)}}]{\setlength{\rightskip}{0pt plus 5cm}void Coleman\+X\+M\+L\+Parser\+::parse\+File (
 \begin{DoxyParamCaption}
 \item[{std\+::vector$<$ {\bf Organism} $>$ \&}]{organisms, }
-\item[{int}]{expected\+Count}
+\item[{int}]{expected\+Count = {\ttfamily 2}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_coleman_x_m_l_parser_a8f2949b991e5922734277a56f81c9a77}{}\label{class_coleman_x_m_l_parser_a8f2949b991e5922734277a56f81c9a77}
+)}\hypertarget{class_coleman_x_m_l_parser_a59121649e42ca29ca640ca0a3bf3e8a1}{}\label{class_coleman_x_m_l_parser_a59121649e42ca29ca640ca0a3bf3e8a1}
 
 
 Uses Coleman\textquotesingle{}s \+\_\+parser to read genotype information from his xml format. 
@@ -51,10 +45,6 @@ Uses Coleman\textquotesingle{}s \+\_\+parser to read genotype information from h
 \begin{DoxySeeAlso}{See also}
 \hyperlink{class_organism}{Organism} 
 \end{DoxySeeAlso}
-
-
-Implements \hyperlink{struct_i_file_parser}{I\+File\+Parser}.
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

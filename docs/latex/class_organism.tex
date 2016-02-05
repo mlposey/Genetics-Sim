@@ -2,7 +2,123 @@
 \label{class_organism}\index{Organism@{Organism}}
 
 
+The \hyperlink{class_organism}{Organism} class represents a living thing.  
+
+
+
+
+{\ttfamily \#include $<$Organism.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Organism} (const string \&genus, const string \&species, const string \&name)\hypertarget{class_organism_a4e5d98843608364964a6616e630f9c3b}{}\label{class_organism_a4e5d98843608364964a6616e630f9c3b}
+
+\item 
+void {\bfseries add\+Gene} (const \hyperlink{class_gene}{Gene} \&gene)\hypertarget{class_organism_a3dd60a8f90366cd02ba10e32bc2aae3c}{}\label{class_organism_a3dd60a8f90366cd02ba10e32bc2aae3c}
+
+\item 
+void {\bfseries serve\+Gene} (\hyperlink{class_gene}{Gene} \&g)\hypertarget{class_organism_ab724ebf5bcdf179f76225730f9f85c7c}{}\label{class_organism_ab724ebf5bcdf179f76225730f9f85c7c}
+
+\item 
+int {\bfseries get\+Gene\+Count} () const \hypertarget{class_organism_a9719a5a125a051c2fadffe6f4d9a8bb8}{}\label{class_organism_a9719a5a125a051c2fadffe6f4d9a8bb8}
+
+\item 
+string {\bfseries to\+String} () const \hypertarget{class_organism_ace0beff5bf214f048ef5d745e45085e0}{}\label{class_organism_ace0beff5bf214f048ef5d745e45085e0}
+
+\item 
+\hyperlink{class_organism_a4e5d98843608364964a6616e630f9c3b}{Organism} (const string \&genus, const string \&species, const string \&name)
+\begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{class_organism}{Organism} with an initial genus, species, name, and blank genotype. \end{DoxyCompactList}\item 
+void \hyperlink{class_organism_a3dd60a8f90366cd02ba10e32bc2aae3c}{add\+Gene} (const \hyperlink{class_gene}{Gene} \&gene)
+\item 
+void \hyperlink{class_organism_aa6d906d352590a2f26f40bd953245e98}{serve\+Gene} (\hyperlink{class_gene}{Gene} \&gene)
+\begin{DoxyCompactList}\small\item\em Retrieves the next \hyperlink{class_gene}{Gene} in the genotype. \end{DoxyCompactList}\item 
+int \hyperlink{class_organism_a9719a5a125a051c2fadffe6f4d9a8bb8}{get\+Gene\+Count} () const \hypertarget{class_organism_a9719a5a125a051c2fadffe6f4d9a8bb8}{}\label{class_organism_a9719a5a125a051c2fadffe6f4d9a8bb8}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of Genes in the \hyperlink{class_organism}{Organism}\textquotesingle{}s genotype. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \hyperlink{class_gene}{Gene} $>$ \& \hyperlink{class_organism_a1744d697440baff0a30a9eded7322f2a}{get\+Genotype} () const \hypertarget{class_organism_a1744d697440baff0a30a9eded7322f2a}{}\label{class_organism_a1744d697440baff0a30a9eded7322f2a}
+
+\begin{DoxyCompactList}\small\item\em Returns a const reference to the \hyperlink{class_organism}{Organism}\textquotesingle{}s genotype. \end{DoxyCompactList}\item 
+string \hyperlink{class_organism_a7e6b427ff537967ae93bf1ee3a4adbfe}{get\+Genus} () const \hypertarget{class_organism_a7e6b427ff537967ae93bf1ee3a4adbfe}{}\label{class_organism_a7e6b427ff537967ae93bf1ee3a4adbfe}
+
+\begin{DoxyCompactList}\small\item\em Returns the genus of the the \hyperlink{class_organism}{Organism} as a string. \end{DoxyCompactList}\item 
+string \hyperlink{class_organism_a7d7d392b253bfacf2e13855de9b7312a}{get\+Species} () const \hypertarget{class_organism_a7d7d392b253bfacf2e13855de9b7312a}{}\label{class_organism_a7d7d392b253bfacf2e13855de9b7312a}
+
+\begin{DoxyCompactList}\small\item\em Returns the species of the \hyperlink{class_organism}{Organism} as a string. \end{DoxyCompactList}\item 
+string \hyperlink{class_organism_a3b539756747214049f9912a55cb7e483}{get\+Name} () const \hypertarget{class_organism_a3b539756747214049f9912a55cb7e483}{}\label{class_organism_a3b539756747214049f9912a55cb7e483}
+
+\begin{DoxyCompactList}\small\item\em Returns the common name of the organism as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_organism}{Organism} class represents a living thing. 
+
+The main purpose of the \hyperlink{class_organism}{Organism} is to store categorical information, such as scientific name, as well as the genotype. New organisms can be created through use of the \hyperlink{class_love_chamber}{Love\+Chamber} class and two parent organisms. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_gene}{Gene} 
+
+\hyperlink{class_love_chamber}{Love\+Chamber} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Organism@{Organism}!Organism@{Organism}}
+\index{Organism@{Organism}!Organism@{Organism}}
+\subsubsection[{\texorpdfstring{Organism(const string \&genus, const string \&species, const string \&name)}{Organism(const string &genus, const string &species, const string &name)}}]{\setlength{\rightskip}{0pt plus 5cm}Organism\+::\+Organism (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{genus, }
+\item[{const string \&}]{species, }
+\item[{const string \&}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_organism_a4e5d98843608364964a6616e630f9c3b}{}\label{class_organism_a4e5d98843608364964a6616e630f9c3b}
+
+
+Constructs an \hyperlink{class_organism}{Organism} with an initial genus, species, name, and blank genotype. 
+
+As the initial state of the \hyperlink{class_organism}{Organism} is one without a genotype, it is necessary that \+::add\+Gene is used to assign the \hyperlink{class_organism}{Organism} some genotype which then makes it elligble to mate with other organisms. 
+\begin{DoxyParams}{Parameters}
+{\em genus} & the genus of the organism \\
+\hline
+{\em species} & the species of the organism \\
+\hline
+{\em name} & the common name of the organism \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Organism@{Organism}!add\+Gene@{add\+Gene}}
+\index{add\+Gene@{add\+Gene}!Organism@{Organism}}
+\subsubsection[{\texorpdfstring{add\+Gene(const Gene \&gene)}{addGene(const Gene &gene)}}]{\setlength{\rightskip}{0pt plus 5cm}void Organism\+::add\+Gene (
+\begin{DoxyParamCaption}
+\item[{const {\bf Gene} \&}]{gene}
+\end{DoxyParamCaption}
+)}\hypertarget{class_organism_a3dd60a8f90366cd02ba10e32bc2aae3c}{}\label{class_organism_a3dd60a8f90366cd02ba10e32bc2aae3c}
+Adds a gene to the \hyperlink{class_organism}{Organism}\textquotesingle{}s genotype 
+\begin{DoxyParams}{Parameters}
+{\em gene} & a constant reference to a \hyperlink{class_gene}{Gene} to be added to the genotype \\
+\hline
+\end{DoxyParams}
+\index{Organism@{Organism}!serve\+Gene@{serve\+Gene}}
+\index{serve\+Gene@{serve\+Gene}!Organism@{Organism}}
+\subsubsection[{\texorpdfstring{serve\+Gene(\+Gene \&gene)}{serveGene(Gene &gene)}}]{\setlength{\rightskip}{0pt plus 5cm}void Organism\+::serve\+Gene (
+\begin{DoxyParamCaption}
+\item[{{\bf Gene} \&}]{gene}
+\end{DoxyParamCaption}
+)}\hypertarget{class_organism_aa6d906d352590a2f26f40bd953245e98}{}\label{class_organism_aa6d906d352590a2f26f40bd953245e98}
+
+
+Retrieves the next \hyperlink{class_gene}{Gene} in the genotype. 
+
+Repeated calls to \+::serve\+Gene will iterate through the \hyperlink{class_organism}{Organism}\textquotesingle{}s list of Genes. When the list has been fully traversed, the position returns to zero. 
+\begin{DoxyParams}{Parameters}
+{\em gene} & the location to store the next \hyperlink{class_gene}{Gene} in the genotype \\
+\hline
+\end{DoxyParams}
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
+Genetics/Organism-\/a\+Computer.\+h\item 
 Genetics/Organism.\+h\item 
+Genetics/Organism-\/a\+Computer.\+cpp\item 
 Genetics/Organism.\+cpp\end{DoxyCompactItemize}

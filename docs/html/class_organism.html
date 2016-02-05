@@ -85,13 +85,163 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_organism-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Organism Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a> class represents a living thing.  
+ <a href="class_organism.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_organism_8h_source.html">Organism.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4e5d98843608364964a6616e630f9c3b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e5d98843608364964a6616e630f9c3b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Organism</b> (const string &amp;genus, const string &amp;species, const string &amp;name)</td></tr>
+<tr class="separator:a4e5d98843608364964a6616e630f9c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dd60a8f90366cd02ba10e32bc2aae3c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3dd60a8f90366cd02ba10e32bc2aae3c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addGene</b> (const <a class="el" href="class_gene.html">Gene</a> &amp;gene)</td></tr>
+<tr class="separator:a3dd60a8f90366cd02ba10e32bc2aae3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab724ebf5bcdf179f76225730f9f85c7c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab724ebf5bcdf179f76225730f9f85c7c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>serveGene</b> (<a class="el" href="class_gene.html">Gene</a> &amp;g)</td></tr>
+<tr class="separator:ab724ebf5bcdf179f76225730f9f85c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9719a5a125a051c2fadffe6f4d9a8bb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9719a5a125a051c2fadffe6f4d9a8bb8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getGeneCount</b> () const </td></tr>
+<tr class="separator:a9719a5a125a051c2fadffe6f4d9a8bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0beff5bf214f048ef5d745e45085e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace0beff5bf214f048ef5d745e45085e0"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> () const </td></tr>
+<tr class="separator:ace0beff5bf214f048ef5d745e45085e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e5d98843608364964a6616e630f9c3b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organism.html#a4e5d98843608364964a6616e630f9c3b">Organism</a> (const string &amp;genus, const string &amp;species, const string &amp;name)</td></tr>
+<tr class="memdesc:a4e5d98843608364964a6616e630f9c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a> with an initial genus, species, name, and blank genotype.  <a href="#a4e5d98843608364964a6616e630f9c3b">More...</a><br /></td></tr>
+<tr class="separator:a4e5d98843608364964a6616e630f9c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dd60a8f90366cd02ba10e32bc2aae3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organism.html#a3dd60a8f90366cd02ba10e32bc2aae3c">addGene</a> (const <a class="el" href="class_gene.html">Gene</a> &amp;gene)</td></tr>
+<tr class="separator:a3dd60a8f90366cd02ba10e32bc2aae3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6d906d352590a2f26f40bd953245e98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organism.html#aa6d906d352590a2f26f40bd953245e98">serveGene</a> (<a class="el" href="class_gene.html">Gene</a> &amp;gene)</td></tr>
+<tr class="memdesc:aa6d906d352590a2f26f40bd953245e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the next <a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a> in the genotype.  <a href="#aa6d906d352590a2f26f40bd953245e98">More...</a><br /></td></tr>
+<tr class="separator:aa6d906d352590a2f26f40bd953245e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9719a5a125a051c2fadffe6f4d9a8bb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9719a5a125a051c2fadffe6f4d9a8bb8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organism.html#a9719a5a125a051c2fadffe6f4d9a8bb8">getGeneCount</a> () const </td></tr>
+<tr class="memdesc:a9719a5a125a051c2fadffe6f4d9a8bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of Genes in the <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a>'s genotype. <br /></td></tr>
+<tr class="separator:a9719a5a125a051c2fadffe6f4d9a8bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1744d697440baff0a30a9eded7322f2a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1744d697440baff0a30a9eded7322f2a"></a>
+const std::vector&lt; <a class="el" href="class_gene.html">Gene</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organism.html#a1744d697440baff0a30a9eded7322f2a">getGenotype</a> () const </td></tr>
+<tr class="memdesc:a1744d697440baff0a30a9eded7322f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a const reference to the <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a>'s genotype. <br /></td></tr>
+<tr class="separator:a1744d697440baff0a30a9eded7322f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e6b427ff537967ae93bf1ee3a4adbfe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e6b427ff537967ae93bf1ee3a4adbfe"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organism.html#a7e6b427ff537967ae93bf1ee3a4adbfe">getGenus</a> () const </td></tr>
+<tr class="memdesc:a7e6b427ff537967ae93bf1ee3a4adbfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the genus of the the <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a> as a string. <br /></td></tr>
+<tr class="separator:a7e6b427ff537967ae93bf1ee3a4adbfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d7d392b253bfacf2e13855de9b7312a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d7d392b253bfacf2e13855de9b7312a"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organism.html#a7d7d392b253bfacf2e13855de9b7312a">getSpecies</a> () const </td></tr>
+<tr class="memdesc:a7d7d392b253bfacf2e13855de9b7312a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the species of the <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a> as a string. <br /></td></tr>
+<tr class="separator:a7d7d392b253bfacf2e13855de9b7312a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b539756747214049f9912a55cb7e483"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b539756747214049f9912a55cb7e483"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organism.html#a3b539756747214049f9912a55cb7e483">getName</a> () const </td></tr>
+<tr class="memdesc:a3b539756747214049f9912a55cb7e483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the common name of the organism as a string. <br /></td></tr>
+<tr class="separator:a3b539756747214049f9912a55cb7e483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a> class represents a living thing. </p>
+<p>The main purpose of the <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a> is to store categorical information, such as scientific name, as well as the genotype. New organisms can be created through use of the <a class="el" href="class_love_chamber.html">LoveChamber</a> class and two parent organisms. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a> </dd>
+<dd>
+<a class="el" href="class_love_chamber.html">LoveChamber</a> </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4e5d98843608364964a6616e630f9c3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Organism::Organism </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>genus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>species</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs an <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a> with an initial genus, species, name, and blank genotype. </p>
+<p>As the initial state of the <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a> is one without a genotype, it is necessary that ::addGene is used to assign the <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a> some genotype which then makes it elligble to mate with other organisms. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">genus</td><td>the genus of the organism </td></tr>
+    <tr><td class="paramname">species</td><td>the species of the organism </td></tr>
+    <tr><td class="paramname">name</td><td>the common name of the organism </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a3dd60a8f90366cd02ba10e32bc2aae3c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Organism::addGene </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_gene.html">Gene</a> &amp;&#160;</td>
+          <td class="paramname"><em>gene</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Adds a gene to the <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a>'s genotype </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gene</td><td>a constant reference to a <a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a> to be added to the genotype </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa6d906d352590a2f26f40bd953245e98"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Organism::serveGene </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_gene.html">Gene</a> &amp;&#160;</td>
+          <td class="paramname"><em>gene</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the next <a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a> in the genotype. </p>
+<p>Repeated calls to ::serveGene will iterate through the <a class="el" href="class_organism.html" title="The Organism class represents a living thing. ">Organism</a>'s list of Genes. When the list has been fully traversed, the position returns to zero. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gene</td><td>the location to store the next <a class="el" href="class_gene.html" title="The Gene class handles pairs of Allele. ">Gene</a> in the genotype </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
+<li>Genetics/<a class="el" href="_organism-a_computer_8h_source.html">Organism-aComputer.h</a></li>
 <li>Genetics/<a class="el" href="_organism_8h_source.html">Organism.h</a></li>
+<li>Genetics/Organism-aComputer.cpp</li>
 <li>Genetics/Organism.cpp</li>
 </ul>
 </div><!-- contents -->
