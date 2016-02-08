@@ -111,9 +111,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afd8934456036b6252e0e968c26ffb04e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_love_chamber.html#afd8934456036b6252e0e968c26ffb04e">LoveChamber</a> (<a class="el" href="class_organism.html">Organism</a> o1, <a class="el" href="class_organism.html">Organism</a> o2)</td></tr>
 <tr class="memdesc:afd8934456036b6252e0e968c26ffb04e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_love_chamber.html" title="The LoveChamber class handles mating between Organisms. ">LoveChamber</a> capable of producing offspring.  <a href="#afd8934456036b6252e0e968c26ffb04e">More...</a><br /></td></tr>
 <tr class="separator:afd8934456036b6252e0e968c26ffb04e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdb1a279b4b6edfd8d38375c4faee182"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_love_chamber.html#acdb1a279b4b6edfd8d38375c4faee182">mate</a> ()</td></tr>
-<tr class="memdesc:acdb1a279b4b6edfd8d38375c4faee182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an offspring using two parent Organisms.  <a href="#acdb1a279b4b6edfd8d38375c4faee182">More...</a><br /></td></tr>
-<tr class="separator:acdb1a279b4b6edfd8d38375c4faee182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dafc3e7dff1ee60359ca9b78db6e13a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_love_chamber.html#a9dafc3e7dff1ee60359ca9b78db6e13a">mate</a> (int count)</td></tr>
+<tr class="memdesc:a9dafc3e7dff1ee60359ca9b78db6e13a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an offspring using two parent Organisms.  <a href="#a9dafc3e7dff1ee60359ca9b78db6e13a">More...</a><br /></td></tr>
+<tr class="separator:a9dafc3e7dff1ee60359ca9b78db6e13a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_observable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_observable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_observable.html">Observable&lt; Organism &gt;</a></td></tr>
 <tr class="memitem:a5caccd0c60c6e11843be0ee0197d34e1 inherit pub_methods_class_observable"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5caccd0c60c6e11843be0ee0197d34e1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_observable.html#a5caccd0c60c6e11843be0ee0197d34e1">addObserver</a> (<a class="el" href="struct_i_observer.html">IObserver</a>&lt; <a class="el" href="class_organism.html">Organism</a> &gt; &amp;o)</td></tr>
@@ -173,21 +173,27 @@ std::vector&lt; <a class="el" href="struct_i_observer.html">IObserver</a>&lt; <a
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="acdb1a279b4b6edfd8d38375c4faee182"></a>
+<a class="anchor" id="a9dafc3e7dff1ee60359ca9b78db6e13a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void LoveChamber::mate </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Creates an offspring using two parent Organisms. </p>
-<p>Uses the genotype of both organisms to create a random, new genotype that will belong to some offspring that is then sent to all Observers </p>
+<p>Uses the genotype of both organisms to create a random, new genotype that will belong to some offspring that is then sent to all Observers </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>the number of times the organisms should mate </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

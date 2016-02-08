@@ -7,25 +7,29 @@ LoveChamber::LoveChamber(Organism o1, Organism o2)
 	: _o1(o1)
 	, _o2(o2) {
 		srand(static_cast<unsigned int>(time(nullptr)));
+		// Show the genetic makeup of the organisms
 		printParentData();
 }
 
-void LoveChamber::mate() {
+void LoveChamber::mate(int count) {
 	int size = _o1.getGeneCount();
 
-	Organism offspring(_o1.getGenus(), _o1.getSpecies(), _o1.getName());
-	string tmp;
+	// Create 'count' offspring and send each of them to the observers
+	for (int c = 0; c < count; ++c) {
+		Organism offspring(_o1.getGenus(), _o1.getSpecies(), _o1.getName());
 
-	for (int i = 0; i < size; ++i) {
-		// TODO: Consider making this faster
-		Gene g1(_o1.serveGene());
-		Gene g2(_o2.serveGene());
+		for (int i = 0; i < size; ++i)
+		{
+			// TODO: Consider making this faster
+			Gene g1(_o1.serveGene());
+			Gene g2(_o2.serveGene());
 
-		offspring.addGene(Gene(g1.getRandomAllele(),
-			g2.getRandomAllele(), g1.getDescription()));
+			offspring.addGene(Gene(g1.getRandomAllele(),
+				g2.getRandomAllele(), g1.getDescription()));
+		}
+
+		notifyAll(offspring);
 	}
-
-	notifyAll(offspring);
 }
 
 void LoveChamber::printParentData() const

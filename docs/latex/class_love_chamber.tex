@@ -20,7 +20,7 @@ Inheritance diagram for Love\+Chamber\+:\begin{figure}[H]
 \item 
 \hyperlink{class_love_chamber_afd8934456036b6252e0e968c26ffb04e}{Love\+Chamber} (\hyperlink{class_organism}{Organism} o1, \hyperlink{class_organism}{Organism} o2)
 \begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{class_love_chamber}{Love\+Chamber} capable of producing offspring. \end{DoxyCompactList}\item 
-void \hyperlink{class_love_chamber_acdb1a279b4b6edfd8d38375c4faee182}{mate} ()
+void \hyperlink{class_love_chamber_a9dafc3e7dff1ee60359ca9b78db6e13a}{mate} (int count)
 \begin{DoxyCompactList}\small\item\em Creates an offspring using two parent Organisms. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -58,16 +58,21 @@ Constructs a \hyperlink{class_love_chamber}{Love\+Chamber} capable of producing 
 \subsection{Member Function Documentation}
 \index{Love\+Chamber@{Love\+Chamber}!mate@{mate}}
 \index{mate@{mate}!Love\+Chamber@{Love\+Chamber}}
-\subsubsection[{\texorpdfstring{mate()}{mate()}}]{\setlength{\rightskip}{0pt plus 5cm}void Love\+Chamber\+::mate (
+\subsubsection[{\texorpdfstring{mate(int count)}{mate(int count)}}]{\setlength{\rightskip}{0pt plus 5cm}void Love\+Chamber\+::mate (
 \begin{DoxyParamCaption}
-{}
+\item[{int}]{count}
 \end{DoxyParamCaption}
-)}\hypertarget{class_love_chamber_acdb1a279b4b6edfd8d38375c4faee182}{}\label{class_love_chamber_acdb1a279b4b6edfd8d38375c4faee182}
+)}\hypertarget{class_love_chamber_a9dafc3e7dff1ee60359ca9b78db6e13a}{}\label{class_love_chamber_a9dafc3e7dff1ee60359ca9b78db6e13a}
 
 
 Creates an offspring using two parent Organisms. 
 
 Uses the genotype of both organisms to create a random, new genotype that will belong to some offspring that is then sent to all Observers 
+\begin{DoxyParams}{Parameters}
+{\em count} & the number of times the organisms should mate \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

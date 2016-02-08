@@ -27,8 +27,9 @@ public:
 	 * Uses the genotype of both organisms to create a random, new
 	 * genotype that will belong to some offspring that is then sent to
 	 * all Observers
+	 * @param count the number of times the organisms should mate
 	 */
-	void mate();
+	void mate(int count);
 
 private:
 	/// Prints the genetic makeup of each organism

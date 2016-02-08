@@ -15,10 +15,10 @@ Simulation::Simulation()
 }
 
 void Simulation::run() {
-	for (int i = 0; i < _offspringCount; ++i) {
-		_loveChamber->mate();
-	}
+	_loveChamber->mate(_offspringCount);
+
 	_statCounter.printStats();
+
 	std::cout << "\nPress Enter to exit the simulation.\n";
 	getchar();
 }
