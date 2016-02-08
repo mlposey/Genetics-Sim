@@ -31,7 +31,11 @@ public:
 	void mate();
 
 private:
-	void printParentData(const std::string &header, const Organism &o);
+	/// Prints the genetic makeup of each organism
+	void printParentData() const;
+
+	/// Prints the genetic makeup of an organism
+	static void printOrganismData(const std::string &header, const Organism &o);
 
 	Organism _o1;
 	Organism _o2;

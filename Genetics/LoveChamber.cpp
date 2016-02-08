@@ -7,13 +7,7 @@ LoveChamber::LoveChamber(Organism o1, Organism o2)
 	: _o1(o1)
 	, _o2(o2) {
 		srand(static_cast<unsigned int>(time(nullptr)));
-
-		// TODO: Put this code in printParentData and make new function printOrganism
-		std::cout << "-----------------------Parent Data-----------------\n";
-		printParentData("Sim parent 1", o1);
-		std::cout << "\n\n";
-		printParentData("Sim parent 2", o2);
-		std::cout << "---------------------------------------------------\n\n";
+		printParentData();
 }
 
 void LoveChamber::mate() {
@@ -34,7 +28,16 @@ void LoveChamber::mate() {
 	notifyAll(offspring);
 }
 
-void LoveChamber::printParentData(const std::string &header, const Organism & o)
+void LoveChamber::printParentData() const
+{
+	std::cout << "-----------------------Parent Data-----------------\n";
+	printOrganismData("Sim parent 1", _o1);
+	std::cout << "\n\n";
+	printOrganismData("Sim parent 2", _o2);
+	std::cout << "---------------------------------------------------\n\n";
+}
+
+void LoveChamber::printOrganismData(const std::string &header, const Organism & o)
 {
 	std::cout << header << '\n';
 	std::cout << "\tOrganism genus-species: " << o.getGenus() << " "
