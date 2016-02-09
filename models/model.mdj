@@ -1447,7 +1447,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+mate(): void",
+											"text": "+mate(count: int): void",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -9054,6 +9054,22 @@
 									"isOrdered": false,
 									"isUnique": false,
 									"direction": "return"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFSw6iYbmeycVw=",
+									"_parent": {
+										"$ref": "AAAAAAFSkaEzFeXrb/Y="
+									},
+									"name": "count",
+									"visibility": "public",
+									"isStatic": false,
+									"isLeaf": false,
+									"type": "int",
+									"isReadOnly": false,
+									"isOrdered": false,
+									"isUnique": false,
+									"direction": "in"
 								}
 							],
 							"concurrency": "sequential",
