@@ -34,7 +34,7 @@ void LoveChamber::mate(int count) {
 
 void LoveChamber::printParentData() const
 {
-	std::cout << "-----------------------Parent Data-----------------\n";
+	std::cout << "\n-----------------------Parent Data-----------------\n";
 	printOrganismData("Sim parent 1", _o1);
 	std::cout << "\n\n";
 	printOrganismData("Sim parent 2", _o2);
