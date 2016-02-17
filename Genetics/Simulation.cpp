@@ -34,6 +34,7 @@ void Simulation::init() {
 			ColemanXMLParser parser(input);
 			
 			std::vector<Organism> parents;
+			// Take the data of the two parents from the input file
 			parser.parseFile(parents);
 
 			_loveChamber = std::unique_ptr<LoveChamber>(new LoveChamber(parents[0], parents[1]));
