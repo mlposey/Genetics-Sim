@@ -5,7 +5,7 @@
 
 #include "Allele.h"
 
-ColemanXMLParser::ColemanXMLParser(const std::string &filename)
+ColemanXMLParser::ColemanXMLParser(const string &filename)
 	: _parser(const_cast<char*>(filename.c_str()))
 {
 }
