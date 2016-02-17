@@ -11,13 +11,13 @@ ColemanXMLParser::ColemanXMLParser(const std::string &filename)
 }
 
 void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
+	organisms.emplace_back(_parser.getGenus(),
+	                       _parser.getSpecies(),
+						   _parser.getCommonName());
 
-	string genus(_parser.getGenus());
-	string species(_parser.getSpecies());
-	string name(_parser.getCommonName());
-
-	organisms.emplace_back(genus, species, name);
-	organisms.emplace_back(genus, species, name);
+	// It can be assumed that both parents are the same
+	// TODO: Determine if both parents will always be the same
+	organisms.push_back(organisms[0]);
 
 
 	char domSymbol;  // dominant allele symbol
