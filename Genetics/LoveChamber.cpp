@@ -12,7 +12,7 @@ LoveChamber::LoveChamber(Organism o1, Organism o2)
 }
 
 void LoveChamber::mate(int count) {
-	int size = _o1.getGeneCount();
+	const int size = _o1.getGeneCount();
 
 	// Create 'count' offspring and send each of them to the observers
 	for (int c = 0; c < count; ++c) {
@@ -48,7 +48,7 @@ void LoveChamber::printOrganismData(const std::string &header, const Organism & 
 			  << o.getSpecies() << '\n';
 	std::cout << "\tCommon name: " << o.getName() << '\n';
 	std::cout << "\tGenes: \n";
-	
+
 	for (const Gene &g : o.getGenotype()) {
 		std::cout << "\t\tGene type = " << g.getDescription() << '\n';
 		std::cout << "\t\t\tGenotype = " << g.getAllelesString() << '\n';
