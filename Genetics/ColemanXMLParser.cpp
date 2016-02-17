@@ -1,6 +1,7 @@
 #include "ColemanXMLParser.h"
 #include <unordered_map>
 #include <utility>
+#include <cstring>
 
 #include "Allele.h"
 
