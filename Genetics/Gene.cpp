@@ -1,17 +1,21 @@
 #include "Gene.h"
 
-#include <sstream>
 #include <algorithm>
 
 Gene::Gene(const Allele &a1, const Allele &a2, const std::string &desc)
 	: _description(desc) {
 	_alleles.push_back(a1);
 	_alleles.push_back(a2);
+
 	// We want capital symbols to appear before lowercase
 	std::sort(begin(_alleles), end(_alleles), [&](Allele &a, Allele &b)
 	{
 		return a.getSymbol() < b.getSymbol();
 	});
+
+	// Store the sorted allele pair as a string
+	_allelesString += _alleles[0].getSymbol();
+	_allelesString += _alleles[1].getSymbol();
 }
 
 Allele Gene::getRandomAllele() const {
@@ -45,13 +49,6 @@ std::string Gene::getZygosity() const {
 	else {
 		return "heterozygous dominant";
 	}
-}
-
-std::string Gene::getAllelesString() const {
-	std::ostringstream ss;
-	ss << _alleles[0].getSymbol();
-	ss << _alleles[1].getSymbol();
-	return ss.str();
 }
 
 std::string Gene::toString() const {

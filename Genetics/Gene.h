@@ -44,13 +44,13 @@ public:
 	std::string getZygosity() const;
 
 	/// @return The allele pair of the gene as a string
-	std::string getAllelesString() const;
+	std::string getAllelesString() const { return _allelesString; }
 
 	/// @return The fully qualified description of the gene
 	std::string toString() const;
 
 private:
 	std::vector<Allele> _alleles;
+	std::string _allelesString;  // A concatenation of the two allele chars
 	std::string _description;
 };
-
