@@ -22,10 +22,10 @@ void LoveChamber::mate(int count) {
 
 		for (int i = 0; i < size; ++i)
 		{
-			// TODO: Consider making this faster
-			Gene g1(_o1.serveGene());
-			Gene g2(_o2.serveGene());
+			Gene &g1 = _o1.serveGene();
+			Gene &g2 = _o2.serveGene();
 
+			// Give the offspring a random allele from each parent
 			offspring.addGene(Gene(g1.getRandomAllele(),
 				g2.getRandomAllele(), g1.getDescription()));
 		}
