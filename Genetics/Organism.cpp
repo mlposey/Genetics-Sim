@@ -13,8 +13,8 @@ void Organism::addGene(const Gene& gene) {
 
 Gene &Organism::serveGene() {
 	if (_serveCounter >= _genotype.size()) {
+		// All genes have been served. Start over.
 		_serveCounter = 0;
 	}
 	return _genotype[_serveCounter++];
 }
-
