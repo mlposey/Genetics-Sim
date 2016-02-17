@@ -1,7 +1,5 @@
 #include "Gene.h"
-#include "Allele.h"
 
-#include <string>
 #include <sstream>
 #include <algorithm>
 
