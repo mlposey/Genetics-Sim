@@ -3,6 +3,8 @@
 #include <iostream>
 #include <ctime>
 
+using std::cout;
+
 LoveChamber::LoveChamber(Organism o1, Organism o2)
 	: _o1(o1)
 	, _o2(o2) {
@@ -34,23 +36,23 @@ void LoveChamber::mate(int count) {
 
 void LoveChamber::printParentData() const
 {
-	std::cout << "\n-----------------------Parent Data-----------------\n";
+	cout << "\n-----------------------Parent Data-----------------\n";
 	printOrganismData("Sim parent 1", _o1);
-	std::cout << "\n\n";
+	cout << "\n\n";
 	printOrganismData("Sim parent 2", _o2);
-	std::cout << "---------------------------------------------------\n\n";
+	cout << "---------------------------------------------------\n\n";
 }
 
 void LoveChamber::printOrganismData(const std::string &header, const Organism & o)
 {
-	std::cout << header << '\n';
-	std::cout << "\tOrganism genus-species: " << o.getGenus() << " "
+	cout << header << '\n';
+	cout << "\tOrganism genus-species: " << o.getGenus() << " "
 			  << o.getSpecies() << '\n';
-	std::cout << "\tCommon name: " << o.getName() << '\n';
-	std::cout << "\tGenes: \n";
+	cout << "\tCommon name: " << o.getName() << '\n';
+	cout << "\tGenes: \n";
 
 	for (const Gene &g : o.getGenotype()) {
-		std::cout << "\t\tGene type = " << g.getDescription() << '\n';
-		std::cout << "\t\t\tGenotype = " << g.getAllelesString() << '\n';
+		cout << "\t\tGene type = " << g.getDescription() << '\n';
+		cout << "\t\t\tGenotype = " << g.getAllelesString() << '\n';
 	}
 }
