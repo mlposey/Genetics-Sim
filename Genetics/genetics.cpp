@@ -1,9 +1,7 @@
 #include "Simulation.h"
 
 int main() {
-	Simulation sim;
+	Simulation().run();
 	
-	sim.run();
-
 	return 0;
 }
