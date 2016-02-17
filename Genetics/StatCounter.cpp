@@ -2,6 +2,8 @@
 #include "StatCounter.h"
 #include "Organism.h"
 
+using std::cout;
+
 void StatCounter::notify(const Organism &arg) {
 	string genotype;
 	for (const Gene &g : arg.getGenotype()) {
@@ -27,21 +29,21 @@ void StatCounter::notify(const Organism &arg) {
 }
 
 void StatCounter::printStats() {
-	std::cout << "\n-----------------------Results---------------------\n";
-	
+	cout << "\n-----------------------Results---------------------\n";
+
 	for (auto &t : _geneCounts) {
-		std::cout << "Gene: " << t.first << '\n';
+		cout << "Gene: " << t.first << '\n';
 		for (auto &u : t.second) {
-			std::cout << "\t" << u.second << " " << u.first << '\n';
+			cout << "\t" << u.second << " " << u.first << '\n';
 		}
 	}
-	std::cout << "\n\n\n";
-	std::cout << "All occuring genotypes and their counts:\n";
+	cout << "\n\n\n";
+	cout << "All occuring genotypes and their counts:\n";
 
 	for (auto &p : _genotypeCounts) {
-		std::cout << "\tGenotype = " << p.first << "\t";
-		std::cout << "Offspring count = " << p.second << '\n';
+		cout << "\tGenotype = " << p.first << "\t";
+		cout << "Offspring count = " << p.second << '\n';
 	}
 
-	std::cout << "\n---------------------------------------------------\n";
+	cout << "\n---------------------------------------------------\n";
 }
