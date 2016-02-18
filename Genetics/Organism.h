@@ -18,7 +18,7 @@ class Organism
 public:
 	/**
 	 * @brief Constructs an Organism with an initial genus, species, name, and blank genotype
-	 * 
+	 *
 	 * As the initial state of the Organism is one without a genotype, it is
 	 * necessary that ::addGene is used to assign the Organism some genotype
 	 * which then makes it elligble to mate with other organisms.
@@ -44,6 +44,14 @@ public:
 	 */
 	Gene &serveGene();
 
+	/**
+	 * @brief Prints a full description of the Organism to stdout
+	 *
+	 * Prints the genus, species, and common name of the organism, as well as
+	 * the contents of the organism's genotype
+	 */
+	void printDescription() const;
+
 	/// Returns the number of Genes in the Organism's genotype
 	int getGeneCount() const { return _genotype.size(); }
 
@@ -68,4 +76,3 @@ private:
 
 	std::vector<Gene> _genotype;
 };
-

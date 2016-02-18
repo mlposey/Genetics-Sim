@@ -1,5 +1,8 @@
 #include "Organism.h"
 
+#include <iostream>
+using std::cout;
+
 Organism::Organism(const string& genus, const string& species, const string& name)
 	: _serveCounter(0)
 	, _genus(genus)
@@ -17,4 +20,16 @@ Gene &Organism::serveGene() {
 		_serveCounter = 0;
 	}
 	return _genotype[_serveCounter++];
+}
+
+void Organism::printDescription() const {
+	cout << "\tOrganism genus-species: " << _genus << " "
+			  << _species << '\n';
+	cout << "\tCommon name: " << _name << '\n';
+	cout << "\tGenes: \n";
+
+	for (const Gene &g : _genotype) {
+		cout << "\t\tGene type = " << g.getDescription() << '\n';
+		cout << "\t\t\tGenotype = " << g.getAllelesString() << '\n';
+	}
 }
