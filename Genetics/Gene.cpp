@@ -14,8 +14,8 @@ Gene::Gene(const Allele &a1, const Allele &a2, const std::string &desc)
 	});
 
 	// Store the sorted allele pair as a string
-	_allelesString += _alleles[0].getSymbol();
-	_allelesString += _alleles[1].getSymbol();
+	_allelesString += first().getSymbol();
+	_allelesString += second().getSymbol();
 }
 
 Allele Gene::getRandomAllele() const {
@@ -23,7 +23,7 @@ Allele Gene::getRandomAllele() const {
 }
 
 std::string Gene::getPhenotype() const {
-	const Allele &a1 = _alleles[0], &a2 = _alleles[1];
+	const Allele &a1 = first(), &a2 = second();
 
 	if (a1.isDominant() == a2.isDominant()) {
 		// They are either both recessive or both dominant
@@ -38,8 +38,8 @@ std::string Gene::getPhenotype() const {
 }
 
 std::string Gene::getZygosity() const {
-	if (_alleles[0].isDominant() == _alleles[1].isDominant()) {
-		if (!_alleles[0].isDominant()) {
+	if (first().isDominant() == second().isDominant()) {
+		if (!first().isDominant()) {
 			return "homozygous recessive";
 		}
 		else {
