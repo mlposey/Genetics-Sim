@@ -5,7 +5,7 @@
 
 /**
  * @brief The LoveChamber class handles mating between Organisms
- * 
+ *
  * LoveChamber uses the genotype of two Organisms to perform random crosses
  * between the individual genotypes of each parent. The resulting offspring
  * are sent to classes that observe LoveChamber.
@@ -34,11 +34,7 @@ public:
 private:
 	/// Prints the genetic makeup of each organism
 	void printParentData() const;
-
-	/// Prints the genetic makeup of an organism
-	static void printOrganismData(const std::string &header, const Organism &o);
-
+	
 	Organism _o1;
 	Organism _o2;
 };
-
