@@ -77,7 +77,6 @@
   <ItemGroup>
     <ClInclude Include="Allele.h" />
     <ClInclude Include="ColemanXMLParser.h" />
-    <ClInclude Include="FileParser.h" />
     <ClInclude Include="Gene.h" />
     <ClInclude Include="GeneticsSimDataParser.h" />
     <ClInclude Include="IObservable.h" />
