@@ -32,7 +32,10 @@ void StatCounter::printStats() {
 	cout << "\n-----------------------Results---------------------\n";
 
 	for (auto &t : _geneCounts) {
+		// Print the description of the gene (e.g., "flower color")
 		cout << "Gene: " << t.first << '\n';
+
+		// Print the count of the gene and the gene as a string
 		for (auto &u : t.second) {
 			cout << "\t" << u.second << " " << u.first << '\n';
 		}
@@ -40,6 +43,7 @@ void StatCounter::printStats() {
 	cout << "\n\n\n";
 	cout << "All occuring genotypes and their counts:\n";
 
+	// Print the occurring genotypes and how many offspring had each
 	for (auto &p : _genotypeCounts) {
 		cout << "\tGenotype = " << p.first << "\t";
 		cout << "Offspring count = " << p.second << '\n';

@@ -37,22 +37,14 @@ void LoveChamber::mate(int count) {
 void LoveChamber::printParentData() const
 {
 	cout << "\n-----------------------Parent Data-----------------\n";
-	printOrganismData("Sim parent 1", _o1);
+
+	cout << "Sim parent 1\n";
+	_o1.printDescription();
+	
 	cout << "\n\n";
-	printOrganismData("Sim parent 2", _o2);
+
+	cout << "Sim parent 2\n";
+	_o2.printDescription();
+
 	cout << "---------------------------------------------------\n\n";
-}
-
-void LoveChamber::printOrganismData(const std::string &header, const Organism & o)
-{
-	cout << header << '\n';
-	cout << "\tOrganism genus-species: " << o.getGenus() << " "
-			  << o.getSpecies() << '\n';
-	cout << "\tCommon name: " << o.getName() << '\n';
-	cout << "\tGenes: \n";
-
-	for (const Gene &g : o.getGenotype()) {
-		cout << "\t\tGene type = " << g.getDescription() << '\n';
-		cout << "\t\t\tGenotype = " << g.getAllelesString() << '\n';
-	}
 }
