@@ -14,7 +14,12 @@ public:
 	{}
 };
 
-// TODO: Describe test's purpose
+/**
+ * This test assumes the following behavior:
+ * 1.) The phenotype of a gene is the description of the dominant Allele
+ *
+ * Deviation from the above should result in a failed test
+ */
 TEST_F(GeneTests, getPhenotype) {
 	ASSERT_EQ("dominant description", gene.getPhenotype());
 }
