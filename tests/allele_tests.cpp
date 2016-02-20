@@ -9,7 +9,7 @@ class AlleleTests : public testing::Test {};
  * 1.) Alleles with an uppercase symbol are dominant
  * 2.) Alleles with a lowercase symbol are not dominant
  *
- * Deviantion from the above should result in a failed test.
+ * Deviation from the above should result in a failed test.
  */
 TEST_F(AlleleTests, is_dominant) {
 	Allele upper('T', "desc");
