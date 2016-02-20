@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <string>
 
 #include "../Genetics/Gene.cpp"
 
@@ -13,6 +14,35 @@ public:
 		, gene(a1, a2, "gene description")
 	{}
 };
+
+/**
+ * This test assumes the following behavior:
+ * 1.) Gene::getRandomAllele returns a random Allele from the two stored
+ *
+ * Deviation from the above should result in a failed test.
+ */
+TEST_F(GeneTests, getRandomAllele) {
+	/* Try this many times to get both alleles. If both are not retrieved
+	   after this count, it can be assumed that the random function is not
+	   suitable for this application--even if it is working correctly. */
+	const int kTryCount = 1000;
+
+	std::string alleleSymbols;
+	bool isBothFound = false;  // Did we find both alleles?
+
+	for (int i = 0; i < kTryCount; ++i) {
+		if (alleleSymbols.size() == 2) {
+			isBothFound = true;
+			break;
+		}
+		char c = gene.getRandomAllele().getSymbol();
+		if (alleleSymbols.find(c) == -1) {
+			alleleSymbols += c;
+		}
+	}
+
+	ASSERT_TRUE(isBothFound);
+}
 
 /**
  * This test assumes the following behavior:
@@ -47,3 +77,4 @@ TEST_F(GeneTests, getZygosity) {
 	// gene is declared in the class fixture as "Tt"
 	ASSERT_EQ("heterozygous dominant", gene.getZygosity());
 }
+
