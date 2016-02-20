@@ -6,12 +6,16 @@
 class GeneTests : public testing::Test {
 public:
 	Allele a1, a2;
-	Gene gene;
+	Gene mixedGene;     // "Tt"
+	Gene recessiveGene; // "tt"
+	Gene dominantGene;  // "TT"
 
 	GeneTests()
 		: a1('T', "dominant description")
 		, a2('t', "recessive description")
-		, gene(a1, a2, "gene description")
+		, mixedGene(a1, a2, "gene description")
+		, recessiveGene(a2, a2, "gene description")
+		, dominantGene(a1, a1, "gene description")
 	{}
 };
 
@@ -35,7 +39,7 @@ TEST_F(GeneTests, getRandomAllele) {
 			isBothFound = true;
 			break;
 		}
-		char c = gene.getRandomAllele().getSymbol();
+		char c = mixedGene.getRandomAllele().getSymbol();
 		if (alleleSymbols.find(c) == -1) {
 			alleleSymbols += c;
 		}
@@ -51,7 +55,7 @@ TEST_F(GeneTests, getRandomAllele) {
  * Deviation from the above should result in a failed test.
  */
 TEST_F(GeneTests, getPhenotype) {
-	ASSERT_EQ("dominant description", gene.getPhenotype());
+	ASSERT_EQ("dominant description", mixedGene.getPhenotype());
 }
 
 
@@ -65,16 +69,33 @@ TEST_F(GeneTests, getPhenotype) {
  * Deviation from the above should result in a failed test.
  */
 TEST_F(GeneTests, getZygosity) {
-	Allele a1Copy(a1);
-	Allele a2Copy(a2);
+	ASSERT_EQ("homozygous recessive", recessiveGene.getZygosity());
 
-	Gene homozygousRecessive(a2, a2Copy, "desc");
-	ASSERT_EQ("homozygous recessive", homozygousRecessive.getZygosity());
+	ASSERT_EQ("homozygous dominant", dominantGene.getZygosity());
 
-	Gene homozygousDominant(a1, a1Copy, "desc");
-	ASSERT_EQ("homozygous dominant", homozygousDominant.getZygosity());
-
-	// gene is declared in the class fixture as "Tt"
-	ASSERT_EQ("heterozygous dominant", gene.getZygosity());
+	ASSERT_EQ("heterozygous dominant", mixedGene.getZygosity());
 }
 
+/**
+ * This test assumes the following behavior:
+ * 1.) Gene::toString returns a concatenated string that consists of
+ *     a) zygosity
+ *     b) phenotype
+ *     c) alleles as a string
+ * ex.) "[zygosity] ([phenotype] [alleles])"
+ *
+ * Deviation from the above should result in a failed test.
+ */
+TEST_F(GeneTests, toString) {
+	const char *expected[] = {
+		"heterozygous dominant (dominant description Tt)",
+		"homozygous recessive (recessive description tt)",
+		"homozygous dominant (dominant description TT)"
+	};
+
+	ASSERT_STREQ(expected[0], mixedGene.toString().c_str());
+
+	ASSERT_STREQ(expected[1], recessiveGene.toString().c_str());
+
+	ASSERT_STREQ(expected[2], dominantGene.toString().c_str());
+}
