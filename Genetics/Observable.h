@@ -27,6 +27,9 @@ public:
 	 */
 	void notifyAll(const T &arg);
 
+	/// @return The number of Observers watching the object
+	int getObserverCount() const { return _observers.size(); }
+
 protected:
 	std::vector<IObserver<T>*> _observers;
 };
@@ -47,5 +50,3 @@ void Observable<T>::notifyAll(const T &arg) {
 		o->notify(arg);
 	}
 }
-
-
