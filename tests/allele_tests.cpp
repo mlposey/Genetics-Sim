@@ -5,7 +5,7 @@
 class AlleleTests : public testing::Test {};
 
 /**
- * This test assumes the following behavior:
+ * This test expects the following behavior:
  * 1.) Alleles with an uppercase symbol are dominant
  * 2.) Alleles with a lowercase symbol are not dominant
  *

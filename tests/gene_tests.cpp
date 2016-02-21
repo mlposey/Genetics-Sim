@@ -20,7 +20,7 @@ public:
 };
 
 /**
- * This test assumes the following behavior:
+ * This test expects the following behavior:
  * 1.) Gene::getRandomAllele returns a random Allele from the two stored
  *
  * Deviation from the above should result in a failed test.
@@ -49,7 +49,7 @@ TEST_F(GeneTests, getRandomAllele) {
 }
 
 /**
- * This test assumes the following behavior:
+ * This test expects the following behavior:
  * 1.) The phenotype of a gene is the description of the dominant Allele
  *
  * Deviation from the above should result in a failed test.
@@ -60,7 +60,7 @@ TEST_F(GeneTests, getPhenotype) {
 
 
 /**
- * This test assumes the following behavior:
+ * This test expects the following behavior:
  * The zygosity of a gene is:
  * 1.) "heterozygous dominant" if the Alleles do not match
  * 2.) "homozygous recessive" if both Alleles are recessive
@@ -77,7 +77,7 @@ TEST_F(GeneTests, getZygosity) {
 }
 
 /**
- * This test assumes the following behavior:
+ * This test expects the following behavior:
  * 1.) Gene::toString returns a concatenated string that consists of
  *     a) zygosity
  *     b) phenotype

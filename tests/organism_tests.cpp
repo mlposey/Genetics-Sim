@@ -22,7 +22,7 @@ public:
 };
 
 /**
- * This test assumes the following behavior:
+ * This test expects the following behavior:
  * 1.) Organism::addGene stores a copy of a gene in the Organism
  *
  * Deviation from the above should result in a failed test.
@@ -38,7 +38,7 @@ TEST_F(OrganismTests, addGene) {
 }
 
 /**
- * This test assumes the following behavior:
+ * This test expects the following behavior:
  * 1.) If no genes are stored, an exception is thrown
  * 2.) Each call returns the address of the Organism's next gene
  * 3.) Repeated calls should cause an eventual wrap
