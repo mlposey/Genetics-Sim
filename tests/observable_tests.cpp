@@ -34,6 +34,7 @@ TEST_F(ObservableTests, addObserver) {
     observable.addObserver(observer);
 
     ASSERT_EQ(1, observable.getObserverCount());
+    ASSERT_TRUE(observable.contains(observer));
 
     observable.addObserver(observer);
 
@@ -64,7 +65,7 @@ TEST_F(ObservableTests, removeObserver) {
     // 'other' should still remain
     ASSERT_EQ(1, observable.getObserverCount());
     ASSERT_TRUE(observable.contains(other));
-    
+
     ASSERT_FALSE(observable.contains(observer));
 }
 
