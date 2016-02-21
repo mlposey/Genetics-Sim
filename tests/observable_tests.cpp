@@ -61,6 +61,7 @@ TEST_F(ObservableTests, removeObserver) {
     ASSERT_EQ(3, observable.getObserverCount());
 
     observable.removeObserver(observer);
+    // TODO: Remove nonexistant observer
 
     // 'other' should still remain
     ASSERT_EQ(1, observable.getObserverCount());
@@ -69,4 +70,17 @@ TEST_F(ObservableTests, removeObserver) {
     ASSERT_FALSE(observable.contains(observer));
 }
 
-// TODO: Create test for Observable::contains
+/**
+ * This test expects the following behavior:
+ * 1.) Observable::notifyAll calls the notify method of all of its observers
+ *
+ * Deviation from the above should result in a failed test.
+ */
+TEST_F(ObservableTests, notifyAll) {
+    observable.notifyAll(0);
+
+    observable.addObserver(observer);
+    observable.notifyAll(0);
+
+    ASSERT_TRUE(observer.isMockNotified);
+}
