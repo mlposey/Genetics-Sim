@@ -17,16 +17,8 @@ public:
 
 class ObservableTests : public testing::Test {
 public:
-    MockObserver *observer;
+    MockObserver observer;
     Observable<int> observable;
-
-    ObservableTests()
-        : observer(new MockObserver())
-    {}
-
-    ~ObservableTests() {
-        delete observer;
-    }
 };
 
 /**
@@ -39,9 +31,11 @@ TEST_F(ObservableTests, addObserver) {
     // The Observable object should start off empty
     ASSERT_EQ(0, observable.getObserverCount());
 
-    observable.addObserver(*observer);
+    observable.addObserver(observer);
 
     ASSERT_EQ(1, observable.getObserverCount());
 
+    observable.addObserver(observer);
 
+    ASSERT_EQ(2, observable.getObserverCount());
 }
