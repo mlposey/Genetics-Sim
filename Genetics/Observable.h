@@ -60,5 +60,5 @@ void Observable<T>::notifyAll(const T &arg) {
 
 template <typename T>
 bool Observable<T>::contains(const IObserver<T> &o) const {
-	return std::find(begin(_observers), end(_observers), o) != end(_observers);
+	return std::find(begin(_observers), end(_observers), &o) != end(_observers);
 }
