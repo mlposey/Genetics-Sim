@@ -50,3 +50,40 @@ TEST_F(ColemanXMLParserTests, constructor) {
         }
     }
 }
+
+/**
+ * This test expects the following behavior:
+ * 1.) ::parseFile takes information for two organisms
+ * 2.) ::parseFile ensures that both organisms have the same gene count
+ * 3.) ::parseFile stores both organisms in the provided vector
+ *
+ * Deviation from the above should result in a failed test.
+ */
+TEST_F(ColemanXMLParserTests, parseFile) {
+    for (auto &fileName : fileNames) {
+        try {
+            ColemanXMLParser parser(fileName.first);
+
+            // The organisms found in the file
+            std::vector<Organism> parents;
+            parser.parseFile(parents);
+
+            ASSERT_EQ(2, parents.size());
+
+            // Check that the data was loaded into each parent
+            for (auto &organism : parents) {
+                ASSERT_FALSE(organism.getSpecies().empty());
+                ASSERT_FALSE(organism.getGenus().empty());
+                ASSERT_FALSE(organism.getName().empty());
+
+                ASSERT_TRUE(organism.getGeneCount() > 0);
+            }
+
+            ASSERT_EQ(parents[0].getGeneCount(), parents[1].getGeneCount());
+
+        } catch (std::ifstream::failure &e) {
+            // Okay, the file didn't exist
+            ASSERT_TRUE(!fileName.second);
+        }
+    }
+}
