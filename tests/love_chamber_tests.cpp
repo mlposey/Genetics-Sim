@@ -34,9 +34,9 @@ TEST_F(LoveChamberTests, constructor) {
     ASSERT_TRUE(compareOutput([&](){ LoveChamber(o1, o2); }, expected));
 }
 
+// TODO: Write unit test for LoveChamber::mate
 /**
  * This test expects the following behavior:
- * 1.)
  *
  * Deviation from the above should result in a failed test.
  */
