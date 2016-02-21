@@ -70,3 +70,5 @@ TEST_F(OrganismTests, serveGene) {
     g = organism.serveGene();
     ASSERT_EQ("desc", g.getDescription());
 }
+
+// TODO: Create test for Organism::printDescription
