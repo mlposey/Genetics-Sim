@@ -27,6 +27,13 @@ public:
 	 */
 	void notifyAll(const T &arg);
 
+	/**
+	 * @brief Searches the stored IObservers for 'o'
+	 * @param The IObserver object to search for
+	 * @return True if the Observable contains 'o'
+	 */
+	bool contains(const IObserver<T> &o) const;
+
 	/// @return The number of Observers watching the object
 	int getObserverCount() const { return _observers.size(); }
 
@@ -35,12 +42,12 @@ protected:
 };
 
 template <typename T>
-void Observable<T>::addObserver(IObserver<T>& o) {
+void Observable<T>::addObserver(IObserver<T> &o) {
 	_observers.push_back(&o);
 }
 
 template <typename T>
-void Observable<T>::removeObserver(const IObserver<T>& o) {
+void Observable<T>::removeObserver(const IObserver<T> &o) {
 	_observers.erase(std::remove(_observers.begin(), _observers.end(), &o), _observers.end());
 }
 
@@ -49,4 +56,9 @@ void Observable<T>::notifyAll(const T &arg) {
 	for (IObserver<T> *o : _observers) {
 		o->notify(arg);
 	}
+}
+
+template <typename T>
+bool Observable<T>::contains(const IObserver<T> &o) const {
+	return std::find(begin(_observers), end(_observers), o) != end(_observers);
 }
