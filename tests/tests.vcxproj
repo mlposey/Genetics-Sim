@@ -80,6 +80,7 @@
     <ClCompile Include="gene_tests.cpp" />
     <ClCompile Include="love_chamber_tests.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="observable_tests.cpp" />
     <ClCompile Include="organism_tests.cpp" />
     <ClCompile Include="utils.h" />
   </ItemGroup>

@@ -39,7 +39,7 @@ TEST_F(ObservableTests, addObserver) {
     // The Observable object should start off empty
     ASSERT_EQ(0, observable.getObserverCount());
 
-    observable.addObserver(*observer)
+    observable.addObserver(*observer);
 
     ASSERT_EQ(1, observable.getObserverCount());
 
