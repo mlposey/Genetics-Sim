@@ -41,5 +41,5 @@ TEST_F(LoveChamberTests, constructor) {
  * Deviation from the above should result in a failed test.
  */
 TEST_F(LoveChamberTests, mate) {
-
+	ASSERT_TRUE(1 == 2);
 }
