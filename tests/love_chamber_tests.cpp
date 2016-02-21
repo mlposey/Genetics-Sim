@@ -35,11 +35,3 @@ TEST_F(LoveChamberTests, constructor) {
 }
 
 // TODO: Write unit test for LoveChamber::mate
-/**
- * This test expects the following behavior:
- *
- * Deviation from the above should result in a failed test.
- */
-TEST_F(LoveChamberTests, mate) {
-	ASSERT_TRUE(1 == 2);
-}
