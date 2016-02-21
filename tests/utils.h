@@ -4,6 +4,18 @@
 #include <fstream>
 #include <sstream>
 
+/**
+ * @brief Determines if correct data was printed to stdout
+ *
+ * This ensures that data printed to stdout by callback contains strings
+ * which are contained in expectedOutputs. This is done by redirecting stdout
+ * to a file and reading data from it. After data has been read, output is then
+ * directed back to stdout and the temp file is deleted.
+ *
+ * @param callback This function should print data to stdout
+ * @param expectedOutputs These are strings that should have been in the output
+ * @return True if all expected data was printed. False otherwise
+ */
 inline bool compareOutput(const std::function<void(void)> &callback,
                    const std::vector<const char*> &expectedOutputs) {
     static void (*swap_)(FILE*, FILE*) = [](FILE *a, FILE *b) {
