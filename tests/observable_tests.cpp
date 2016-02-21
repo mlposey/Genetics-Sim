@@ -21,6 +21,22 @@ public:
     Observable<int> observable;
 };
 
+
+/**
+ * This test assumes the following behavior:
+ * 1.) Observable::contains returns true if it contains the provided argument
+ * 2.) Observable::contains false if it does not contain the provided argument
+ *
+ * Deviation from the above should result in a failed test.
+ */
+TEST_F(ObservableTests, contains) {
+    observable.addObserver(observer);
+    ASSERT_TRUE(observable.contains(observer));
+
+    MockObserver o;
+    ASSERT_FALSE(observable.contains(o));
+}
+
 /**
  * This test expects the following behavior:
  * 1.) Observable::addObserver stores the address of the provided argument
