@@ -1,3 +1,11 @@
+/*******************************************************************
+*   LoveChamber.cpp
+*   CS 307 Programming Assignment 1
+*   Author: Marcus Posey
+*   Date Submitted: 02/23/2016
+*
+*   This program is entirely my own work.
+*******************************************************************/
 #include "LoveChamber.h"
 #include "Organism.h"
 #include <iostream>
@@ -40,7 +48,7 @@ void LoveChamber::printParentData() const
 
 	cout << "Sim parent 1\n";
 	_o1.printDescription();
-	
+
 	cout << "\n\n";
 
 	cout << "Sim parent 2\n";

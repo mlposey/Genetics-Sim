@@ -1,9 +1,17 @@
+/*******************************************************************
+*   Allele.h
+*   CS 307 Programming Assignment 1
+*   Author: Marcus Posey
+*   Date Submitted: 02/23/2016
+*
+*   This program is entirely my own work.
+*******************************************************************/
 #pragma once
 #include <string>
 
 /**
  * @brief The Allele class models the alleles of a Gene
- * 
+ *
  * This immutable representation of an allele holds information
  * regarding symbols (e.g. T or t), description of the allele
  * (e.g. tall), and whether the allele is dominant or not. It is
@@ -33,4 +41,3 @@ private:
 	char _symbol;
 	std::string _description;
 };
-

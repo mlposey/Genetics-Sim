@@ -33,7 +33,7 @@ class GeneticsSimDataParser
 		char *getSpecies();
 		char *getScientificName();				// Get genus and species in one string
 		char *getCommonName();
-		bool getParentGenotype(char *genotype);		
+		bool getParentGenotype(char *genotype);
 		bool getGeneData(char *trait, char *domDesc, char *domSymbol, char *recDesc, char *recSymbol);
 	private:
 		bool getNextLine(char *buffer, int n);

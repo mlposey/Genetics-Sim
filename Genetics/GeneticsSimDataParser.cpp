@@ -123,7 +123,7 @@ char *GeneticsSimDataParser::getCommonName()
 //			*recSymbol - pointer to a char variable to hold the recessive
 //						trait letter symbol
 //--------------------------------------------------------------------------
-bool GeneticsSimDataParser::getGeneData(char *trait, char *domDesc, char *domSymbol, 
+bool GeneticsSimDataParser::getGeneData(char *trait, char *domDesc, char *domSymbol,
 										char *recDesc, char *recSymbol)
 {
 	int gNum = 0;
@@ -247,7 +247,7 @@ bool GeneticsSimDataParser::getParentGenotype(char *genotype)
 						{
 							if(getNextLine(line, 127)) // Read the genotype string
 							{
-								strcpy(genotype, line); 
+								strcpy(genotype, line);
 							}
 							else
 								return false; // Oops!
@@ -279,7 +279,7 @@ bool GeneticsSimDataParser::getParentGenotype(char *genotype)
 //   them in buffer, removing any leading white
 //   space.  Skips blank lines. Ignors comment
 //   lines starting with <!-- and ending with -->
-//   
+//
 // Args:  buffer -- char array to read line into.
 //        n -- length of buffer.
 // Returns: True if a line was successfully read,
@@ -324,7 +324,3 @@ bool GeneticsSimDataParser::getNextLine(char *buffer, int n)
 	strcpy(buffer, temp);
     return true;  // Flag a successful read
 }
-
-
-
-

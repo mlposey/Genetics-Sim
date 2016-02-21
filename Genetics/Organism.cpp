@@ -1,3 +1,11 @@
+/*******************************************************************
+*   Organism.cpp
+*   CS 307 Programming Assignment 1
+*   Author: Marcus Posey
+*   Date Submitted: 02/23/2016
+*
+*   This program is entirely my own work.
+*******************************************************************/
 #include "Organism.h"
 
 #include <iostream>
@@ -21,7 +29,7 @@ Gene &Organism::serveGene() {
 		// TODO: Make a proper exception for cases like this
 		throw std::exception();
 	}
-	
+
 	if (_serveCounter >= _genotype.size()) {
 		// All genes have been served. Start over.
 		_serveCounter = 0;

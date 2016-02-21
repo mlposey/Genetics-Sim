@@ -1,3 +1,11 @@
+/*******************************************************************
+*   ColemanXMLParser.cpp
+*   CS 307 Programming Assignment 1
+*   Author: Marcus Posey
+*   Date Submitted: 02/23/2016
+*
+*   This program is entirely my own work.
+*******************************************************************/
 #include "ColemanXMLParser.h"
 #include <unordered_map>
 #include <utility>

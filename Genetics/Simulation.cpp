@@ -1,3 +1,11 @@
+/*******************************************************************
+*   Simulation.cpp
+*   CS 307 Programming Assignment 1
+*   Author: Marcus Posey
+*   Date Submitted: 02/23/2016
+*
+*   This program is entirely my own work.
+*******************************************************************/
 #include <iostream>
 #include <string>
 #include <memory>
@@ -32,7 +40,7 @@ void Simulation::init() {
 			std::getline(std::cin, input);
 
 			ColemanXMLParser parser(input);
-			
+
 			std::vector<Organism> parents;
 			// Take the data of the two parents from the input file
 			parser.parseFile(parents);

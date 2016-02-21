@@ -1,3 +1,11 @@
+/*******************************************************************
+*   StatCounter.h
+*   CS 307 Programming Assignment 1
+*   Author: Marcus Posey
+*   Date Submitted: 02/23/2016
+*
+*   This program is entirely my own work.
+*******************************************************************/
 #pragma once
 #include <string>
 #include <unordered_map>
@@ -14,7 +22,7 @@ class Gene;
 
 /**
  * @brief The StatCounter class records statistical data of Organisms
- * 
+ *
  * This class is meant to observe some other class that provides
  * an implemenation of Observable<Organism>. All Organisms that
  * are sent to StatCounter have counts of both genotypes and Genes
