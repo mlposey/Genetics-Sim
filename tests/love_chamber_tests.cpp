@@ -28,15 +28,15 @@ TEST_F(LoveChamberTests, constructor) {
     // Output console data here
     const char *consoleOutputFileName = "console_output.txt";
 
-	FILE *file = fopen(consoleOutputFileName, "w");
     // LoveChamber::LoveChamber() should ouput the organism data to stdout
     // We are interested in if it was printed correctly, so we redirect stdout
     // to this file.
+    FILE *file = fopen(consoleOutputFileName, "w");
 	swapOutput(stdout, file);
 
     LoveChamber chamber(o1, o2);
 
-    // Close the file so we can examine it
+    // Redirect output back to stdout
 	swapOutput(stdout, file);
 	fclose(file);
 
