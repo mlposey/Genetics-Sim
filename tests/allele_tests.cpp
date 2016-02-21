@@ -11,7 +11,7 @@ class AlleleTests : public testing::Test {};
  *
  * Deviation from the above should result in a failed test.
  */
-TEST_F(AlleleTests, is_dominant) {
+TEST_F(AlleleTests, isDominant) {
 	Allele upper('T', "desc");
 	ASSERT_TRUE(upper.isDominant());
 
