@@ -2,7 +2,8 @@
 #include <fstream>
 #include <cstdio>
 #include <sstream>
-#include <vector>
+
+#include "utils.h"
 
 #include "../Genetics/LoveChamber.cpp"
 
@@ -27,19 +28,21 @@ TEST_F(LoveChamberTests, constructor) {
     // Output console data here
     const char *consoleOutputFileName = "console_output.txt";
 
+	FILE *file = fopen(consoleOutputFileName, "w");
     // LoveChamber::LoveChamber() should ouput the organism data to stdout
     // We are interested in if it was printed correctly, so we redirect stdout
     // to this file.
-    freopen(consoleOutputFileName, "w", stdout);
+	swapOutput(stdout, file);
 
     LoveChamber chamber(o1, o2);
 
     // Close the file so we can examine it
-    fclose(stdout);
+	swapOutput(stdout, file);
+	fclose(file);
 
     // Even in the event that the organisms themselves cannot properly print
     // data, we still expect the LoveChamber to output this basic information.
-    std::vector<const char*> expectedInformation = {
+    const char* expectedInformation[] = {
         "\n-----------------------Parent Data-----------------\n",
         "Sim parent 1\n",
         // parent1.printDescription() should put information here

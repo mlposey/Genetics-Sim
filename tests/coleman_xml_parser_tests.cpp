@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 #include <utility>
-#define name(FILENAME, EXISTS) std::make_pair(FILENAME, EXISTS)
 
 #include <vector>
 #include <fstream>
@@ -14,13 +13,12 @@ public:
     std::vector<std::pair<const char*, bool/*exists*/>> fileNames;
 
     ColemanXMLParserTests() {
-        fileNames = {
-            name("GeneticsSim1.xml", true),
-            name("NonexistantFile.xml", false),
-            name("", false),
-            name(".xml", false),
-            name("32", false)
-        };
+		// This is ugly. Blame VS2012
+	    fileNames.emplace_back("GeneticsSim1.xml", true);
+	    fileNames.emplace_back("NonexistantFile.xml", false);
+	    fileNames.emplace_back("", false);
+	    fileNames.emplace_back(".xml", false);
+	    fileNames.emplace_back("32", false);
     }
 };
 

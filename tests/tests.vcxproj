@@ -48,7 +48,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PreprocessorDefinitions>_VARIADIC_MAX=10;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_VARIADIC_MAX=10;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -76,8 +76,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="allele_tests.cpp" />
+    <ClCompile Include="coleman_xml_parser_tests.cpp" />
     <ClCompile Include="gene_tests.cpp" />
+    <ClCompile Include="love_chamber_tests.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="organism_tests.cpp" />
+    <ClCompile Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
