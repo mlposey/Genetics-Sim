@@ -66,6 +66,7 @@ TEST_F(OrganismTests, serveGene) {
     g = organism.serveGene();
     ASSERT_EQ("d", g.getDescription());
 
+    // The wrap should occur here
     g = organism.serveGene();
     ASSERT_EQ("desc", g.getDescription());
 }
