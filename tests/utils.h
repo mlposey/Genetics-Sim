@@ -1,8 +1,10 @@
 #include <cstdio>
-#include <cstring>
 #include <functional>
+#include <vector>
+#include <fstream>
+#include <sstream>
 
-bool compareOutput(const std::function<void(void)> &callback,
+inline bool compareOutput(const std::function<void(void)> &callback,
                    const std::vector<const char*> &expectedOutputs) {
     static void (*swap_)(FILE*, FILE*) = [](FILE *a, FILE *b) {
         FILE tmp;
