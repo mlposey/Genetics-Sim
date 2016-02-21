@@ -31,6 +31,7 @@ public:
  * Deviation from the above should result in a failed test.
  */
 TEST_F(ColemanXMLParserTests, constructor) {
+    // Try to open each file in fileNames
     for (auto &fileName : fileNames) {
         bool isExceptionThrown = false;
         try {
