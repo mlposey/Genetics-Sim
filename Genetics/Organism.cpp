@@ -3,6 +3,8 @@
 #include <iostream>
 using std::cout;
 
+#include <exception>
+
 Organism::Organism(const string& genus, const string& species, const string& name)
 	: _serveCounter(0)
 	, _genus(genus)
@@ -15,6 +17,11 @@ void Organism::addGene(const Gene& gene) {
 }
 
 Gene &Organism::serveGene() {
+	if (_genotype.size() == 0) {
+		// TODO: Make a proper exception for cases like this
+		throw std::exception();
+	}
+	
 	if (_serveCounter >= _genotype.size()) {
 		// All genes have been served. Start over.
 		_serveCounter = 0;
