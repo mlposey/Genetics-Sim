@@ -22,7 +22,7 @@ inline bool compareOutput(const std::function<void(void)> &callback,
     fclose(tmp);
 
     std::ifstream consoleOutput(fn);
-    if (!consoleOutput.good())
+    if (!consoleOutput.is_open())
         return false;
 
     std::stringstream ss;
