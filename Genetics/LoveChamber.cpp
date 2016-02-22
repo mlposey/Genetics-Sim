@@ -22,6 +22,7 @@ LoveChamber::LoveChamber(Organism o1, Organism o2)
 }
 
 void LoveChamber::mate(int count) {
+	// The parents should each have this number of genes
 	const int size = _o1.getGeneCount();
 
 	// Create 'count' offspring and send each of them to the observers
