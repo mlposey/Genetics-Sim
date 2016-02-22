@@ -39,8 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\marcu\OneDrive\School\Classes\Current\CS 307\Genetics\gtest;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\marcu\OneDrive\School\Classes\Current\CS 307\Genetics\gtest\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\gtest;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\gtest\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -49,6 +49,7 @@
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PreprocessorDefinitions>_VARIADIC_MAX=10;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
