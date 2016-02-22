@@ -22,7 +22,9 @@ public:
 
     ColemanXMLParserTests() {
 		// This is ugly. Blame VS2012
-	    fileNames.emplace_back("GeneticsSim1.xml", true);
+	    fileNames.emplace_back("test_files/GeneticsSim1.xml", true);
+		fileNames.emplace_back("test_files/GeneticsSim2.xml", true);
+		fileNames.emplace_back("test_files/GeneticsSim3.xml", true);
 	    fileNames.emplace_back("NonexistantFile.xml", false);
 	    fileNames.emplace_back("", false);
 	    fileNames.emplace_back(".xml", false);
@@ -67,11 +69,11 @@ TEST_F(ColemanXMLParserTests, constructor) {
  */
 TEST_F(ColemanXMLParserTests, parseFile) {
     for (auto &fileName : fileNames) {
+        // The organisms found in the file
+		std::vector<Organism> parents;
         try {
             ColemanXMLParser parser(fileName.first);
 
-            // The organisms found in the file
-            std::vector<Organism> parents;
             parser.parseFile(parents);
 
             ASSERT_EQ(2, parents.size());
@@ -85,11 +87,12 @@ TEST_F(ColemanXMLParserTests, parseFile) {
                 ASSERT_TRUE(organism.getGeneCount() > 0);
             }
 
-            ASSERT_EQ(parents[0].getGeneCount(), parents[1].getGeneCount());
-
         } catch (std::ifstream::failure &e) {
             // Okay, the file didn't exist
             ASSERT_TRUE(!fileName.second);
+        } catch (BadSimFile &e) {
+	        // Okay, the file had bad data
+			ASSERT_STREQ("test_files/GeneticsSim3.xml", fileName.first);
         }
     }
 }
