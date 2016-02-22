@@ -18,17 +18,24 @@
 class ColemanXMLParserTests : public testing::Test {
 public:
     // All the files to test
-    std::vector<std::pair<const char*, bool/*exists*/>> fileNames;
+    std::vector<std::pair<const char*/*filename*/,
+		                 std::pair<bool/*malformed*/, bool/*exists*/>
+						 >
+	           > fileNames;
+
+// Sets up a file for testing with ColemanXMLParser
+#define SETFILE(FILE_NAME, MALFORMED, EXISTS) \
+	fileNames.emplace_back(FILE_NAME, std::make_pair<bool, bool>(MALFORMED, EXISTS))
 
     ColemanXMLParserTests() {
 		// This is ugly. Blame VS2012
-	    fileNames.emplace_back("test_files/GeneticsSim1.xml", true);
-		fileNames.emplace_back("test_files/GeneticsSim2.xml", true);
-		fileNames.emplace_back("test_files/GeneticsSim3.xml", true);
-	    fileNames.emplace_back("NonexistantFile.xml", false);
-	    fileNames.emplace_back("", false);
-	    fileNames.emplace_back(".xml", false);
-	    fileNames.emplace_back("32", false);
+		SETFILE("test_files/GeneticsSim1.xml", false, true);
+		SETFILE("test_files/GeneticsSim2.xml", false, true);
+		SETFILE("test_files/GeneticsSim3.xml", true, true);
+	    SETFILE("NonexistantFile.xml", false, false);
+	    SETFILE("", false, false);
+	    SETFILE(".xml", false, false);
+	    SETFILE("32", false, false);
     }
 };
 
@@ -50,11 +57,11 @@ TEST_F(ColemanXMLParserTests, constructor) {
 
         if (!isExceptionThrown) {
             // The file should have existed
-            ASSERT_TRUE(fileName.second);
+            ASSERT_TRUE(fileName.second.second);
         }
         else {
             // The file should not have existed
-            ASSERT_TRUE(!fileName.second);
+            ASSERT_TRUE(!fileName.second.second);
         }
     }
 }
@@ -89,10 +96,10 @@ TEST_F(ColemanXMLParserTests, parseFile) {
 
         } catch (std::ifstream::failure &e) {
             // Okay, the file didn't exist
-            ASSERT_TRUE(!fileName.second);
+            ASSERT_TRUE(!fileName.second.second);
         } catch (MalformedFileException &e) {
 	        // Okay, the file had bad data
-			ASSERT_STREQ("test_files/GeneticsSim3.xml", fileName.first);
+			ASSERT_TRUE(fileName.second.first);
         }
     }
 }
