@@ -62,7 +62,7 @@ void Simulation::init() {
 		{
 			// The data is not in the expected format
 			std::cerr << "An error occurred while reading the file:\n";
-			std::cerr << e.what();
+			std::cerr << e.what() << '\n';
 		}
 	}
 
