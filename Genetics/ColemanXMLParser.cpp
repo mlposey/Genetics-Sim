@@ -12,6 +12,7 @@
 #include <cstring>
 
 #include "Allele.h"
+#include "CustomExceptions.h"
 
 ColemanXMLParser::ColemanXMLParser(const string &filename)
 	: _parser(const_cast<char*>(filename.c_str()))
@@ -47,12 +48,20 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 		possibleAlleles[recSymbol] = std::make_pair<string, string>(recDesc, trait);
 	}
 
+
+
 	char genotype[2][32];
+	_parser.getParentGenotype(genotype[0]);
+	_parser.getParentGenotype(genotype[1]);
+
+	if (strlen(genotype[0]) != strlen(genotype[1])) {
+		throw BadSimFile("Mismatched genotype counts in supplied file.");
+	}
+
 	std::vector<Allele> alleles;
 
 	// Load the genotype of each parent into the appropriate parent organisms
 	for (int i = 0; i < 2; ++i) {
-		_parser.getParentGenotype(genotype[i]);
 		int genLength = strlen(genotype[i]);
 		// Create alleles from each character and use pairs to create
 		// genes to be added to the organism's genotype
@@ -67,5 +76,7 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 			alleles.emplace_back(c, possibleAlleles[c].first);
 		}
 	}
+
+
 
 }
