@@ -55,7 +55,7 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 	_parser.getParentGenotype(genotype[1]);
 
 	if (strlen(genotype[0]) != strlen(genotype[1])) {
-		throw BadSimFile("Mismatched genotype counts in supplied file.");
+		throw MalformedFileException("Mismatched genotype counts in supplied file.");
 	}
 
 	std::vector<Allele> alleles;

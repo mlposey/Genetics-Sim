@@ -58,7 +58,7 @@ void Simulation::init() {
 			std::cerr << "The file '" + input + "' could not be opened.\n";
 			std::cerr << "Please try another file.\n";
 		}
-		catch (BadSimFile &e)
+		catch (MalformedFileException &e)
 		{
 			// The data is not in the expected format
 			std::cerr << "An error occurred while reading the file:\n";

@@ -90,7 +90,7 @@ TEST_F(ColemanXMLParserTests, parseFile) {
         } catch (std::ifstream::failure &e) {
             // Okay, the file didn't exist
             ASSERT_TRUE(!fileName.second);
-        } catch (BadSimFile &e) {
+        } catch (MalformedFileException &e) {
 	        // Okay, the file had bad data
 			ASSERT_STREQ("test_files/GeneticsSim3.xml", fileName.first);
         }
