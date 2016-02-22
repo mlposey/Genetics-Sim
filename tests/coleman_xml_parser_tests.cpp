@@ -28,7 +28,7 @@ public:
 	fileNames.emplace_back(FILE_NAME, std::make_pair<bool, bool>(MALFORMED, EXISTS))
 
     ColemanXMLParserTests() {
-		// This is ugly. Blame VS2012
+		// TODO: Read these from a file
 		SETFILE("test_files/GeneticsSim1.xml", false, true);
 		SETFILE("test_files/GeneticsSim2.xml", false, true);
 		SETFILE("test_files/GeneticsSim3.xml", true, true);
