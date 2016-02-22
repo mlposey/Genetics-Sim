@@ -13,6 +13,7 @@
 
 #include "Simulation.h"
 #include "ColemanXMLParser.h"
+#include "CustomExceptions.h"
 
 using std::cout;
 using std::string;
@@ -47,13 +48,21 @@ void Simulation::init() {
 
 			_loveChamber = std::unique_ptr<LoveChamber>(new LoveChamber(parents[0], parents[1]));
 
+			// Add an object to keep track of created offspring
 			_loveChamber->addObserver(_statCounter);
 
 			break;
 		}
 		catch (ifstream::failure &e) {
+			// They tried to give a file that didn't exist
 			std::cerr << "The file '" + input + "' could not be opened.\n";
 			std::cerr << "Please try another file.\n";
+		}
+		catch (BadSimFile &e)
+		{
+			// The data is not in the expected format
+			std::cerr << "An error occurred while reading the file:\n";
+			std::cerr << e.what();
 		}
 	}
 
