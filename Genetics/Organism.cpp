@@ -11,7 +11,7 @@
 #include <iostream>
 using std::cout;
 
-#include <exception>
+#include "CustomExceptions.h"
 
 Organism::Organism(const string& genus, const string& species, const string& name)
 	: _serveCounter(0)
@@ -26,8 +26,7 @@ void Organism::addGene(const Gene& gene) {
 
 Gene &Organism::serveGene() {
 	if (_genotype.size() == 0) {
-		// TODO: Make a proper exception for cases like this
-		throw std::exception();
+		throw EmptyContainerException("The Organism contains no genes");
 	}
 
 	if (_serveCounter >= _genotype.size()) {
