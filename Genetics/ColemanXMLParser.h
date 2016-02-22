@@ -38,7 +38,7 @@ public:
 
 private:
 	/// @return True if genotype is missing alleles
-	bool isGenotypeMissingAlleles(char genotype[32]);
+	bool isGenotypeMissingAlleles(int size, char *genotype);
 
 	GeneticsSimDataParser _parser;
 };

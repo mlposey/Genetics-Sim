@@ -54,17 +54,35 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 	_parser.getParentGenotype(genotype[0]);
 	_parser.getParentGenotype(genotype[1]);
 
-	if (isGenotypeMissingAlleles(genotype[0])) {
+
+	// If genotype[0] or genotype[1] equal "</GENOTYPE>", then either are missing
+	// a genotype definition in the sim file
+
+	if (strcmp(genotype[0], "</GENOTYPE>") == 0) {
+		throw MalformedFileException("First parent in file is missing a genotype.");
+	}
+
+	if (strcmp(genotype[1], "</GENOTYPE>") == 0) {
+		throw MalformedFileException("Second parent in file is missing a genotype.");
+	}
+
+	// The length of each genotype
+	int length[] = {strlen(genotype[0]), strlen(genotype[1])};
+	
+
+	if (isGenotypeMissingAlleles(length[0], genotype[0])) {
 		throw MalformedFileException("First parent in file is missing an allele.");
 	}
 
-	if (isGenotypeMissingAlleles(genotype[1])) {
+	if (isGenotypeMissingAlleles(length[1], genotype[1])) {
 		throw MalformedFileException("Second parent in file is missing an allele.");
 	}
 
-	if (strlen(genotype[0]) != strlen(genotype[1])) {
+	if (length[0] != length[1]) {
 		throw MalformedFileException("Mismatched genotype counts in supplied file.");
 	}
+
+	
 
 	std::vector<Allele> alleles;
 
@@ -89,8 +107,7 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 
 }
 
-bool ColemanXMLParser::isGenotypeMissingAlleles(char genotype[32]) {
-	int size = strlen(genotype);
+bool ColemanXMLParser::isGenotypeMissingAlleles(int size, char *genotype) {
 	for (int i = 0; i < size - 1; ++i) {
 		if (genotype[i] == ' ' && genotype[i + 1] == ' ') {
 			return true;
