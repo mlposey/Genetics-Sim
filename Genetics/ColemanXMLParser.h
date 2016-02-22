@@ -20,6 +20,7 @@ using std::string;
  * This class acts as a wrapper around Dr. Coleman's GeneticsSimDataParser class.
  * It takes a filename which should contain organism data and then stores that
  * data in a supplied container.
+ * @see GeneticsSimDataParser
  */
 class ColemanXMLParser
 {
