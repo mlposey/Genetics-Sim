@@ -15,8 +15,11 @@ using std::string;
 #include "Organism.h"
 
 /**
- * @brief The ColemanXMLParser class acts as a wrapper around Dr. Rick Coleman's
- * genetic xml format and _parser.
+ * @brief The ColemanXMLParser class wraps behavior of GeneticsSimDataParser
+ *
+ * This class acts as a wrapper around Dr. Coleman's GeneticsSimDataParser class.
+ * It takes a filename which should contain organism data and then stores that
+ * data in a supplied container.
  */
 class ColemanXMLParser
 {
@@ -24,8 +27,7 @@ public:
 	explicit ColemanXMLParser(const string &filename);
 
 	/**
-	 * @brief Uses Coleman's _parser to read genotype information from his xml
-	 * format
+	 * @brief Reads organism data from a file into a vector of organisms
 	 *
 	 * @param organisms The vector to store the organisms in
 	 * @param expectedCount The expected organism count in the data file
