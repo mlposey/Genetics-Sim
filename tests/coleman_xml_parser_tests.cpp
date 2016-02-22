@@ -41,6 +41,10 @@ public:
 		SETFILE("test_files/GeneticsSim2.xml", true, false);
 		SETFILE("test_files/GeneticsSim3.xml", true, true);
 		SETFILE("test_files/GeneticsSim4.xml", true, true);
+		SETFILE("test_files/GeneticsSim5.xml", true, true);
+		SETFILE("test_files/GeneticsSim6.xml", true, true);
+		SETFILE("test_files/GeneticsSim7.xml", true, true);
+		SETFILE("test_files/GeneticsSim8.xml", true, true);
 	    SETFILE("NonexistantFile.xml", false, false);
 	    SETFILE("", false, false);
 	    SETFILE(".xml", false, false);
