@@ -19,10 +19,13 @@ class ColemanXMLParserTests : public testing::Test {
 public:
 	// Stores metadata about a file to test
 	struct TestFile {
+		TestFile(const char *n, bool e, bool m)
+			: name(n), exists(e), isMalformed(m){}
 		const char *name;
 		bool exists;
 		bool isMalformed;
 	};
+
     // All the files to test
     std::vector<TestFile> testFiles;
 
@@ -34,8 +37,8 @@ public:
 
     ColemanXMLParserTests() {
 		// TODO: Read these from a file
-		SETFILE("test_files/GeneticsSim1.xml", false, true);
-		SETFILE("test_files/GeneticsSim2.xml", false, true);
+		SETFILE("test_files/GeneticsSim1.xml", true, false);
+		SETFILE("test_files/GeneticsSim2.xml", true, false);
 		SETFILE("test_files/GeneticsSim3.xml", true, true);
 		SETFILE("test_files/GeneticsSim4.xml", true, true);
 	    SETFILE("NonexistantFile.xml", false, false);
