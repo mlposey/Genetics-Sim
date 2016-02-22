@@ -17,21 +17,27 @@
 
 class ColemanXMLParserTests : public testing::Test {
 public:
+	// Stores metadata about a file to test
+	struct TestFile {
+		const char *name;
+		bool exists;
+		bool isMalformed;
+	};
     // All the files to test
-    std::vector<std::pair<const char*/*filename*/,
-		                 std::pair<bool/*malformed*/, bool/*exists*/>
-						 >
-	           > fileNames;
+    std::vector<TestFile> testFiles;
+
 
 // Sets up a file for testing with ColemanXMLParser
-#define SETFILE(FILE_NAME, MALFORMED, EXISTS) \
-	fileNames.emplace_back(FILE_NAME, std::make_pair<bool, bool>(MALFORMED, EXISTS))
+#define SETFILE(FILE_NAME, EXISTS, MALFORMED) \
+	testFiles.emplace_back(FILE_NAME, EXISTS, MALFORMED);
+
 
     ColemanXMLParserTests() {
 		// TODO: Read these from a file
 		SETFILE("test_files/GeneticsSim1.xml", false, true);
 		SETFILE("test_files/GeneticsSim2.xml", false, true);
 		SETFILE("test_files/GeneticsSim3.xml", true, true);
+		SETFILE("test_files/GeneticsSim4.xml", true, true);
 	    SETFILE("NonexistantFile.xml", false, false);
 	    SETFILE("", false, false);
 	    SETFILE(".xml", false, false);
@@ -46,22 +52,22 @@ public:
  * Deviation from the above should result in a failed test.
  */
 TEST_F(ColemanXMLParserTests, constructor) {
-    // Try to open each file in fileNames
-    for (auto &fileName : fileNames) {
+    // Try to open each file in testFiles
+    for (auto &file : testFiles) {
         bool isExceptionThrown = false;
         try {
-            ColemanXMLParser parser(fileName.first);
+            ColemanXMLParser parser(file.name);
         } catch (std::ifstream::failure &e) {
             isExceptionThrown = true;
         }
 
         if (!isExceptionThrown) {
             // The file should have existed
-            ASSERT_TRUE(fileName.second.second);
+            ASSERT_TRUE(file.exists);
         }
         else {
             // The file should not have existed
-            ASSERT_TRUE(!fileName.second.second);
+            ASSERT_TRUE(!file.exists);
         }
     }
 }
@@ -75,11 +81,12 @@ TEST_F(ColemanXMLParserTests, constructor) {
  * Deviation from the above should result in a failed test.
  */
 TEST_F(ColemanXMLParserTests, parseFile) {
-    for (auto &fileName : fileNames) {
+    for (auto &file : testFiles) {
         // The organisms found in the file
 		std::vector<Organism> parents;
+		bool caughtMalformedFile = false;
         try {
-            ColemanXMLParser parser(fileName.first);
+            ColemanXMLParser parser(file.name);
 
             parser.parseFile(parents);
 
@@ -96,10 +103,13 @@ TEST_F(ColemanXMLParserTests, parseFile) {
 
         } catch (std::ifstream::failure &e) {
             // Okay, the file didn't exist
-            ASSERT_TRUE(!fileName.second.second);
+            ASSERT_TRUE(!file.exists);
         } catch (MalformedFileException &e) {
-	        // Okay, the file had bad data
-			ASSERT_TRUE(fileName.second.first);
+			// Make sure it was actually a bad file
+			ASSERT_TRUE(file.isMalformed);
+			caughtMalformedFile = true;
         }
+		// Make sure malformed files didn't avoid detection
+		ASSERT_EQ(caughtMalformedFile, file.isMalformed);
     }
 }
