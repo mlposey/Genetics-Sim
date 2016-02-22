@@ -37,5 +37,8 @@ public:
 	void parseFile(std::vector<Organism>& organisms);
 
 private:
+	/// @return True if genotype is missing alleles
+	bool isGenotypeMissingAlleles(char genotype[32]);
+
 	GeneticsSimDataParser _parser;
 };
