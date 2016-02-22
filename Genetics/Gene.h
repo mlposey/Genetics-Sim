@@ -45,10 +45,26 @@ public:
 
 	std::string getDescription() const { return _description; }
 
-	/// @return The phenotype of the gene
+	/**
+	 * @brief Gets the phenotype of the Gene
+	 *
+	 * The phenotype represents the visible Allele trait.
+	 * This should belong to the Allele that is dominant or default
+	 * to one of the recessives which should share the trait.
+	 * @return The phenotype of the Gene as a string
+	 */
 	std::string getPhenotype() const;
 
-	/// @return The zygosity of the gene (i.e. heterozygous, etc)
+	/**
+	 * @brief Gets the zygosity of the Gene
+	 *
+	 * The zygosity of the gene represents the commonality of its Alleles.
+	 * It can be one of three values:
+	 *     1.) heterozygous dominant
+	 *     2.) homozygous recessive
+	 *     3.) homozgyous dominant
+	 * @return The zygosity of the Gene as a string
+	 */
 	std::string getZygosity() const;
 
 	/// @return The allele pair of the gene as a string
@@ -58,7 +74,7 @@ public:
 	std::string toString() const;
 
 private:
-	std::vector<Allele> _alleles;
-	std::string _allelesString;  // A concatenation of the two allele chars
-	std::string _description;
+	std::vector<Allele> _alleles; // The two alleles that make up the gene
+	std::string _allelesString;   // A concatenation of the two allele chars
+	std::string _description;     // A description of what the gene codes for
 };
