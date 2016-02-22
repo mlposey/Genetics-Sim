@@ -30,12 +30,12 @@ public:
 	LoveChamber(Organism o1, Organism o2);
 
 	/**
-	 * @brief Creates an offspring using two parent Organisms
+	 * @brief Creates a number of offspring using two parent Organisms
 	 *
-	 * Uses the genotype of both organisms to create a random, new
+	 * Uses the genotype of both organisms to repeatedly create a random, new
 	 * genotype that will belong to some offspring that is then sent to
 	 * all Observers
-	 * @param count the number of times the organisms should mate
+	 * @param count the number of offspring that should be created
 	 */
 	void mate(int count);
 
@@ -43,6 +43,6 @@ private:
 	/// Prints the genetic makeup of each organism
 	void printParentData() const;
 
-	Organism _o1;
-	Organism _o2;
+	Organism _o1;  // A parent organism
+	Organism _o2;  // A parent organism
 };
