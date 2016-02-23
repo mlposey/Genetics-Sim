@@ -40,6 +40,9 @@ void Simulation::init() {
 			cout << "Enter the name of the simulation data file and press Enter: ";
 			std::getline(std::cin, input);
 
+			cout << "\nRunning Simulation...\n\n";
+			cout << "---------------------------------------------------\n";
+
 			ColemanXMLParser parser(input);
 
 			std::vector<Organism> parents;
