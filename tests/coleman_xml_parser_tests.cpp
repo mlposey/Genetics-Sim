@@ -120,3 +120,5 @@ TEST_F(ColemanXMLParserTests, parseFile) {
 		ASSERT_EQ(caughtMalformedFile, file.isMalformed);
     }
 }
+
+// TODO: Write test for checking master gene output
