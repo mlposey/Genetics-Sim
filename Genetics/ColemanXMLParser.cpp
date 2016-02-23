@@ -10,6 +10,7 @@
 #include <unordered_map>
 #include <utility>
 #include <cstring>
+#include <algorithm>
 
 #include "Allele.h"
 #include "CustomExceptions.h"
@@ -42,13 +43,20 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 	// The pair holds the allele and gene trait description
 	std::unordered_map<char, std::pair<string, string>> possibleAlleles;
 
+
+	std::cout << "\nMaster Genes: \n";
+
+	// TODO: This creates some redundant data. It could get out of hand
 	// Survey the file to find all possible alleles that a parent may have
+	// and print the results
 	while (_parser.getGeneData(trait, domDesc, &domSymbol, recDesc, &recSymbol)) {
+		std::cout << "\tTrait Name: " << trait << '\n';
+		std::cout << "\t\tDominant Name: " << domDesc << "(" << domSymbol << ")\n";
+		std::cout << "\t\tRecessive Name: " << recDesc << "(" << recSymbol << ")\n";
 		possibleAlleles[domSymbol] = std::make_pair<string, string>(domDesc, trait);
 		possibleAlleles[recSymbol] = std::make_pair<string, string>(recDesc, trait);
 	}
-
-
+	std::cout << '\n';
 
 	char genotype[2][32];
 	_parser.getParentGenotype(genotype[0]);
