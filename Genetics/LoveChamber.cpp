@@ -45,14 +45,14 @@ void LoveChamber::mate(int count) {
 
 void LoveChamber::printParentData() const
 {
-	cout << "\n-----------------------Parent Data-----------------\n";
+	cout << "\n--------------------Parent Data--------------------\n";
 
-	cout << "Sim parent 1\n";
+	cout << "Sim Parent 1:\n";
 	_o1.printDescription();
 
 	cout << "\n\n";
 
-	cout << "Sim parent 2\n";
+	cout << "Sim Parent 2:\n";
 	_o2.printDescription();
 
 	cout << "---------------------------------------------------\n\n";
