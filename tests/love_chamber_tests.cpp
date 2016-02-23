@@ -34,9 +34,9 @@ TEST_F(LoveChamberTests, constructor) {
     // Even in the event that the organisms themselves cannot properly print
     // data, we still expect the LoveChamber to output this basic information.
     std::vector<const char*> expected;
-    expected.push_back("\n-----------------------Parent Data-----------------\n");
-    expected.push_back("Sim parent 1\n");
-    expected.push_back("Sim parent 2\n");
+    expected.push_back("\n--------------------Parent Data--------------------\n");
+    expected.push_back("Sim Parent 1:\n");
+    expected.push_back("Sim Parent 2:\n");
     expected.push_back("---------------------------------------------------\n\n");
 
     ASSERT_TRUE(compareOutput([&](){ LoveChamber(o1, o2); }, expected));
