@@ -49,7 +49,7 @@ void StatCounter::printStats() {
 		}
 	}
 	cout << "\n\n\n";
-	cout << "All occuring genotypes and their counts:\n";
+	cout << "All occurring genotypes and their counts:\n";
 
 	// Print the occurring genotypes and how many offspring had each
 	for (auto &p : _genotypeCounts) {
