@@ -7,7 +7,6 @@
 *   This program is entirely my own work.
 *******************************************************************/
 #include <gtest/gtest.h>
-#include <utility>
 
 #include <vector>
 #include <fstream>
