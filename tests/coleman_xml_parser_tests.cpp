@@ -78,6 +78,8 @@ TEST_F(ColemanXMLParserTests, constructor) {
     }
 }
 
+// TODO: ColemanXMLParser::parseFile was split into smaller bits.
+//       Give each their own test.
 /**
  * This test expects the following behavior:
  * 1.) ::parseFile takes information for two organisms
