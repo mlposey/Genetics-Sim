@@ -7,8 +7,6 @@
 *   This program is entirely my own work.
 *******************************************************************/
 #include "ColemanXMLParser.h"
-#include <unordered_map>
-#include <utility>
 #include <cstring>
 #include <algorithm>
 
@@ -30,34 +28,8 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 	// TODO: Determine if both parents will always be the same
 	organisms.push_back(organisms[0]);
 
-
-	char domSymbol;  // dominant allele symbol
-	char recSymbol;  // recessive allele symbol
-
-	const int WIDTH = 128; // max length of a trait or description
-	char trait[WIDTH];     // name of the the trait
-	char domDesc[WIDTH];   // description of the dominant allele
-	char recDesc[WIDTH];   // description of the recessive allele
-
-	// All possible alleles that a parent may have
-	// The key is the symbol of the allele
-	// The pair holds the allele and gene trait description
-	std::unordered_map<char, std::pair<string, string>> possibleAlleles;
-
-
-	std::cout << "\nMaster Genes: \n";
-
-	// TODO: This creates some redundant data. It could get out of hand
-	// Survey the file to find all possible alleles that a parent may have
-	// and print the results
-	while (_parser.getGeneData(trait, domDesc, &domSymbol, recDesc, &recSymbol)) {
-		std::cout << "\tTrait Name: " << trait << '\n';
-		std::cout << "\t\tDominant Name: " << domDesc << "(" << domSymbol << ")\n";
-		std::cout << "\t\tRecessive Name: " << recDesc << "(" << recSymbol << ")\n";
-		possibleAlleles[domSymbol] = std::make_pair<string, string>(domDesc, trait);
-		possibleAlleles[recSymbol] = std::make_pair<string, string>(recDesc, trait);
-	}
-	std::cout << '\n';
+	// Keep a record of all Alleles the organisms can contain
+	storeAlleles();
 
 	char genotype[2][32];
 	_parser.getParentGenotype(genotype[0]);
@@ -66,7 +38,8 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 	// Make sure there's nothing fishy about the genotypes of each parent
 	verifyConformity(genotype[0], genotype[1]);
 
-	std::vector<Allele> alleles;
+	// Keep alleles here until a pair can be formed
+	std::vector<Allele> tmp;
 
 	// Load the genotype of each parent into the appropriate parent organisms
 	for (int i = 0; i < 2; ++i) {
@@ -75,13 +48,13 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 		// genes to be added to the organism's genotype
 		for (int j = 0; j < genLength + 1; ++j) {
 			char c = genotype[i][j];
-			if (alleles.size() == 2) {
-				organisms[i].addGene(Gene(alleles[0], alleles[1],
-					                 possibleAlleles[alleles[0].getSymbol()].second));
-				alleles.clear();
+			if (tmp.size() == 2) {
+				organisms[i].addGene(Gene(tmp[0], tmp[1],
+					                 _alleles[tmp[0].getSymbol()].second));
+				tmp.clear();
 				continue;
 			}
-			alleles.emplace_back(c, possibleAlleles[c].first);
+			tmp.emplace_back(c, _alleles[c].first);
 		}
 	}
 }
@@ -113,6 +86,30 @@ void ColemanXMLParser::verifyConformity(char *genotypeA, char *genotypeB) {
 	if (length[0] != length[1]) {
 		throw MalformedFileException("Mismatched genotype counts in supplied file.");
 	}
+}
+
+void ColemanXMLParser::storeAlleles() {
+	char domSymbol;  // dominant allele symbol
+	char recSymbol;  // recessive allele symbol
+
+	const int WIDTH = 128; // max length of a trait or description
+	char trait[WIDTH];     // name of the the trait
+	char domDesc[WIDTH];   // description of the dominant allele
+	char recDesc[WIDTH];   // description of the recessive allele
+
+	std::cout << "\nMaster Genes: \n";
+
+	// TODO: This creates some redundant data. It could get out of hand
+	// Survey the file to find all possible alleles that a parent may have
+	// and print the results
+	while (_parser.getGeneData(trait, domDesc, &domSymbol, recDesc, &recSymbol)) {
+		std::cout << "\tTrait Name: " << trait << '\n';
+		std::cout << "\t\tDominant Name: " << domDesc << "(" << domSymbol << ")\n";
+		std::cout << "\t\tRecessive Name: " << recDesc << "(" << recSymbol << ")\n";
+		_alleles[domSymbol] = std::make_pair<string, string>(domDesc, trait);
+		_alleles[recSymbol] = std::make_pair<string, string>(recDesc, trait);
+	}
+	std::cout << '\n';
 }
 
 bool ColemanXMLParser::isGenotypeMissingAlleles(int size, char *genotype) {

@@ -8,11 +8,20 @@
 *******************************************************************/
 #pragma once
 #include <string>
+#include <unordered_map>
+#include <utility>
 
 using std::string;
 
 #include "GeneticsSimDataParser.h"
 #include "Organism.h"
+
+// TODO: Maybe change the name of this to ColemanXMLInterpreter
+//       see comment for _parser
+
+// TODO: This class contains some functionality that could be common to all
+//       file readers. Put that code in a base class and let this be a
+//       generalization.
 
 /**
  * @brief The ColemanXMLParser class wraps behavior of GeneticsSimDataParser
@@ -50,8 +59,20 @@ private:
 	 */
 	void verifyConformity(char *genotypeA, char *genotypeB);
 
+	/**
+	 * @brief Stores information about each Allele found in the file
+	 * @see Allele
+	 */
+	void storeAlleles();
+
 	/// @return True if genotype is missing alleles
 	bool isGenotypeMissingAlleles(int size, char *genotype);
 
+	// This retrieves the data from the file. We just interpret it
 	GeneticsSimDataParser _parser;
+
+	// This contains information about every Allele found in the file
+	// The key is the symbol of the Allele
+	// The pair holds the Allele and Gene trait description
+	std::unordered_map<char, std::pair<string, string>> _alleles;
 };
