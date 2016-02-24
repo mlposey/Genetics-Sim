@@ -7,7 +7,7 @@
 *   This program is entirely my own work.
 *******************************************************************/
 #pragma once
-#include <exception>
+#include <stdexcept>
 
 /**
  * @brief The MalformedFileException class is an exception for malformed files
@@ -16,24 +16,24 @@
  * information in a manner that is deemed the standard.
  * @see std::exception
  */
-class MalformedFileException : public std::exception {
+class MalformedFileException : public std::runtime_error {
 public:
 	MalformedFileException(const char *msg)
-		: std::exception(msg)
+		: std::runtime_error(msg)
 	{}
 };
 
 /**
  * @brief The EmptyContainerException class is an exception for empty containers
- * 
+ *
  * Ideally, this should be used when one attempts to access elements in a container
  * which is either empty or not currently delivering data to outside objects.
  * @see std::exception
  */
-class EmptyContainerException : public std::exception
+class EmptyContainerException : public std::runtime_error
 {
 public:
 	EmptyContainerException(const char *msg)
-		: std::exception(msg)
+		: std::runtime_error(msg)
 	{}
 };
