@@ -37,6 +37,19 @@ public:
 	void parseFile(std::vector<Organism>& organisms);
 
 private:
+	/**
+	 * @brief Verifies that the data conforms to format rules and standards
+	 *
+	 * The function checks for consistency errors in the file, such as mismatched
+	 * genotype lengths. It also ensures that rules are being followed. For
+	 * instance, it is illegal to have an Organism that is missing a genotype.
+	 *
+	 * @param genotypeA One parent genotype to check
+	 * @param genotypeB One parent genotype to check
+	 * @throws MalformedFileException
+	 */
+	void verifyConformity(char *genotypeA, char *genotypeB);
+
 	/// @return True if genotype is missing alleles
 	bool isGenotypeMissingAlleles(int size, char *genotype);
 

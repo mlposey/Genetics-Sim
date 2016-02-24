@@ -63,35 +63,8 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 	_parser.getParentGenotype(genotype[0]);
 	_parser.getParentGenotype(genotype[1]);
 
-
-	// If genotype[0] or genotype[1] equal "</GENOTYPE>", then either are missing
-	// a genotype definition in the sim file
-
-	if (strcmp(genotype[0], "</GENOTYPE>") == 0) {
-		throw MalformedFileException("First parent in file is missing a genotype.");
-	}
-
-	if (strcmp(genotype[1], "</GENOTYPE>") == 0) {
-		throw MalformedFileException("Second parent in file is missing a genotype.");
-	}
-
-	// The length of each genotype
-	unsigned long length[] = {strlen(genotype[0]), strlen(genotype[1])};
-
-
-	if (isGenotypeMissingAlleles(length[0], genotype[0])) {
-		throw MalformedFileException("First parent in file is missing an allele.");
-	}
-
-	if (isGenotypeMissingAlleles(length[1], genotype[1])) {
-		throw MalformedFileException("Second parent in file is missing an allele.");
-	}
-
-	if (length[0] != length[1]) {
-		throw MalformedFileException("Mismatched genotype counts in supplied file.");
-	}
-
-
+	// Make sure there's nothing fishy about the genotypes of each parent
+	verifyConformity(genotype[0], genotype[1]);
 
 	std::vector<Allele> alleles;
 
@@ -111,9 +84,35 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 			alleles.emplace_back(c, possibleAlleles[c].first);
 		}
 	}
+}
+
+void ColemanXMLParser::verifyConformity(char *genotypeA, char *genotypeB) {
+	// If genotype[0] or genotype[1] equal "</GENOTYPE>", then either are missing
+	// a genotype definition in the sim file
+
+	if (strcmp(genotypeA, "</GENOTYPE>") == 0) {
+		throw MalformedFileException("First parent in file is missing a genotype.");
+	}
+
+	if (strcmp(genotypeB, "</GENOTYPE>") == 0) {
+		throw MalformedFileException("Second parent in file is missing a genotype.");
+	}
+
+	// The length of each genotype
+	unsigned long length[] = {strlen(genotypeA), strlen(genotypeB)};
 
 
+	if (isGenotypeMissingAlleles(length[0], genotypeA)) {
+		throw MalformedFileException("First parent in file is missing an allele.");
+	}
 
+	if (isGenotypeMissingAlleles(length[1], genotypeB)) {
+		throw MalformedFileException("Second parent in file is missing an allele.");
+	}
+
+	if (length[0] != length[1]) {
+		throw MalformedFileException("Mismatched genotype counts in supplied file.");
+	}
 }
 
 bool ColemanXMLParser::isGenotypeMissingAlleles(int size, char *genotype) {
