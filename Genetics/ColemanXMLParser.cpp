@@ -20,6 +20,7 @@ ColemanXMLParser::ColemanXMLParser(const string &filename)
 {
 }
 
+// TODO: Split this up
 void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 	organisms.emplace_back(_parser.getGenus(),
 	                       _parser.getSpecies(),
@@ -75,8 +76,8 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 	}
 
 	// The length of each genotype
-	int length[] = {strlen(genotype[0]), strlen(genotype[1])};
-	
+	unsigned long length[] = {strlen(genotype[0]), strlen(genotype[1])};
+
 
 	if (isGenotypeMissingAlleles(length[0], genotype[0])) {
 		throw MalformedFileException("First parent in file is missing an allele.");
@@ -90,7 +91,7 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 		throw MalformedFileException("Mismatched genotype counts in supplied file.");
 	}
 
-	
+
 
 	std::vector<Allele> alleles;
 
