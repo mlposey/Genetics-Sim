@@ -66,7 +66,7 @@ private:
 	void storeAlleles();
 
 	/// @return True if genotype is missing alleles
-	bool isGenotypeMissingAlleles(int size, char *genotype);
+	static bool isGenotypeMissingAlleles(int size, char *genotype);
 
 	// This retrieves the data from the file. We just interpret it
 	GeneticsSimDataParser _parser;
