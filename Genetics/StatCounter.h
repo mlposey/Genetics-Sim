@@ -7,9 +7,9 @@
 *   This program is entirely my own work.
 *******************************************************************/
 #pragma once
-#include <string>
 #include <unordered_map>
 
+#include <string>
 using std::string;
 
 #include "IObserver.h"
