@@ -32,9 +32,12 @@ public:
 private:
 	void init();
 
+	// Handles breeding between the two parent organisms retrieved from the file
 	std::unique_ptr<LoveChamber> _loveChamber;
 
+	// Stores counts of unique genes and genotypes that are created
 	StatCounter _statCounter;
 
+	// How many offspring to create
 	int _offspringCount;
 };
