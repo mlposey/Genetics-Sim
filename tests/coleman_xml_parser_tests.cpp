@@ -9,7 +9,6 @@
 #include <gtest/gtest.h>
 
 #include <vector>
-#include <fstream>
 
 #include "../Genetics/GeneticsSimDataParser.cpp"
 #include "../Genetics/ColemanXMLParser.cpp"
