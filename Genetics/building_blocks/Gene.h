@@ -9,6 +9,8 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <memory>
+using std::shared_ptr;
 
 #include "Allele.h"
 
@@ -29,19 +31,19 @@ public:
 	 * @param a2 One allele to be part of the gene
 	 * @param desc The description of the gene trait
 	 */
-	Gene(const Allele &a1, const Allele &a2, const std::string &desc);
+	Gene(shared_ptr<Allele> a1, shared_ptr<Allele> a2, const std::string &desc);
 
 	/**
 	 * @brief Picks a random Allele from the pair and returns it
 	 * @return An Allele from the pair
 	 */
-	Allele getRandomAllele() const;
+	shared_ptr<Allele> getRandomAllele() const;
 
 	/// @return The first of two alleles
-	Allele first() const { return _alleles[0]; }
+	shared_ptr<Allele> first() const { return _alleles[0]; }
 
 	/// @return The second of two alleles
-	Allele second() const { return _alleles[1]; }
+	shared_ptr<Allele> second() const { return _alleles[1]; }
 
 	std::string getDescription() const { return _description; }
 
@@ -74,7 +76,7 @@ public:
 	std::string toString() const;
 
 private:
-	std::vector<Allele> _alleles; // The two alleles that make up the gene
+	std::vector<shared_ptr<Allele>> _alleles; // The two alleles that make up the gene
 	std::string _allelesString;   // A concatenation of the two allele chars
 	std::string _description;     // A description of what the gene codes for
 

@@ -12,6 +12,8 @@
 
 #include "../building_blocks/Allele.h"
 #include "../utils/CustomExceptions.h"
+#include "../building_blocks/GeneFactory.h"
+#include "../building_blocks/AlleleFactory.h"
 
 ColemanXMLParser::ColemanXMLParser(const string &filename)
 	: _parser(const_cast<char*>(filename.c_str()))
@@ -98,6 +100,8 @@ void ColemanXMLParser::storeAlleles() {
 	char recDesc[WIDTH];   // description of the recessive allele
 
 	std::cout << "\nMaster Genes: \n";
+
+	AlleleFactory *alleleFactory = AlleleFactory::getInstance();
 
 	// TODO: This creates some redundant data. It could get out of hand
 	// Survey the file to find all possible alleles that a parent may have
