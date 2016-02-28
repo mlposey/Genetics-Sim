@@ -41,7 +41,9 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 	verifyConformity(genotype[0], genotype[1]);
 
 	// Keep alleles here until a pair can be formed
-	std::vector<Allele> tmp;
+	std::vector<shared_ptr<Allele>> tmp;
+
+	AlleleFactory *alleleFactory = AlleleFactory::getInstance();
 
 	// Load the genotype of each parent into the appropriate parent organisms
 	for (int i = 0; i < 2; ++i) {
@@ -52,11 +54,11 @@ void ColemanXMLParser::parseFile(std::vector<Organism> &organisms) {
 			char c = genotype[i][j];
 			if (tmp.size() == 2) {
 				organisms[i].addGene(Gene(tmp[0], tmp[1],
-					                 _alleles[tmp[0].getSymbol()].second));
+					                 _alleles[tmp[0]->getSymbol()].second));
 				tmp.clear();
 				continue;
 			}
-			tmp.emplace_back(c, _alleles[c].first);
+			tmp.emplace_back(alleleFactory->getAllele(c, _alleles[c].first));
 		}
 	}
 }
@@ -101,7 +103,7 @@ void ColemanXMLParser::storeAlleles() {
 
 	std::cout << "\nMaster Genes: \n";
 
-	AlleleFactory *alleleFactory = AlleleFactory::getInstance();
+	AlleleFactory *factory = AlleleFactory::getInstance();
 
 	// TODO: This creates some redundant data. It could get out of hand
 	// Survey the file to find all possible alleles that a parent may have
@@ -110,8 +112,8 @@ void ColemanXMLParser::storeAlleles() {
 		std::cout << "\tTrait Name: " << trait << '\n';
 		std::cout << "\t\tDominant Name: " << domDesc << "(" << domSymbol << ")\n";
 		std::cout << "\t\tRecessive Name: " << recDesc << "(" << recSymbol << ")\n";
-		_alleles[domSymbol] = std::make_pair<string, string>(domDesc, trait);
-		_alleles[recSymbol] = std::make_pair<string, string>(recDesc, trait);
+		factory->getAllele(domSymbol, domDesc);
+		factory->getAllele(recSymbol, recDesc);
 	}
 	std::cout << '\n';
 }
