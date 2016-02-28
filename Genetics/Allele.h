@@ -35,9 +35,15 @@ public:
 	char getSymbol() const { return _symbol; }
 
 	/// @return The description of the allele (e.g. "tall" or "short")
-	std::string getDescription() const { return _description; }
+	std::string getDescription() const { return _phenotype; }
 
 private:
+	/*
+	  The symbol of the Allele. Capital letters represent a dominant Allele
+	  while lower case letters represent a recessive one.
+	*/
 	char _symbol;
-	std::string _description;
+
+	// The physical trait the Alelle represents
+	std::string _phenotype;
 };

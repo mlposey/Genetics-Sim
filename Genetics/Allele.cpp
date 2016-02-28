@@ -10,5 +10,5 @@
 
 Allele::Allele(char symbol, const std::string& description)
 	: _symbol(symbol)
-	, _description(description) {
+	, _phenotype(description) {
 }
