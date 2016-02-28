@@ -1,5 +1,5 @@
 /*******************************************************************
-*   Organism.h
+*   building_blocks/Organism.h
 *   CS 307 Programming Assignment 1
 *   Author: Marcus Posey
 *   Date Submitted: 02/23/2016
@@ -9,7 +9,7 @@
 #pragma once
 #include <vector>
 
-#include "Gene.h"
+#include "building_blocks/Gene.h"
 
 using std::string;
 

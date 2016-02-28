@@ -6,7 +6,7 @@
 *
 *   This program is entirely my own work.
 *******************************************************************/
-#include "Simulation.h"
+#include "core/Simulation.h"
 
 int main() {
 	Simulation().run();

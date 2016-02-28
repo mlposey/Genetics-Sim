@@ -1,5 +1,5 @@
 /*******************************************************************
-*   Gene.h
+*   building_blocks/Gene.h
 *   CS 307 Programming Assignment 1
 *   Author: Marcus Posey
 *   Date Submitted: 02/23/2016
@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 
-#include "Allele.h"
+#include "building_blocks/Allele.h"
 
 /**
  * @brief The Gene class handles pairs of Allele.

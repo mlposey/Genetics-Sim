@@ -8,7 +8,7 @@
 *******************************************************************/
 #include <gtest/gtest.h>
 
-#include "../Genetics/Observable.h"
+#include "../Genetics/sync/Observable.h"
 
 // IObserver is an ADT.
 // We need to define a mock class for testing Observable

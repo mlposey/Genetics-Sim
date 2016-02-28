@@ -18,63 +18,63 @@
     <ClCompile Include="genetics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ColemanXMLParser.cpp">
+    <ClCompile Include="io\ColemanXMLParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneticsSimDataParser.cpp">
+    <ClCompile Include="io\GeneticsSimDataParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Organism.cpp">
+    <ClCompile Include="core\LoveChamber.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Gene.cpp">
+    <ClCompile Include="core\Simulation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Allele.cpp">
+    <ClCompile Include="core\StatCounter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StatCounter.cpp">
+    <ClCompile Include="building_blocks\Allele.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LoveChamber.cpp">
+    <ClCompile Include="building_blocks\Gene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Simulation.cpp">
+    <ClCompile Include="building_blocks\Organism.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ColemanXMLParser.h">
+    <ClInclude Include="io\ColemanXMLParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneticsSimDataParser.h">
+    <ClInclude Include="io\GeneticsSimDataParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Organism.h">
+    <ClInclude Include="core\LoveChamber.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Gene.h">
+    <ClInclude Include="core\Simulation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Allele.h">
+    <ClInclude Include="core\StatCounter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IObserver.h">
+    <ClInclude Include="building_blocks\Allele.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IObservable.h">
+    <ClInclude Include="building_blocks\Gene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StatCounter.h">
+    <ClInclude Include="building_blocks\Organism.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LoveChamber.h">
+    <ClInclude Include="sync\IObserver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Simulation.h">
+    <ClInclude Include="sync\Observable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CustomExceptions.h">
+    <ClInclude Include="utils\CustomExceptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

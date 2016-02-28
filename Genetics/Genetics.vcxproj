@@ -66,28 +66,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Allele.cpp" />
-    <ClCompile Include="ColemanXMLParser.cpp" />
-    <ClCompile Include="Gene.cpp" />
+    <ClCompile Include="building_blocks\Allele.cpp" />
+    <ClCompile Include="building_blocks\Gene.cpp" />
+    <ClCompile Include="building_blocks\Organism.cpp" />
+    <ClCompile Include="core\LoveChamber.cpp" />
+    <ClCompile Include="core\Simulation.cpp" />
+    <ClCompile Include="core\StatCounter.cpp" />
     <ClCompile Include="genetics.cpp" />
-    <ClCompile Include="GeneticsSimDataParser.cpp" />
-    <ClCompile Include="LoveChamber.cpp" />
-    <ClCompile Include="Organism.cpp" />
-    <ClCompile Include="Simulation.cpp" />
-    <ClCompile Include="StatCounter.cpp" />
+    <ClCompile Include="io\ColemanXMLParser.cpp" />
+    <ClCompile Include="io\GeneticsSimDataParser.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Allele.h" />
-    <ClInclude Include="ColemanXMLParser.h" />
-    <ClInclude Include="CustomExceptions.h" />
-    <ClInclude Include="Gene.h" />
-    <ClInclude Include="GeneticsSimDataParser.h" />
-    <ClInclude Include="IObservable.h" />
-    <ClInclude Include="IObserver.h" />
-    <ClInclude Include="LoveChamber.h" />
-    <ClInclude Include="Organism.h" />
-    <ClInclude Include="Simulation.h" />
-    <ClInclude Include="StatCounter.h" />
+    <ClInclude Include="building_blocks\Allele.h" />
+    <ClInclude Include="building_blocks\Gene.h" />
+    <ClInclude Include="building_blocks\Organism.h" />
+    <ClInclude Include="core\LoveChamber.h" />
+    <ClInclude Include="core\Simulation.h" />
+    <ClInclude Include="core\StatCounter.h" />
+    <ClInclude Include="io\ColemanXMLParser.h" />
+    <ClInclude Include="io\GeneticsSimDataParser.h" />
+    <ClInclude Include="sync\IObserver.h" />
+    <ClInclude Include="sync\Observable.h" />
+    <ClInclude Include="utils\CustomExceptions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
