@@ -1,0 +1,40 @@
+\hypertarget{class_stat_counter}{}\section{Stat\+Counter Class Reference}
+\label{class_stat_counter}\index{Stat\+Counter@{Stat\+Counter}}
+
+
+The \hyperlink{class_stat_counter}{Stat\+Counter} class records statistical data of Organisms.  
+
+
+
+
+{\ttfamily \#include $<$Stat\+Counter.\+h$>$}
+
+Inheritance diagram for Stat\+Counter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_stat_counter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_stat_counter_a81f82e98e35f1571565f2e1bc54de471}{}void \hyperlink{class_stat_counter_a81f82e98e35f1571565f2e1bc54de471}{notify} (const \hyperlink{class_organism}{Organism} \&arg) override\label{class_stat_counter_a81f82e98e35f1571565f2e1bc54de471}
+
+\begin{DoxyCompactList}\small\item\em Increments the stored counts of the genotypes and genes that arg possesses. \end{DoxyCompactList}\item 
+\hypertarget{class_stat_counter_ada1a2c28945b0bedd7840068e6cf770f}{}void \hyperlink{class_stat_counter_ada1a2c28945b0bedd7840068e6cf770f}{print\+Stats} ()\label{class_stat_counter_ada1a2c28945b0bedd7840068e6cf770f}
+
+\begin{DoxyCompactList}\small\item\em Displays the count data for genotypes and genes that have been processed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_stat_counter}{Stat\+Counter} class records statistical data of Organisms. 
+
+This class is meant to observe some other class that provides an implemenation of \hyperlink{class_observable}{Observable$<$\+Organism$>$}. All Organisms that are sent to \hyperlink{class_stat_counter}{Stat\+Counter} have counts of both genotypes and Genes recorded. \begin{DoxySeeAlso}{See also}
+\hyperlink{struct_i_observer}{I\+Observer}, \hyperlink{class_organism}{Organism} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Genetics/Stat\+Counter.\+h\item 
+Genetics/Stat\+Counter.\+cpp\end{DoxyCompactItemize}

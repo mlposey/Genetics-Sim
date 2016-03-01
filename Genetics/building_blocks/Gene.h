@@ -77,11 +77,4 @@ private:
 	std::vector<Allele> _alleles; // The two alleles that make up the gene
 	std::string _allelesString;   // A concatenation of the two allele chars
 	std::string _description;     // A description of what the gene codes for
-
-	/*
-	  The percent chance that the Gene will cross over
-	  Every Gene has a chance that it will cross over to the corresponding
-	  segment on the other Chromosome of a pair.
-	*/
-	double _crossChance;
 };

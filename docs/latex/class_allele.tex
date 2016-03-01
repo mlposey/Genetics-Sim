@@ -1,0 +1,91 @@
+\hypertarget{class_allele}{}\section{Allele Class Reference}
+\label{class_allele}\index{Allele@{Allele}}
+
+
+The \hyperlink{class_allele}{Allele} class models the alleles of a \hyperlink{class_gene}{Gene}.  
+
+
+
+
+{\ttfamily \#include $<$Allele.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_allele_a22adf689d715473f8a14fdc2ac80e167}{Allele} (char symbol, const std\+::string \&description)
+\begin{DoxyCompactList}\small\item\em Constructs an \hyperlink{class_allele}{Allele} object. \end{DoxyCompactList}\item 
+bool \hyperlink{class_allele_a6096e43a00dfc291544abd97b4a82c06}{is\+Dominant} () const 
+\item 
+char \hyperlink{class_allele_afc738a4cfcc3e69e07baf2e196570c0a}{get\+Symbol} () const 
+\item 
+std\+::string \hyperlink{class_allele_a332bec024b1be3eff4ba984320aed490}{get\+Description} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_allele}{Allele} class models the alleles of a \hyperlink{class_gene}{Gene}. 
+
+This immutable representation of an allele holds information regarding symbols (e.\+g. T or t), description of the allele (e.\+g. tall), and whether the allele is dominant or not. It is an essential part of the \hyperlink{class_gene}{Gene} class. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_gene}{Gene} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_allele_a22adf689d715473f8a14fdc2ac80e167}{}\index{Allele@{Allele}!Allele@{Allele}}
+\index{Allele@{Allele}!Allele@{Allele}}
+\subsubsection[{Allele}]{\setlength{\rightskip}{0pt plus 5cm}Allele\+::\+Allele (
+\begin{DoxyParamCaption}
+\item[{char}]{symbol, }
+\item[{const std\+::string \&}]{description}
+\end{DoxyParamCaption}
+)}\label{class_allele_a22adf689d715473f8a14fdc2ac80e167}
+
+
+Constructs an \hyperlink{class_allele}{Allele} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em symbol} & The symbol for the allele \\
+\hline
+{\em description} & What the allele represents \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_allele_a332bec024b1be3eff4ba984320aed490}{}\index{Allele@{Allele}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!Allele@{Allele}}
+\subsubsection[{get\+Description}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Allele\+::get\+Description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_allele_a332bec024b1be3eff4ba984320aed490}
+\begin{DoxyReturn}{Returns}
+The description of the allele (e.\+g. \char`\"{}tall\char`\"{} or \char`\"{}short\char`\"{}) 
+\end{DoxyReturn}
+\hypertarget{class_allele_afc738a4cfcc3e69e07baf2e196570c0a}{}\index{Allele@{Allele}!get\+Symbol@{get\+Symbol}}
+\index{get\+Symbol@{get\+Symbol}!Allele@{Allele}}
+\subsubsection[{get\+Symbol}]{\setlength{\rightskip}{0pt plus 5cm}char Allele\+::get\+Symbol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_allele_afc738a4cfcc3e69e07baf2e196570c0a}
+\begin{DoxyReturn}{Returns}
+The symbol of the allele (e.\+g. \textquotesingle{}T\textquotesingle{} or \textquotesingle{}t\textquotesingle{}) 
+\end{DoxyReturn}
+\hypertarget{class_allele_a6096e43a00dfc291544abd97b4a82c06}{}\index{Allele@{Allele}!is\+Dominant@{is\+Dominant}}
+\index{is\+Dominant@{is\+Dominant}!Allele@{Allele}}
+\subsubsection[{is\+Dominant}]{\setlength{\rightskip}{0pt plus 5cm}bool Allele\+::is\+Dominant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_allele_a6096e43a00dfc291544abd97b4a82c06}
+\begin{DoxyReturn}{Returns}
+True if the allele is dominant or false if it is recessive 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Genetics/Allele.\+h\item 
+Genetics/Allele.\+cpp\end{DoxyCompactItemize}
