@@ -9,7 +9,7 @@
 #include <gtest/gtest.h>
 #include <exception>
 
-#include "../Genetics/building_blocks/Organism.cpp"
+#include "../Genetics/building_blocks/Organism.h"
 
 class OrganismTests : public testing::Test {
 public:
