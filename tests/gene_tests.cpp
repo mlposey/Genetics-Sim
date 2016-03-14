@@ -9,7 +9,7 @@
 #include <gtest/gtest.h>
 #include <string>
 
-#include "../Genetics/building_blocks/Gene.h"
+#include "../Genetics/building_blocks/Gene.cpp"
 
 class GeneTests : public testing::Test {
 public:

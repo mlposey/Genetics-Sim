@@ -10,10 +10,8 @@
 
 #include <vector>
 
-#include "../Genetics/io/GeneticsSimDataParser.h"
-#include "../Genetics/io/ColemanXMLParser.h"
-
-#include "../Genetics/utils/CustomExceptions.h"
+#include "../Genetics/io/GeneticsSimDataParser.cpp"
+#include "../Genetics/io/ColemanXMLParser.cpp"
 
 class ColemanXMLParserTests : public testing::Test {
 public:

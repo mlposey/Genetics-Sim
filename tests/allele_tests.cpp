@@ -8,7 +8,7 @@
 *******************************************************************/
 #include <gtest/gtest.h>
 
-#include "../Genetics/building_blocks/Allele.h"
+#include "../Genetics/building_blocks/Allele.cpp"
 
 class AlleleTests : public testing::Test {};
 

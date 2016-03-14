@@ -11,7 +11,7 @@
 
 #include "utils.h"
 
-#include "../Genetics/core/LoveChamber.h"
+#include "../Genetics/core/LoveChamber.cpp"
 
 class LoveChamberTests : public testing::Test {
 public:
