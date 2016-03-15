@@ -12,6 +12,7 @@ public:
 
         bool operator!=(const const_iterator &rhs);
 
+        /// returns the symbol for a randomly chosen allele from the gene pair
         char operator*() const;
 
         const_iterator &operator++(int c);
