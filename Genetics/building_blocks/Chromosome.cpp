@@ -5,11 +5,11 @@ void Chromosome::addGene(const Gene &gene) {
 }
 
 Chromosome::const_iterator Chromosome::begin() const {
-    return Chromosome::const_iterator(_genes.begin());
+    return Chromosome::const_iterator(_genes.begin(), _genes.end());
 }
 
 Chromosome::const_iterator Chromosome::end() const {
-    return Chromosome::const_iterator(_genes.end());
+    return Chromosome::const_iterator(_genes.end(), _genes.end());
 }
 
 bool Chromosome::const_iterator::operator!=(const Chromosome::const_iterator &rhs) const {
@@ -17,6 +17,9 @@ bool Chromosome::const_iterator::operator!=(const Chromosome::const_iterator &rh
 }
 
 char Chromosome::const_iterator::operator*() const {
+	if (_it == _end) {
+		throw std::range_error("The iterator does not point to a valid object.");
+	}
     return _it->getRandomAllele().getSymbol();
 }
 
