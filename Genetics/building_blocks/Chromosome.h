@@ -10,14 +10,21 @@ public:
         const_iterator(std::vector<Gene>::const_iterator it)
                 : _it(it) { }
 
+		/**
+		 * @brief Compares two iterators for position equality
+		 * @return True if the iterators are at different positions in the
+		 *		   Chromosome.
+		 */
         bool operator!=(const const_iterator &rhs);
 
         /// returns the symbol for a randomly chosen allele from the gene pair
         char operator*() const;
 
+		/// Advances one Gene forward into the Chromosome
         const_iterator &operator++(int c);
 
     private:
+		// A const_iterator the underlying Gene vector
         std::vector<Gene>::const_iterator _it;
     };
 
@@ -27,10 +34,17 @@ public:
      */
     void addGene(const Gene &gene);
 
+	/// Acquires an iterator to the beginning of Chromosome strand
     const_iterator begin() const;
 
+	/**
+	 * @brief Acquires an iterator to the end of the Chromosome strand
+	 * This element is theoretically one past the end and should not be
+	 * queried for data.
+	 */
     const_iterator end() const;
 
 private:
+	// The genes that make up the Chromosome
     std::vector<Gene> _genes;
 };
