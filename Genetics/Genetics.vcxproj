@@ -67,6 +67,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="building_blocks\Allele.cpp" />
+    <ClCompile Include="building_blocks\Chromosome.cpp" />
     <ClCompile Include="building_blocks\Gene.cpp" />
     <ClCompile Include="building_blocks\Organism.cpp" />
     <ClCompile Include="core\LoveChamber.cpp" />
@@ -78,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="building_blocks\Allele.h" />
+    <ClInclude Include="building_blocks\Chromosome.h" />
     <ClInclude Include="building_blocks\Gene.h" />
     <ClInclude Include="building_blocks\Organism.h" />
     <ClInclude Include="core\LoveChamber.h" />
