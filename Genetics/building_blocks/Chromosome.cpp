@@ -12,7 +12,7 @@ Chromosome::const_iterator Chromosome::end() const {
     return Chromosome::const_iterator(_genes.end());
 }
 
-bool Chromosome::const_iterator::operator!=(const Chromosome::const_iterator &rhs) {
+bool Chromosome::const_iterator::operator!=(const Chromosome::const_iterator &rhs) const {
     return _it != rhs._it;
 }
 

@@ -15,7 +15,7 @@ public:
 		 * @return True if the iterators are at different positions in the
 		 *		   Chromosome.
 		 */
-        bool operator!=(const const_iterator &rhs);
+        bool operator!=(const const_iterator &rhs) const;
 
         /// returns the symbol for a randomly chosen allele from the gene pair
         char operator*() const;
