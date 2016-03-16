@@ -76,6 +76,7 @@
     <ClCompile Include="genetics.cpp" />
     <ClCompile Include="io\ColemanXMLParser.cpp" />
     <ClCompile Include="io\GeneticsSimDataParser.cpp" />
+    <ClCompile Include="building_blocks\MasterGene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="building_blocks\Allele.h" />
@@ -87,6 +88,7 @@
     <ClInclude Include="core\StatCounter.h" />
     <ClInclude Include="io\ColemanXMLParser.h" />
     <ClInclude Include="io\GeneticsSimDataParser.h" />
+    <ClInclude Include="building_blocks\MasterGene.h" />
     <ClInclude Include="sync\IObserver.h" />
     <ClInclude Include="sync\Observable.h" />
     <ClInclude Include="utils\CustomExceptions.h" />
