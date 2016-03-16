@@ -27,7 +27,7 @@ public:
         char operator*() const;
 
 		/// Advances one Gene forward into the Chromosome
-        const_iterator &operator++(int c);
+        const_iterator &operator++();
 
     private:
 		// A const_iterator the underlying Gene vector

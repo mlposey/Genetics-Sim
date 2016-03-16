@@ -23,7 +23,7 @@ char Chromosome::const_iterator::operator*() const {
     return _it->getRandomAllele().getSymbol();
 }
 
-Chromosome::const_iterator &Chromosome::const_iterator::operator++(int c) {
+Chromosome::const_iterator &Chromosome::const_iterator::operator++() {
     ++_it;
     return *this;
 }

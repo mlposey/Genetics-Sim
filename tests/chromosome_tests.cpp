@@ -30,7 +30,7 @@ TEST_F(ChromosomeTests, iteratorNotEqual_DifferentPosition) {
 	auto iterator2 = chromosome.begin();
 
 	// Advance the second one forward by one Gene
-	iterator2++;
+	++iterator2;
 
 	// They are now in different positions
 	ASSERT_TRUE(iterator1 != iterator2);
@@ -59,8 +59,8 @@ TEST_F(ChromosomeTests, iteratorNotEqual_SamePositions) {
 	ASSERT_FALSE(iterator3 != iterator4);
 
 	// The test fixture class put two genes in. Advance forward to the end
-	iterator1++;
-	iterator1++;
+	++iterator1;
+	++iterator1;
 
 	// iterator1 should now also be at the end
 	ASSERT_FALSE(iterator1 != iterator3);
@@ -94,4 +94,16 @@ TEST_F(ChromosomeTests, iteratorDereference_EndIterator) {
 	auto iterator = chromosome.end();
 
 	ASSERT_THROW(*iterator, std::range_error);
+}
+
+/**
+ * This test assumes that a Chromosomes use in a range-based for loop
+ * returns char variables.
+ *
+ * Deviation from the above should result in a failed test.
+ */
+TEST_F(ChromosomeTests, iteratorRangeBasedFor) {
+	for (auto c : chromosome) {
+		EXPECT_EQ(typeid(char), typeid(c));
+	}
 }
