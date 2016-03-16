@@ -90,6 +90,7 @@
     <ClCompile Include="gene_tests.cpp" />
     <ClCompile Include="love_chamber_tests.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="master_gene_factory_tests.cpp" />
     <ClCompile Include="master_gene_tests.cpp" />
     <ClCompile Include="observable_tests.cpp" />
     <ClCompile Include="organism_tests.cpp" />
