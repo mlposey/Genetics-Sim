@@ -1,6 +1,6 @@
 #include "MasterGeneFactory.h"
 #include "MasterGene.h"
-#include "../io/GeneticsSimDataParser.h"
+#include "../../io/GeneticsSimDataParser.h"
 
 
 MasterGeneFactory* MasterGeneFactory::getInstance() {
