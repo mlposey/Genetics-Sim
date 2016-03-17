@@ -6,9 +6,9 @@ using std::string;
 class MasterGene
 {
 public:
-	MasterGene(const string& trait, const string& dominantAllele,
-		       const string& recessiveAllele, char dominantSymbol,
-			   char recessiveSymbol, double crossoverChance)
+	MasterGene(const string &trait, const string &dominantAllele,
+		       const string &recessiveAllele, const string &dominantSymbol,
+			   const string &recessiveSymbol, double crossoverChance)
 		: _trait(trait)
 		, _dominantAllele(dominantAllele)
 		, _recessiveAllele(recessiveAllele)
@@ -32,11 +32,11 @@ public:
 		return _recessiveAllele;
 	}
 
-	char getDominantSymbol() const {
+	string getDominantSymbol() const {
 		return _dominantSymbol;
 	}
 
-	char getRecessiveSymbol() const {
+	string getRecessiveSymbol() const {
 		return _recessiveSymbol;
 	}
 
@@ -49,8 +49,10 @@ private:
 		   _dominantAllele,
 		   _recessiveAllele;
 	
-	char _dominantSymbol,
-		 _recessiveSymbol;
+	// Symbols representing the dominant and recessive genes
+	// Note: A "symbol" could be multicharacter (e.g. "A1")
+	string _dominantSymbol,
+		   _recessiveSymbol;
 
 	double _crossoverChance;
 };
