@@ -9,19 +9,18 @@
 #pragma once
 #include <stdexcept>
 
+#define MAKE_EXCEPTION(NAME) \
+	class NAME : public std::runtime_error { \
+	public: \
+	NAME(const string &msg) : std::runtime_error(msg.c_str()) {} };
+
 /**
- * @brief The MalformedFileException class is an exception for malformed files
+ * @brief The InvalidSymbolException class is an exception for invalid allele symbols
  *
- * Ideally, this should be used when a file is read and determined to not contain
- * information in a manner that is deemed the standard.
- * @see std::exception
+ * This is usually thrown when requesting a MasterGene from MasterGeneIndex
+ * that does not exist.
  */
-class MalformedFileException : public std::runtime_error {
-public:
-	MalformedFileException(const char *msg)
-		: std::runtime_error(msg)
-	{}
-};
+MAKE_EXCEPTION(InvalidSymbolException)
 
 /**
  * @brief The EmptyContainerException class is an exception for empty containers
@@ -30,10 +29,4 @@ public:
  * which is either empty or not currently delivering data to outside objects.
  * @see std::exception
  */
-class EmptyContainerException : public std::runtime_error
-{
-public:
-	EmptyContainerException(const char *msg)
-		: std::runtime_error(msg)
-	{}
-};
+MAKE_EXCEPTION(EmptyContainerException)
