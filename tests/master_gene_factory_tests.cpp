@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../Genetics/building_blocks/MasterGeneFactory.cpp"
+#include "../Genetics/building_blocks/MasterGeneFactory.h"
 
 class MasterGeneFactoryTests : public testing::Test {};
 

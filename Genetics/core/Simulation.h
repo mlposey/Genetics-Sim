@@ -8,9 +8,12 @@
 *******************************************************************/
 #pragma once
 #include <memory>
+#include <vector>
+#include <string>
 
-#include "LoveChamber.h"
 #include "StatCounter.h"
+
+class MasterGene;
 
 /**
  * @brief The Simulation class handles the main thread of execution for the genetic simulation
@@ -32,12 +35,18 @@ public:
 private:
 	void init();
 
-	// Handles breeding between the two parent organisms retrieved from the file
-	std::unique_ptr<LoveChamber> _loveChamber;
+	/**
+	 * @brief Loads genes from the file into _masterGenes
+	 * @throws ifstream::failure
+	 */
+	void loadMasterGenes(const std::string &filename);
 
 	// Stores counts of unique genes and genotypes that are created
 	StatCounter _statCounter;
 
 	// How many offspring to create
 	int _offspringCount;
+
+	// The collection of MasterGenes that are referenced by all Gene objects
+	std::vector<std::shared_ptr<MasterGene>> _masterGenes;
 };

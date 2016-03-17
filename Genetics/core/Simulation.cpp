@@ -14,6 +14,7 @@
 #include "Simulation.h"
 #include "../io/ColemanXMLParser.h"
 #include "../utils/CustomExceptions.h"
+#include "../building_blocks/MasterGeneFactory.h"
 
 using std::cout;
 using std::string;
@@ -24,9 +25,10 @@ Simulation::Simulation()
 }
 
 void Simulation::run() {
-	_loveChamber->mate(_offspringCount);
+	cout << "\nRunning Simulation...\n\n";
+	cout << "---------------------------------------------------\n";
 
-	_statCounter.printStats();
+	// Simulation happens here
 
 	std::cout << "\nPress Enter to exit the simulation.\n";
 	getchar();
@@ -40,19 +42,13 @@ void Simulation::init() {
 			cout << "Enter the name of the simulation data file and press Enter: ";
 			std::getline(std::cin, input);
 
-			cout << "\nRunning Simulation...\n\n";
-			cout << "---------------------------------------------------\n";
+			loadMasterGenes(input);
+			
+			// Get the general organism information from the top of the file
+			
+			// Get each organisms strands
 
-			ColemanXMLParser parser(input);
-
-			std::vector<Organism> parents;
-			// Take the data of the two parents from the input file
-			parser.parseFile(parents);
-
-			_loveChamber = std::unique_ptr<LoveChamber>(new LoveChamber(parents[0], parents[1]));
-
-			// Add an object to keep track of created offspring
-			_loveChamber->addObserver(_statCounter);
+			// Use factories to turn the strands into a series of objects
 
 			break;
 		}
@@ -61,12 +57,6 @@ void Simulation::init() {
 			std::cerr << "The file '" + input + "' could not be opened.\n";
 			std::cerr << "Please try another file.\n";
 		}
-		catch (MalformedFileException &e)
-		{
-			// The data is not in the expected format
-			std::cerr << "An error occurred while reading the file:\n";
-			std::cerr << e.what() << '\n';
-		}
 	}
 
 	cout << "# of offspring to generate: ";
@@ -74,4 +64,19 @@ void Simulation::init() {
 
 	std::istringstream ss(input);
 	ss >> _offspringCount;
+}
+
+void Simulation::loadMasterGenes(const std::string &filename) {
+	MasterGeneFactory* mgFactory = MasterGeneFactory::getInstance();
+	mgFactory->setDataFile(filename);
+
+	if (!mgFactory->isInitialized()) {
+		// The file probably didn't exist
+		throw ifstream::failure(filename + " did not exist.");
+	}
+
+	// Load all of the master genes for later flyweight use by Gene objects
+	while (mgFactory->hasNext()) {
+		_masterGenes.push_back(mgFactory->createMasterGene());
+	}
 }

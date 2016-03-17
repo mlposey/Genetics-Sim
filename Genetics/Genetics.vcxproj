@@ -75,7 +75,6 @@
     <ClCompile Include="core\Simulation.cpp" />
     <ClCompile Include="core\StatCounter.cpp" />
     <ClCompile Include="genetics.cpp" />
-    <ClCompile Include="io\ColemanXMLParser.cpp" />
     <ClCompile Include="io\GeneticsSimDataParser.cpp" />
     <ClCompile Include="building_blocks\MasterGene.cpp" />
     <ClCompile Include="building_blocks\MasterGeneFactory.cpp" />
@@ -88,7 +87,6 @@
     <ClInclude Include="core\LoveChamber.h" />
     <ClInclude Include="core\Simulation.h" />
     <ClInclude Include="core\StatCounter.h" />
-    <ClInclude Include="io\ColemanXMLParser.h" />
     <ClInclude Include="io\GeneticsSimDataParser.h" />
     <ClInclude Include="building_blocks\MasterGene.h" />
     <ClInclude Include="building_blocks\MasterGeneFactory.h" />

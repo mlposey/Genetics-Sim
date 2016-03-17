@@ -86,7 +86,6 @@
   <ItemGroup>
     <ClCompile Include="allele_tests.cpp" />
     <ClCompile Include="chromosome_tests.cpp" />
-    <ClCompile Include="coleman_xml_parser_tests.cpp" />
     <ClCompile Include="gene_tests.cpp" />
     <ClCompile Include="love_chamber_tests.cpp" />
     <ClCompile Include="main.cpp" />

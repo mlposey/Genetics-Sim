@@ -1,0 +1,2 @@
+* Delete ColemanXMLParser files from io
+* Delete coleman_xml_parser_tests from tests
