@@ -11,7 +11,7 @@ class MasterGeneTests : public testing::Test {};
  * Deviation from the above should result in a failed test.
  */
 TEST_F(MasterGeneTests, negativeCrossoverChance) {
-	MasterGene gene("", "", "", ' ', ' ', -27.2);
+	MasterGene gene("", "", "", "", "", -27.2);
 
 	ASSERT_EQ(0, gene.getCrossoverChance());
 }
