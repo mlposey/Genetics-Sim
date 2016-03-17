@@ -75,8 +75,10 @@ void Simulation::loadMasterGenes(const std::string &filename) {
 		throw ifstream::failure(filename + " did not exist.");
 	}
 
+	MasterGeneIndex *index = MasterGeneIndex::getInstance();
+
 	// Load all of the master genes for later flyweight use by Gene objects
 	while (mgFactory->hasNext()) {
-		_masterGenes.push_back(mgFactory->createMasterGene());
+		index->add(mgFactory->createMasterGene());
 	}
 }

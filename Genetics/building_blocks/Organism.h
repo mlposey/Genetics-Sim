@@ -9,7 +9,8 @@
 #pragma once
 #include <vector>
 
-#include "Gene.h"
+#include "gene/Gene.h"
+#include "Chromosome.h"
 
 using std::string;
 
@@ -82,5 +83,5 @@ private:
 	string _species;
 	string _name;
 
-	std::vector<Gene> _genotype;
+	std::vector<Chromosome> _chromosomes;
 };

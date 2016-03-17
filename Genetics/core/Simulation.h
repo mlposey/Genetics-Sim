@@ -12,8 +12,7 @@
 #include <string>
 
 #include "StatCounter.h"
-
-class MasterGene;
+#include "../building_blocks/gene/MasterGeneIndex.h"
 
 /**
  * @brief The Simulation class handles the main thread of execution for the genetic simulation
@@ -21,7 +20,7 @@ class MasterGene;
  * Simulation invokes the necessary file parser to read the initial parent
  * states and uses this data to start the LoveChamber and StatCounter which
  * handle all reproduction and data collection
- * @see LoveChamber, StatCounter
+ * @see StatCounter
  */
 class Simulation
 {
@@ -46,7 +45,4 @@ private:
 
 	// How many offspring to create
 	int _offspringCount;
-
-	// The collection of MasterGenes that are referenced by all Gene objects
-	std::vector<std::shared_ptr<MasterGene>> _masterGenes;
 };
