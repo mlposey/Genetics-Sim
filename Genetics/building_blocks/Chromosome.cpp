@@ -16,11 +16,11 @@ bool Chromosome::const_iterator::operator!=(const Chromosome::const_iterator &rh
     return _it != rhs._it;
 }
 
-char Chromosome::const_iterator::operator*() const {
+string Chromosome::const_iterator::operator*() const {
 	if (_it == _end) {
 		throw std::range_error("The iterator does not point to a valid object.");
 	}
-    return _it->getRandomAllele().getSymbol();
+    return _it->getRandomAllele();
 }
 
 Chromosome::const_iterator &Chromosome::const_iterator::operator++() {

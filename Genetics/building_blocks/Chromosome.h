@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "Gene.h"
+#include "gene/Gene.h"
 
 class Chromosome {
 public:
@@ -24,7 +24,7 @@ public:
 		 * returns the symbol for a randomly chosen allele from the gene pair
 		 * @throws std::range_error if dereferencing end iterator
 		 */
-        char operator*() const;
+        string operator*() const;
 
 		/// Advances one Gene forward into the Chromosome
         const_iterator &operator++();
