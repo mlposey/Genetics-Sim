@@ -17,10 +17,8 @@ using std::string;
 /**
  * @brief The Gene class handles pairs of Allele.
  *
- * Gene holds a pair of Alleles that can be any combination of
- * dominant or recessive. It is immutable and allows the random
- * retrieval of copies of either of the stored Alleles.
- * @see Allele
+ * Gene holds a pair of alleles that can be any combination of
+ * dominant or recessive.
  */
 class Gene
 {

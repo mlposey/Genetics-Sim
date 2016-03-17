@@ -10,7 +10,7 @@
 
 #include <algorithm>
 
-Gene::Gene(std::shared_ptr<MasterGene> master, const string& a1, const string& a2)
+Gene::Gene(std::shared_ptr<MasterGene> master, const string &a1, const string &a2)
 	: _master(master)
 	, _allele1(a1)
 	, _allele2(a2)
@@ -20,14 +20,14 @@ string Gene::getRandomAllele() const {
 	return rand() % 2 == 0 ? _allele1 : _allele2;
 }
 
-std::string Gene::getPhenotype() const {
+string Gene::getPhenotype() const {
 	// TODO: getPhenotype
 }
 
-std::string Gene::getZygosity() const {
+string Gene::getZygosity() const {
 	// TODO: getZygosity
 }
 
-std::string Gene::toString() const {
+string Gene::toString() const {
 	return getZygosity() + " (" + getPhenotype() + " " + getAllelesString() + ")";
 }

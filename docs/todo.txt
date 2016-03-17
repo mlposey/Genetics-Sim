@@ -2,3 +2,4 @@
 * Delete coleman_xml_parser_tests from tests
 
 * Update classes to reflect char -> string Allele change
+* Update Gene docs
