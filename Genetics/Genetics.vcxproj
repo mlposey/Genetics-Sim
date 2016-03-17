@@ -69,27 +69,31 @@
   <ItemGroup>
     <ClCompile Include="building_blocks\Allele.cpp" />
     <ClCompile Include="building_blocks\Chromosome.cpp" />
-    <ClCompile Include="building_blocks\Gene.cpp" />
+    <ClCompile Include="building_blocks\gene\Gene.cpp" />
     <ClCompile Include="building_blocks\Organism.cpp" />
     <ClCompile Include="core\LoveChamber.cpp" />
     <ClCompile Include="core\Simulation.cpp" />
     <ClCompile Include="core\StatCounter.cpp" />
+    <ClCompile Include="building_blocks\gene\GeneFactory.cpp" />
     <ClCompile Include="genetics.cpp" />
     <ClCompile Include="io\GeneticsSimDataParser.cpp" />
-    <ClCompile Include="building_blocks\MasterGene.cpp" />
-    <ClCompile Include="building_blocks\MasterGeneFactory.cpp" />
+    <ClCompile Include="building_blocks\gene\MasterGene.cpp" />
+    <ClCompile Include="building_blocks\gene\MasterGeneFactory.cpp" />
+    <ClCompile Include="building_blocks\gene\MasterGeneIndex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="building_blocks\Allele.h" />
     <ClInclude Include="building_blocks\Chromosome.h" />
-    <ClInclude Include="building_blocks\Gene.h" />
+    <ClInclude Include="building_blocks\gene\Gene.h" />
     <ClInclude Include="building_blocks\Organism.h" />
     <ClInclude Include="core\LoveChamber.h" />
     <ClInclude Include="core\Simulation.h" />
     <ClInclude Include="core\StatCounter.h" />
+    <ClInclude Include="building_blocks\gene\GeneFactory.h" />
     <ClInclude Include="io\GeneticsSimDataParser.h" />
-    <ClInclude Include="building_blocks\MasterGene.h" />
-    <ClInclude Include="building_blocks\MasterGeneFactory.h" />
+    <ClInclude Include="building_blocks\gene\MasterGene.h" />
+    <ClInclude Include="building_blocks\gene\MasterGeneFactory.h" />
+    <ClInclude Include="building_blocks\gene\MasterGeneIndex.h" />
     <ClInclude Include="sync\IObserver.h" />
     <ClInclude Include="sync\Observable.h" />
     <ClInclude Include="utils\CustomExceptions.h" />

@@ -33,19 +33,25 @@
     <ClCompile Include="building_blocks\Allele.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="building_blocks\Gene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="building_blocks\Organism.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="building_blocks\Chromosome.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="building_blocks\MasterGene.cpp">
+    <ClCompile Include="building_blocks\gene\Gene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="building_blocks\MasterGeneFactory.cpp">
+    <ClCompile Include="building_blocks\gene\GeneFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="building_blocks\gene\MasterGene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="building_blocks\gene\MasterGeneFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="building_blocks\gene\MasterGeneIndex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,9 +71,6 @@
     <ClInclude Include="building_blocks\Allele.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="building_blocks\Gene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="building_blocks\Organism.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -83,10 +86,19 @@
     <ClInclude Include="building_blocks\Chromosome.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="building_blocks\MasterGene.h">
+    <ClInclude Include="building_blocks\gene\Gene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="building_blocks\MasterGeneFactory.h">
+    <ClInclude Include="building_blocks\gene\GeneFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="building_blocks\gene\MasterGene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="building_blocks\gene\MasterGeneFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="building_blocks\gene\MasterGeneIndex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
