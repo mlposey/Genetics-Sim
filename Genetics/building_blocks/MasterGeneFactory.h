@@ -1,7 +1,13 @@
 #pragma once
 
 #include <memory>
-#include "MasterGene.h"
+using std::shared_ptr;
+
+#include <string>
+using std::string;
+
+class MasterGene;
+class GeneticsSimDataParser;
 
 /**
  * @brief The MasterGeneFactory class creates MasterGene objects from the data file
@@ -23,13 +29,36 @@ public:
 	 * Before calling this function, one should check the result of
 	 * ::hasNext to ensure that another MasterGene exists within the
 	 * data file.
-	 * @return A shared_ptr to a MasterGene object
+	 * @return A shared_ptr to a MasterGene object if another gene was
+	 *         available. If this is not the case, nullptr is returned.
 	 */
-	std::shared_ptr<MasterGene> createMasterGene();
+	shared_ptr<MasterGene> createMasterGene();
+
+	/**
+	 * @brief Sets the file name to retrieve genetic data from
+	 *
+	 * This should be called immediately after first initialization.
+	 * ::isInitialized() can be used to check if a parser has been set.
+	 * @param filename The name of the file which contains genetic information
+	 * @return returns true if the file was valid; false otherwise
+	 */
+	bool setDataFile(const string &filename);
+
+	/// Returns true if the parser has been initialized with ::setDataFile
+	bool isInitialized() const { return _isParserInit; }
 
 	/// Returns true if another MasterGene can be created
-	bool hasNext() const;
+	bool hasNext() const { return _genesRemaining > 0; };
 
 private:
-	MasterGeneFactory() {}
+	MasterGeneFactory();
+
+	// This parser retrieves information from the data file
+	shared_ptr<GeneticsSimDataParser> _parser;
+
+	// The number of genes left to read from the file
+	int _genesRemaining;
+
+	// True if the _parser object has been initialized
+	bool _isParserInit;
 };
