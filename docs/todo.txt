@@ -1,5 +1,9 @@
 * Delete ColemanXMLParser files from io
 * Delete coleman_xml_parser_tests from tests
+* Delete Allele files from building_blocks
+* Delete allele_tests from tests
 
 * Update classes to reflect char -> string Allele change
 * Update Gene docs
+
+* Fix MasterGeneIndex overhead
