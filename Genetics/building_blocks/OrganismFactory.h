@@ -5,6 +5,10 @@
 #include "Organism.h"
 #include "../utils/macros.h"
 
+struct RawChromosome {
+	string strand1, strand2;
+};
+
 /**
  * @brief The OrganismFactory class is used to create Organisms
  */
@@ -25,6 +29,6 @@ public:
 		const string &genus,
 		const string &species,
 		const string &name,
-		const std::vector<string[2]> &chromosomes);
+		const std::vector<RawChromosome> &chromosomes);
 };
 

@@ -4,7 +4,7 @@ std::unique_ptr<Organism> OrganismFactory::createOrganism(
 		const string &genus,
 		const string &species,
 		const string &name,
-		const std::vector<string[2]> &chromosomes) {
+		const std::vector<RawChromosome> &chromosomes) {
 
 	std::unique_ptr<Organism> organism(new Organism(genus, species, name));
 
