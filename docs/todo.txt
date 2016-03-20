@@ -11,3 +11,5 @@
 * Organism::printDescription()
 
 * OrganismFactory::createOrganism
+
+* ChromosomeFactory implementation
