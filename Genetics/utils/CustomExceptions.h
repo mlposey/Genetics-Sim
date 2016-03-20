@@ -8,11 +8,7 @@
 *******************************************************************/
 #pragma once
 #include <stdexcept>
-
-#define MAKE_EXCEPTION(NAME) \
-	class NAME : public std::runtime_error { \
-	public: \
-	NAME(const string &msg) : std::runtime_error(msg.c_str()) {} };
+#include "macros.h"
 
 /**
  * @brief The InvalidSymbolException class is an exception for invalid allele symbols
