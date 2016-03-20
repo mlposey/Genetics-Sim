@@ -2,6 +2,11 @@
 #include "MasterGene.h"
 #include "../../io/GeneticsSimDataParser.h"
 
+MasterGeneFactory::MasterGeneFactory()
+	: _parser(GeneticsSimDataParser::getInstance())
+	, _isParserInit(false)
+	, _genesRemaining(0)
+{}
 
 MasterGeneFactory* MasterGeneFactory::getInstance() {
 	static MasterGeneFactory *instance = new MasterGeneFactory();
@@ -43,9 +48,3 @@ bool MasterGeneFactory::setDataFile(const string& filename) {
 	}
 	return _isParserInit;
 }
-
-MasterGeneFactory::MasterGeneFactory()
-	: _parser(GeneticsSimDataParser::getInstance())
-	, _isParserInit(false)
-	, _genesRemaining(0)
-{}
