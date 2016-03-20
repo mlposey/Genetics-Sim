@@ -10,6 +10,7 @@
 #include <sstream>
 #include <fstream>
 #include <thread>
+#include <vector>
 
 #include "Simulation.h"
 #include "../building_blocks/gene/MasterGeneFactory.h"
