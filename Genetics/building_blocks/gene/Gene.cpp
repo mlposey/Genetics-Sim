@@ -8,7 +8,6 @@
 *******************************************************************/
 #include "Gene.h"
 
-#include <algorithm>
 #include "MasterGeneIndex.h"
 
 Gene::Gene(std::shared_ptr<MasterGene> master, char a1, char a2)
