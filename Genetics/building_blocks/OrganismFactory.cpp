@@ -1,4 +1,5 @@
 #include "OrganismFactory.h"
+#include "ChromosomeFactory.h"
 
 std::unique_ptr<Organism> OrganismFactory::createOrganism(
 		const string &genus,
@@ -8,6 +9,11 @@ std::unique_ptr<Organism> OrganismFactory::createOrganism(
 
 	std::unique_ptr<Organism> organism(new Organism(genus, species, name));
 
-	// TODO: Use ChromosomeFactory to turn strands into chromosomes to add 
+	ChromosomeFactory *factory = ChromosomeFactory::getInstance();
+
+	for (auto &rc : chromosomes) {
+		organism->addChromosome(factory->createChromosome(rc));
+	}
+
 	return std::move(organism);
 }
