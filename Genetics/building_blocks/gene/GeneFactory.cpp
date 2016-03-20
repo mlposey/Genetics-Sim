@@ -2,11 +2,6 @@
 #include "MasterGeneIndex.h"
 #include "../../utils/CustomExceptions.h"
 
-GeneFactory* GeneFactory::getInstance() {
-	static GeneFactory *instance = new GeneFactory();
-	return instance;
-}
-
 Gene GeneFactory::createGene(const string& allele1, const string& allele2) {
 	auto masterGene = MasterGeneIndex::getInstance()->get(allele1);
 	if (masterGene == nullptr) {
