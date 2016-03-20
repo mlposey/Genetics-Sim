@@ -1,5 +1,6 @@
 #pragma once
 #include "Gene.h"
+#include "../../utils/macros.h"
 
 /**
  * @brief The GeneFactory class is a singleton that creates Gene objects
@@ -7,9 +8,9 @@
  */
 class GeneFactory
 {
-public:
-	static GeneFactory *getInstance();
+	SINGLETON(GeneFactory)
 
+public:
 	/**
 	 * @brief Creates a Gene object with the given symbols
 	 * @param allele1 A symbol for an allele
@@ -18,7 +19,4 @@ public:
 	 * @throws InvalidSymbolException
 	 */
 	Gene createGene(const string &allele1, const string &allele2);
-
-private:
-	GeneFactory() {}
 };
