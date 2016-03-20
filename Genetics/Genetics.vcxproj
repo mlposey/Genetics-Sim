@@ -72,9 +72,7 @@
     <ClCompile Include="building_blocks\gene\Gene.cpp" />
     <ClCompile Include="building_blocks\Organism.cpp" />
     <ClCompile Include="building_blocks\ChromosomeFactory.cpp" />
-    <ClCompile Include="core\LoveChamber.cpp" />
     <ClCompile Include="core\Simulation.cpp" />
-    <ClCompile Include="core\StatCounter.cpp" />
     <ClCompile Include="building_blocks\gene\GeneFactory.cpp" />
     <ClCompile Include="genetics.cpp" />
     <ClCompile Include="io\GeneticsSimDataParser.cpp" />
@@ -89,9 +87,7 @@
     <ClInclude Include="building_blocks\gene\Gene.h" />
     <ClInclude Include="building_blocks\Organism.h" />
     <ClInclude Include="building_blocks\ChromosomeFactory.h" />
-    <ClInclude Include="core\LoveChamber.h" />
     <ClInclude Include="core\Simulation.h" />
-    <ClInclude Include="core\StatCounter.h" />
     <ClInclude Include="building_blocks\gene\GeneFactory.h" />
     <ClInclude Include="io\GeneticsSimDataParser.h" />
     <ClInclude Include="building_blocks\gene\MasterGene.h" />

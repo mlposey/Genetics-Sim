@@ -21,13 +21,7 @@
     <ClCompile Include="io\GeneticsSimDataParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core\LoveChamber.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="core\Simulation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="core\StatCounter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="building_blocks\Allele.cpp">
@@ -65,13 +59,7 @@
     <ClInclude Include="io\GeneticsSimDataParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="core\LoveChamber.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="core\Simulation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="core\StatCounter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="building_blocks\Allele.h">

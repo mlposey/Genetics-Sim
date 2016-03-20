@@ -7,15 +7,15 @@
 *   This program is entirely my own work.
 *******************************************************************/
 #include <iostream>
-#include <string>
 #include <sstream>
 #include <fstream>
 
 #include "Simulation.h"
 #include "../building_blocks/gene/MasterGeneFactory.h"
+#include "../io/GeneticsSimDataParser.h"
+#include "../building_blocks/OrganismFactory.h"
+#include "../building_blocks/gene/MasterGeneIndex.h"
 
-using std::cout;
-using std::string;
 
 Simulation::Simulation()
 	: _offspringCount(0) {
@@ -40,15 +40,11 @@ void Simulation::init() {
 			cout << "Enter the name of the simulation data file and press Enter: ";
 			std::getline(std::cin, input);
 
+			// Acquire the MasterGene information and store it
 			loadMasterGenes(input);
-			
-			// Get the general organism information from the top of the file
-			
-			// Get strand1 and strand2 from each chromosome for each parent
-			// and send this data along with the general information to an
-			// OrganismFactory
 
-			// Store the two parents in some way
+			// Acquire the parent information and create two parent organisms
+			loadParentData();
 
 			break;
 		}
@@ -66,7 +62,7 @@ void Simulation::init() {
 	ss >> _offspringCount;
 }
 
-void Simulation::loadMasterGenes(const std::string &filename) {
+void Simulation::loadMasterGenes(const string &filename) {
 	MasterGeneFactory* mgFactory = MasterGeneFactory::getInstance();
 	mgFactory->setDataFile(filename);
 
@@ -81,4 +77,51 @@ void Simulation::loadMasterGenes(const std::string &filename) {
 	while (mgFactory->hasNext()) {
 		index->add(mgFactory->createMasterGene());
 	}
+}
+
+void Simulation::loadParentData() {
+	// The parser used to retrieve information about each organism
+	GeneticsSimDataParser *parser = GeneticsSimDataParser::getInstance();
+
+	// The Organisms will have a shared number of chromosomes
+	const int kChromosomeCount = parser->getChromosomeCount();
+
+	// Each chromosome has two strands
+	const int kStrandCount = 2;
+
+	// The max line length as defined by GeneticsSimDataParser is 128.
+	// Therefore, the max strand length shares this value
+	const int kMaxLength = 128;
+
+	// A collection of raw chromosomes for each parent
+	std::vector<string[kStrandCount]>
+		p1(kChromosomeCount),
+		p2(kChromosomeCount);
+
+
+	// Acquire chromosome information for each parent
+	for (auto &s : p1) {
+		char buffer[kStrandCount][kMaxLength];
+		parser->getP1Chromosome(buffer[0], buffer[1]);
+		s[0] = buffer[0];
+		s[1] = buffer[1];
+	}
+
+	for (auto &s : p2) {
+		char buffer[kStrandCount][kMaxLength];
+		parser->getP2Chromosome(buffer[0], buffer[1]);
+		s[0] = buffer[0];
+		s[1] = buffer[1];
+	}
+
+	_parents[0] = OrganismFactory::getInstance()->createOrganism(
+		parser->getGenus(),
+		parser->getSpecies(),
+		parser->getCommonName(),
+		p1);
+	_parents[1] = OrganismFactory::getInstance()->createOrganism(
+		parser->getGenus(),
+		parser->getSpecies(),
+		parser->getCommonName(),
+		p2);
 }

@@ -10,9 +10,10 @@
 #include <memory>
 #include <vector>
 #include <string>
+using std::string;
 
-#include "StatCounter.h"
-#include "../building_blocks/gene/MasterGeneIndex.h"
+// #include "StatCounter.h"
+#include "../building_blocks/Organism.h"
 
 /**
  * @brief The Simulation class handles the main thread of execution for the genetic simulation
@@ -38,10 +39,16 @@ private:
 	 * @brief Loads genes from the file into _masterGenes
 	 * @throws ifstream::failure
 	 */
-	void loadMasterGenes(const std::string &filename);
+	void loadMasterGenes(const string &filename);
+
+	/// @brief Initializes two parent Organisms
+	void loadParentData();
 
 	// Stores counts of unique genes and genotypes that are created
-	StatCounter _statCounter;
+	// StatCounter _statCounter;
+
+	// These are the Organisms defined in the data file
+	std::unique_ptr<Organism> _parents[2];
 
 	// How many offspring to create
 	int _offspringCount;

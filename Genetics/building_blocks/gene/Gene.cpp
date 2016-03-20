@@ -22,10 +22,12 @@ string Gene::getRandomAllele() const {
 
 string Gene::getPhenotype() const {
 	// TODO: getPhenotype
+	return "";
 }
 
 string Gene::getZygosity() const {
 	// TODO: getZygosity
+	return "";
 }
 
 string Gene::toString() const {
