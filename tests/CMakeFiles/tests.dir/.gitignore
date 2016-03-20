@@ -12,3 +12,10 @@
 /main.o
 /observable_tests.o
 /progress.make
+/allele_tests.cpp.o
+/coleman_xml_parser_tests.cpp.o
+/gene_tests.cpp.o
+/love_chamber_tests.cpp.o
+/main.cpp.o
+/observable_tests.cpp.o
+/organism_tests.cpp.o
