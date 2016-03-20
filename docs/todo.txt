@@ -4,6 +4,7 @@
 * Delete allele_tests from tests
 
 * Update Gene docs
+* Update docs to reflect that alleles are chars, not strings
 
 * Fix MasterGeneIndex overhead
 
@@ -11,5 +12,4 @@
 
 * Figure out if all factories should return copies or pointers
 
-* Implement remaining Gene methods
 
