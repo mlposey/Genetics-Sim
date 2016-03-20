@@ -12,4 +12,4 @@
 
 * Figure out if all factories should return copies or pointers
 
-
+* Run code analysis to clean up potential issues
