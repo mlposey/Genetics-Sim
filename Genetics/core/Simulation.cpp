@@ -10,10 +10,9 @@
 #include <string>
 #include <memory>
 #include <sstream>
+#include <fstream>
 
 #include "Simulation.h"
-#include "../io/ColemanXMLParser.h"
-#include "../utils/CustomExceptions.h"
 #include "../building_blocks/gene/MasterGeneFactory.h"
 
 using std::cout;
@@ -54,7 +53,7 @@ void Simulation::init() {
 
 			break;
 		}
-		catch (ifstream::failure &e) {
+		catch (std::ifstream::failure &e) {
 			// They tried to give a file that didn't exist
 			std::cerr << "The file '" + input + "' could not be opened.\n";
 			std::cerr << "Please try another file.\n";
