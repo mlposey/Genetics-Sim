@@ -14,7 +14,7 @@
 #include "Simulation.h"
 #include "../io/ColemanXMLParser.h"
 #include "../utils/CustomExceptions.h"
-#include "../building_blocks/MasterGeneFactory.h"
+#include "../building_blocks/gene/MasterGeneFactory.h"
 
 using std::cout;
 using std::string;
