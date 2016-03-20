@@ -73,7 +73,7 @@ void Simulation::loadMasterGenes(const std::string &filename) {
 
 	if (!mgFactory->isInitialized()) {
 		// The file probably didn't exist
-		throw ifstream::failure(filename + " did not exist.");
+		throw std::ifstream::failure(filename + " did not exist.");
 	}
 
 	MasterGeneIndex *index = MasterGeneIndex::getInstance();
