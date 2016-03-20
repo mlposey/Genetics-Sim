@@ -7,3 +7,7 @@
 * Update Gene docs
 
 * Fix MasterGeneIndex overhead
+
+* Organism::printDescription()
+
+* OrganismFactory::createOrganism
