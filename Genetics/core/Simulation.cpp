@@ -46,9 +46,11 @@ void Simulation::init() {
 			
 			// Get the general organism information from the top of the file
 			
-			// Get each organisms strands
+			// Get strand1 and strand2 from each chromosome for each parent
+			// and send this data along with the general information to an
+			// OrganismFactory
 
-			// Use factories to turn the strands into a series of objects
+			// Store the two parents in some way
 
 			break;
 		}
