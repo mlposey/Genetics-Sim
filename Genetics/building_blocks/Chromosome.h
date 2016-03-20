@@ -3,6 +3,12 @@
 #include <vector>
 #include "gene/Gene.h"
 
+// A very basic representation of a chromosome that is used
+// by ChromosomeFactory to create Chromosome objects
+struct RawChromosome {
+	string strand1, strand2;
+};
+
 class Chromosome {
 public:
     class const_iterator {

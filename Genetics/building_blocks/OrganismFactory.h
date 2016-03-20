@@ -5,10 +5,6 @@
 #include "Organism.h"
 #include "../utils/macros.h"
 
-struct RawChromosome {
-	string strand1, strand2;
-};
-
 /**
  * @brief The OrganismFactory class is used to create Organisms
  */
