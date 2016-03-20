@@ -3,18 +3,13 @@
 * Delete Allele files from building_blocks
 * Delete allele_tests from tests
 
-* Update classes to reflect char -> string Allele change
 * Update Gene docs
 
 * Fix MasterGeneIndex overhead
 
 * Organism::printDescription()
 
-* OrganismFactory::createOrganism
-
-* ChromosomeFactory implementation
-
 * Figure out if all factories should return copies or pointers
 
-* MasterGene is pulling in the wrong symbol information for both recessive and dominant alleles. This causes InvalidSymbolException to be thrown when building Gene objects with GeneFactory because the correct strand information does not match the incorrect MasterGene information found in MasterGeneIndex.
-* * This may be due to linux newline standard
+* Implement remaining Gene methods
+
