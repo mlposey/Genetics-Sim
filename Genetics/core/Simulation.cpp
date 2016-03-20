@@ -9,6 +9,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <thread>
 
 #include "Simulation.h"
 #include "../building_blocks/gene/MasterGeneFactory.h"
@@ -94,7 +95,7 @@ void Simulation::loadParentData() {
 	const int kMaxLength = 128;
 
 	// A collection of raw chromosomes for each parent
-	std::vector<string[kStrandCount]>
+	std::vector<RawChromosome>
 		p1(kChromosomeCount),
 		p2(kChromosomeCount);
 
@@ -103,25 +104,33 @@ void Simulation::loadParentData() {
 	for (auto &s : p1) {
 		char buffer[kStrandCount][kMaxLength];
 		parser->getP1Chromosome(buffer[0], buffer[1]);
-		s[0] = buffer[0];
-		s[1] = buffer[1];
+		s.strand1 = buffer[0];
+		s.strand2 = buffer[1];
 	}
 
 	for (auto &s : p2) {
 		char buffer[kStrandCount][kMaxLength];
 		parser->getP2Chromosome(buffer[0], buffer[1]);
-		s[0] = buffer[0];
-		s[1] = buffer[1];
+		s.strand1 = buffer[0];
+		s.strand2 = buffer[1];
 	}
 
-	_parents[0] = OrganismFactory::getInstance()->createOrganism(
-		parser->getGenus(),
-		parser->getSpecies(),
-		parser->getCommonName(),
-		p1);
-	_parents[1] = OrganismFactory::getInstance()->createOrganism(
-		parser->getGenus(),
-		parser->getSpecies(),
-		parser->getCommonName(),
-		p2);
+	std::thread parent1Thread([&]() {
+		_parent1 = OrganismFactory::getInstance()->createOrganism(
+				parser->getGenus(),
+				parser->getSpecies(),
+				parser->getCommonName(),
+				p1);
+	});
+
+	std::thread parent2Thread([&]() {
+		_parent2 = OrganismFactory::getInstance()->createOrganism(
+				parser->getGenus(),
+				parser->getSpecies(),
+				parser->getCommonName(),
+				p2);
+	});
+
+	parent1Thread.join();
+	parent2Thread.join();
 }
