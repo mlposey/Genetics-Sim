@@ -9,6 +9,7 @@
 #include "Gene.h"
 
 #include <algorithm>
+#include "MasterGeneIndex.h"
 
 Gene::Gene(std::shared_ptr<MasterGene> master, char a1, char a2)
 	: _master(master)
@@ -20,14 +21,26 @@ char Gene::getRandomAllele() const {
 	return rand() % 2 == 0 ? _allele1 : _allele2;
 }
 
+// TODO: Test this method
 string Gene::getPhenotype() const {
-	// TODO: getPhenotype
-	return "";
+	MasterGeneIndex *index = MasterGeneIndex::getInstance();
+	return (_allele1 == _allele2 || isupper(_allele1)) ?
+		index->get(_allele1)->getDominantAllele()
+		:
+		index->get(_allele2)->getRecessiveAllele();
 }
 
+// TODO: Test this method
 string Gene::getZygosity() const {
-	// TODO: getZygosity
-	return "";
+	if (_allele1 == _allele2) {
+		if (isupper(_allele1)) {
+			return "homozygous dominant";
+		}
+		else {
+			return "homozygous recessive";
+		}
+	}
+	return "heterozygous dominant";
 }
 
 string Gene::toString() const {
