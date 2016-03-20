@@ -13,3 +13,5 @@
 * OrganismFactory::createOrganism
 
 * ChromosomeFactory implementation
+
+* Figure out if all factories should return copies or pointers

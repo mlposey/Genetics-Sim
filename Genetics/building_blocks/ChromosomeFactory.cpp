@@ -1,5 +1,5 @@
 #include "ChromosomeFactory.h"
 
 Chromosome ChromosomeFactory::createChromosome(const RawChromosome &rc) const {
-    return Chromosome();
+    // TODO: Figure out if all factories should return copies or pointers
 }
