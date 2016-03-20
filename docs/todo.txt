@@ -15,3 +15,5 @@
 * ChromosomeFactory implementation
 
 * Figure out if all factories should return copies or pointers
+
+* MasterGene is pulling in the wrong symbol information for both recessive and dominant alleles. This causes InvalidSymbolException to be thrown when building Gene objects with GeneFactory because the correct strand information does not match the incorrect MasterGene information found in MasterGeneIndex.
