@@ -11,7 +11,7 @@ void MasterGeneIndex::add(shared_ptr<MasterGene> master) {
 	_masterGenes.push_back(master);
 }
 
-shared_ptr<MasterGene> MasterGeneIndex::get(const string& symbol) {
+shared_ptr<MasterGene> MasterGeneIndex::get(char symbol) {
 	for (auto &master : _masterGenes) {
 		if (master->getDominantSymbol() == symbol ||
 			master->getRecessiveSymbol() == symbol) {

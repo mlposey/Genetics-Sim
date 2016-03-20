@@ -11,6 +11,7 @@ std::unique_ptr<Organism> OrganismFactory::createOrganism(
 
 	ChromosomeFactory *factory = ChromosomeFactory::getInstance();
 
+	// Turn the raw chromosomes into actual Chromosome objects
 	for (auto &rc : chromosomes) {
 		organism->addChromosome(factory->createChromosome(rc));
 	}

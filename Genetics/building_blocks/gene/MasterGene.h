@@ -7,8 +7,8 @@ class MasterGene
 {
 public:
 	MasterGene(const string &trait, const string &dominantAllele,
-		       const string &recessiveAllele, const string &dominantSymbol,
-			   const string &recessiveSymbol, double crossoverChance)
+		       const string &recessiveAllele, char dominantSymbol,
+			   char recessiveSymbol, double crossoverChance)
 		: _trait(trait)
 		, _dominantAllele(dominantAllele)
 		, _recessiveAllele(recessiveAllele)
@@ -32,11 +32,11 @@ public:
 		return _recessiveAllele;
 	}
 
-	string getDominantSymbol() const {
+	char getDominantSymbol() const {
 		return _dominantSymbol;
 	}
 
-	string getRecessiveSymbol() const {
+	char getRecessiveSymbol() const {
 		return _recessiveSymbol;
 	}
 
@@ -45,14 +45,15 @@ public:
 	}
 
 private:
-	string _trait,
-		   _dominantAllele,
-		   _recessiveAllele;
+	string
+		_trait,
+		_dominantAllele,
+		_recessiveAllele;
 	
 	// Symbols representing the dominant and recessive genes
-	// Note: A "symbol" could be multicharacter (e.g. "A1")
-	string _dominantSymbol,
-		   _recessiveSymbol;
+	char 
+		_dominantSymbol,
+		_recessiveSymbol;
 
 	double _crossoverChance;
 };

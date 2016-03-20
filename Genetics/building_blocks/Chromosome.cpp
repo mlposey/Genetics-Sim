@@ -16,7 +16,7 @@ bool Chromosome::const_iterator::operator!=(const Chromosome::const_iterator &rh
     return _it != rhs._it;
 }
 
-string Chromosome::const_iterator::operator*() const {
+char Chromosome::const_iterator::operator*() const {
 	if (_it == _end) {
 		throw std::range_error("The iterator does not point to a valid object.");
 	}

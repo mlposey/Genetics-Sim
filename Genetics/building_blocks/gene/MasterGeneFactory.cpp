@@ -1,6 +1,7 @@
 #include "MasterGeneFactory.h"
 #include "MasterGene.h"
 #include "../../io/GeneticsSimDataParser.h"
+#include <algorithm>
 
 MasterGeneFactory::MasterGeneFactory()
 	: _parser(GeneticsSimDataParser::getInstance())
@@ -21,22 +22,23 @@ shared_ptr<MasterGene> MasterGeneFactory::createMasterGene() {
 		// This length matches what is defined in GeneticsSimDataParser
 		const int kMaxChar = 128;
 
-		char trait[kMaxChar],
+		char
+			trait[kMaxChar],
 			domDesc[kMaxChar],
-			domSymbol[kMaxChar],
-			recDesc[kMaxChar],
-			recSymbol[kMaxChar];
+			recDesc[kMaxChar];
+		char
+			domSymbol,
+			recSymbol;
 		double crossoverChance;
 
-		_parser->getGeneData(trait, domDesc, domSymbol, recDesc, recSymbol, 
+		_parser->getGeneData(trait, domDesc, &domSymbol, recDesc, &recSymbol, 
 			&crossoverChance);
 
 		--_genesRemaining;
 
 		// Under VS2012, _VARIADIC_MAX must be set in order to do this
 		return std::make_shared<MasterGene>(string(trait), string(domDesc),
-			string(recDesc), string(domSymbol), string(recSymbol),
-			crossoverChance);
+			string(recDesc), domSymbol, recSymbol, crossoverChance);
 	}
 	return nullptr;
 }

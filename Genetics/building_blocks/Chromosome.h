@@ -30,7 +30,7 @@ public:
 		 * returns the symbol for a randomly chosen allele from the gene pair
 		 * @throws std::range_error if dereferencing end iterator
 		 */
-        string operator*() const;
+        char operator*() const;
 
 		/// Advances one Gene forward into the Chromosome
         const_iterator &operator++();

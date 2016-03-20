@@ -29,19 +29,19 @@ public:
 	 * @param a1 The symbol of one allele to be part of the gene pair
 	 * @param a2 The symbol of one allele to be part of the gene pair
 	 */
-	Gene(std::shared_ptr<MasterGene> master, const string &a1, const string &a2);
+	Gene(std::shared_ptr<MasterGene> master, char a1, char a2);
 
 	/**
 	 * @brief Picks a random Allele from the pair and returns it
 	 * @return An Allele from the pair
 	 */
-	string getRandomAllele() const;
+	char getRandomAllele() const;
 
 	/// @return The first of two alleles
-	string first() const { return _allele1; }
+	char first() const { return _allele1; }
 
 	/// @return The second of two alleles
-	string second() const { return _allele2; }
+	char second() const { return _allele2; }
 
 	/**
 	 * @brief Gets the phenotype of the Gene
@@ -66,14 +66,18 @@ public:
 	string getZygosity() const;
 
 	/// @return The allele pair of the gene as a string
-	string getAllelesString() const { return _allele1 + _allele2; }
+	string getAllelesString() const {
+		return string() += _allele1
+			 + string() += _allele2;
+	}
 
 	/// @return The fully qualified description of the gene
 	string toString() const;
 
 private:
-	string _allele1;  // The symbol for the first allele of the gene pair
-	string _allele2;  // The symbol for the second allele of the gene pair
+	char
+		_allele1,  // The symbol for the first allele of the gene pair
+		_allele2;  // The symbol for the second allele of the gene pair
 
 	std::shared_ptr<MasterGene> _master;  // A shared_ptr to the MasterGene
 };

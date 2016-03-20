@@ -18,5 +18,5 @@ public:
 	 * @return A Gene with the given symbols and associated MasterGene
 	 * @throws InvalidSymbolException
 	 */
-	Gene createGene(const string &allele1, const string &allele2);
+	Gene createGene(char allele1, char allele2);
 };

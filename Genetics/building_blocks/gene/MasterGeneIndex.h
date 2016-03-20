@@ -18,7 +18,7 @@ public:
 	void add(shared_ptr<MasterGene> master);
 
 	/// Retrieves a MasterGene from the index
-	shared_ptr<MasterGene> get(const string &symbol);
+	shared_ptr<MasterGene> get(char symbol);
 
 private:
 	MasterGeneIndex() {}
