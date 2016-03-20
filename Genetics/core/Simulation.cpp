@@ -115,6 +115,7 @@ void Simulation::loadParentData() {
 		s.strand2 = buffer[1];
 	}
 
+	// Build the first parent using factories
 	std::thread parent1Thread([&]() {
 		_parent1 = OrganismFactory::getInstance()->createOrganism(
 				parser->getGenus(),
@@ -123,6 +124,7 @@ void Simulation::loadParentData() {
 				p1);
 	});
 
+	// Build the second parent using factories
 	std::thread parent2Thread([&]() {
 		_parent2 = OrganismFactory::getInstance()->createOrganism(
 				parser->getGenus(),
