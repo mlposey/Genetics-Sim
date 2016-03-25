@@ -1,0 +1,187 @@
+==============================================================
+|        MENDELIAN GENETICS SIMULATION DEMONSTRATION         |
+|            CS 307 -- Programming Assignment 2              |
+==============================================================
+
+Please enter the name of the simulation data file then press Enter:
+	
+Running Simulation...
+
+Master Genes:
+	Trait Name: Eye Color
+		Dominant Name: Red Eyes(E)
+		Recessive Name: White Eyes(e)
+		Chance of crossover: 5.2
+	Trait Name: Eye Shape
+		Dominant Name: Normal Eye Shape(S)
+		Recessive Name: Miniature Eye(s)
+		Chance of crossover: 4.3
+	Trait Name: Eye Presence
+		Dominant Name: Eyes Present(Y)
+		Recessive Name: Eyes Missing(y)
+		Chance of crossover: 4.25
+	Trait Name: Body Color
+		Dominant Name: Brown(B)
+		Recessive Name: Yellow(b)
+		Chance of crossover: 5.75
+	Trait Name: Wing Shape
+		Dominant Name: Straight Wings(W)
+		Recessive Name: Wrinkled Wings(w)
+		Chance of crossover: 5.4
+	Trait Name: Wing Size
+		Dominant Name: Normal Wing Size(V)
+		Recessive Name: Vestigial Wings(v)
+		Chance of crossover: 3.4
+	Trait Name: Antenna Shape
+		Dominant Name: Straight(A)
+		Recessive Name: Curly(a)
+		Chance of crossover: 4.25
+	Trait Name: Antenna Form
+		Dominant Name: Antennapedia(P)
+		Recessive Name: Normal Antenna(p)
+		Chance of crossover: 2.75
+	Trait Name: Leg Shape
+		Dominant Name: Long Legs(L)
+		Recessive Name: Short Legs(L)
+		Chance of crossover: 4.25
+	Trait Name: Head Shape
+		Dominant Name: Normal Head(H)
+		Recessive Name: Elongated Head(h)
+		Chance of crossover: 2.75
+
+
+Sim parent 1
+	Organism genus-species: Drosophila Melanogaster
+	Chromosomes:
+		Chromosome 1
+			Gene Type: Body Color
+				Allele 1: Brown(B)
+				Allele 2: Yellow(b)
+		Chromosome 2
+			Gene Type: Eye Color
+				Allele 1: Red Eyes(E)
+				Allele 2: White Eyes(e)
+			Gene Type: Eye Shape
+				Allele 1: Normal Eye Shape(S)
+				Allele 2: Miniature Eye(s)
+			Gene Type: Eye Presence
+				Allele 1: Eyes Present(Y)
+				Allele 2: Eyes Missing(y)
+		Chromosome 3
+			Gene Type: Wing Shape
+				Allele 1: Straight Wings(W)
+				Allele 2: Wrinkled Wings(w)
+			Gene Type: Wing Size
+				Allele 1: Normal Wing Size(V)
+				Allele 2: Vestigial Wings(v)
+			Gene Type: Antenna Shape
+				Allele 1: Straight(A)
+				Allele 2: Curly(a)
+			Gene Type: Antenna Form
+				Allele 1: Antennapedia(P)
+				Allele 2: Normal Antenna(p)
+			Gene Type: Leg Shape
+				Allele 1: Long Legs(L)
+				Allele 2: Short Legs(L)
+			Gene Type: Head Shape
+				Allele 1: Normal Head(H)
+				Allele 2: Elongated Head(h)
+
+
+Sim parent 2
+	Organism genus-species: Drosophila Melanogaster
+	Chromosomes:
+		Chromosome 1
+			Gene Type: Body Color
+				Allele 1: Brown(B)
+				Allele 2: Yellow(b)
+		Chromosome 2
+			Gene Type: Eye Color
+				Allele 1: Red Eyes(E)
+				Allele 2: White Eyes(e)
+			Gene Type: Eye Shape
+				Allele 1: Normal Eye Shape(S)
+				Allele 2: Miniature Eye(s)
+			Gene Type: Eye Presence
+				Allele 1: Eyes Present(Y)
+				Allele 2: Eyes Missing(y)
+		Chromosome 3
+			Gene Type: Wing Shape
+				Allele 1: Straight Wings(W)
+				Allele 2: Wrinkled Wings(w)
+			Gene Type: Wing Size
+				Allele 1: Normal Wing Size(V)
+				Allele 2: Vestigial Wings(v)
+			Gene Type: Antenna Shape
+				Allele 1: Straight(A)
+				Allele 2: Curly(a)
+			Gene Type: Antenna Form
+				Allele 1: Antennapedia(P)
+				Allele 2: Normal Antenna(p)
+			Gene Type: Leg Shape
+				Allele 1: Long Legs(L)
+				Allele 2: Short Legs(L)
+			Gene Type: Head Shape
+				Allele 1: Normal Head(H)
+				Allele 2: Elongated Head(h)
+
+
+How many offspring do you want to generate? (Type the number then press Enter)
+-->
+
+======================= Results of this Run =======================
+
+Gene: Body Color
+	4 homozygous dominant (Brown BB)
+	7 heterozygous dominant (Brown Bb)
+	9 homozygous recessive (Yellow bb)
+
+Gene: Eye Color
+	8 homozygous dominant (Red Eyes EE)
+	8 heterozygous dominant (Red Eyes Ee)
+	4 homozygous recessive (White Eyes ee)
+
+Gene: Eye Shape
+	5 homozygous dominant (Normal Eye Shape SS)
+	12 heterozygous dominant (Normal Eye Shape Ss)
+	3 homozygous recessive (Miniature Eye ss)
+
+Gene: Eye Presence
+	6 homozygous dominant (Eyes Present YY)
+	12 heterozygous dominant (Eyes Present Yy)
+	2 homozygous recessive (Eyes Missing yy)
+
+Gene: Wing Shape
+	6 homozygous dominant (Straight Wings WW)
+	10 heterozygous dominant (Straight Wings Ww)
+	4 homozygous recessive (Wrinkled Wings ww)
+
+Gene: Wing Size
+	4 homozygous dominant (Normal Wing Size VV)
+	11 heterozygous dominant (Normal Wing Size Vv)
+	5 homozygous recessive (Vestigial Wings vv)
+
+Gene: Antenna Shape
+	4 homozygous dominant (Straight AA)
+	12 heterozygous dominant (Straight Aa)
+	4 homozygous recessive (Curly aa)
+
+Gene: Antenna Form
+	3 homozygous dominant (Antennapedia PP)
+	13 heterozygous dominant (Antennapedia Pp)
+	4 homozygous recessive (Normal Antenna pp)
+
+Gene: Leg Shape
+	3 homozygous dominant (Long Legs LL)
+	3 heterozygous dominant (Long Legs LL)
+	3 homozygous recessive (Short Legs LL)
+
+Gene: Head Shape
+	6 homozygous dominant (Normal Head HH)
+	11 heterozygous dominant (Normal Head Hh)
+	3 homozygous recessive (Elongated Head hh)
+
+
+
+A total of 13 offspring had at least one crossover gene.
+Press Enter to end this demonstration...
