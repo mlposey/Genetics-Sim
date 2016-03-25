@@ -31,7 +31,7 @@ void Simulation::run() {
 	// Simulation happens here
 	
 	// For each chromosome among both parents
-		// Acquire iterators for each parent's chromsome
+		// Acquire iterators for each parent's chromosome
 			// 
 
 	std::cout << "\nPress Enter to exit the simulation.\n";
@@ -41,6 +41,7 @@ void Simulation::run() {
 void Simulation::init() {
 	string input;
 
+	// Attempt to get a valid data file from the user
 	while (true) {
 		try {
 			cout << "Enter the name of the simulation data file and press Enter: ";
