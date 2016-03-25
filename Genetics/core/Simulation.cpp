@@ -29,6 +29,10 @@ void Simulation::run() {
 	cout << "---------------------------------------------------\n";
 
 	// Simulation happens here
+	
+	// For each chromosome among both parents
+		// Acquire iterators for each parent's chromsome
+			// 
 
 	std::cout << "\nPress Enter to exit the simulation.\n";
 	getchar();
