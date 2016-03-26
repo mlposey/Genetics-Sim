@@ -95,7 +95,7 @@ void Simulation::loadParentData() {
 	std::mutex fileLock; // Locked when reading chromosomes from file
 
 	// Creates a parent organism
-	auto createOrganism =[&](bool isParent1) {
+	auto createParent =[&](bool isParent1) {
 		std::vector<RawChromosome>
 			chromosomes(parser->getChromosomeCount());
 
@@ -120,8 +120,8 @@ void Simulation::loadParentData() {
 			chromosomes);
 	};
 
-	thread t1(createOrganism, true);
-	thread t2(createOrganism, false);
+	thread t1(createParent, true);
+	thread t2(createParent, false);
 
 	t1.join();
 	t2.join();
