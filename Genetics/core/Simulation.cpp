@@ -10,6 +10,8 @@
 #include <sstream>
 #include <fstream>
 #include <thread>
+#include <mutex>
+using std::thread;
 #include <vector>
 
 #include "Simulation.h"
@@ -89,56 +91,37 @@ void Simulation::loadParentData() {
 	// The parser used to retrieve information about each organism
 	GeneticsSimDataParser *parser = GeneticsSimDataParser::getInstance();
 
-	// The Organisms will have a shared number of chromosomes
-	const int kChromosomeCount = parser->getChromosomeCount();
+	std::mutex fileLock; // Locked when reading chromosomes from file
 
-	// Each chromosome has two strands
-	const int kStrandCount = 2;
+	// Creates a parent organism
+	auto createOrganism =[&](bool isParent1) {
+		std::vector<RawChromosome>
+			chromosomes(parser->getChromosomeCount());
 
-	// The max line length as defined by GeneticsSimDataParser is 128.
-	// Therefore, the max strand length shares this value
-	const int kMaxLength = 128;
+		auto lock = new std::lock_guard<std::mutex>(fileLock);
+		// Convert the data file's chars to raw chromosomes
+		for (auto &s : chromosomes) {
+			// Two strands, each with a max length of 128 chars
+			char buffer[2][128];
+			isParent1 ? parser->getP1Chromosome(buffer[0], buffer[1]):
+			parser->getP2Chromosome(buffer[0], buffer[1]);
+			s.strand1 = buffer[0];
+			s.strand2 = buffer[1];
+		}
+		delete lock;
 
-	// A collection of raw chromosomes for each parent
-	std::vector<RawChromosome>
-		p1(kChromosomeCount),
-		p2(kChromosomeCount);
+		auto &p = isParent1 ? _parent1 : _parent2;
+		// Use the raw chromosomes to create an Organism
+		p = OrganismFactory::getInstance()->createOrganism(
+			parser->getGenus(),
+			parser->getSpecies(),
+			parser->getCommonName(),
+			chromosomes);
+	};
 
+	thread t1(createOrganism, true);
+	thread t2(createOrganism, false);
 
-	// Acquire chromosome information for each parent
-	for (auto &s : p1) {
-		char buffer[kStrandCount][kMaxLength];
-		parser->getP1Chromosome(buffer[0], buffer[1]);
-		s.strand1 = buffer[0];
-		s.strand2 = buffer[1];
-	}
-
-	for (auto &s : p2) {
-		char buffer[kStrandCount][kMaxLength];
-		parser->getP2Chromosome(buffer[0], buffer[1]);
-		s.strand1 = buffer[0];
-		s.strand2 = buffer[1];
-	}
-
-	
-	// Build the first parent using factories
-	std::thread parent1Thread([&]() {
-		_parent1 = OrganismFactory::getInstance()->createOrganism(
-				parser->getGenus(),
-				parser->getSpecies(),
-				parser->getCommonName(),
-				p1);
-	});
-
-	// Build the second parent using factories
-	std::thread parent2Thread([&]() {
-		_parent2 = OrganismFactory::getInstance()->createOrganism(
-				parser->getGenus(),
-				parser->getSpecies(),
-				parser->getCommonName(),
-				p2);
-	});
-
-	parent1Thread.join();
-	parent2Thread.join();
+	t1.join();
+	t2.join();
 }

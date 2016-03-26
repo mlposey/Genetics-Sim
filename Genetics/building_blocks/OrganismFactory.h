@@ -1,6 +1,8 @@
 #pragma once
 
 #include <memory>
+using std::shared_ptr;
+using std::make_shared;
 
 #include "Organism.h"
 #include "../utils/macros.h"
@@ -21,10 +23,10 @@ public:
 	 * @param chromosomes The strand pairs that make up the Organism
 	 * @return A unique_ptr to the created Organism
 	 */
-	std::unique_ptr<Organism> createOrganism(
-		const string &genus,
-		const string &species,
-		const string &name,
-		const std::vector<RawChromosome> &chromosomes);
+	shared_ptr<Organism> createOrganism(
+		const string& genus,
+		const string& species,
+		const string& name,
+		const std::vector<RawChromosome>& chromosomes);
 };
 

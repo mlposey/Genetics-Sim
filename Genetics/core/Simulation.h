@@ -47,7 +47,7 @@ private:
 	// StatCounter _statCounter;
 
 	// These are the Organisms defined in the data file
-	std::unique_ptr<Organism> _parent1, _parent2;
+	std::shared_ptr<Organism> _parent1, _parent2;
 
 	// How many offspring to create
 	int _offspringCount;
