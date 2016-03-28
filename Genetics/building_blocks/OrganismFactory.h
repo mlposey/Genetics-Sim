@@ -21,12 +21,25 @@ public:
 	 * @param species The species of the organism
 	 * @param name The common name of the organism
 	 * @param chromosomes The strand pairs that make up the Organism
-	 * @return A unique_ptr to the created Organism
+	 * @return A shared_ptr to the created Organism
 	 */
 	shared_ptr<Organism> createOrganism(
 		const string& genus,
 		const string& species,
 		const string& name,
-		const std::vector<RawChromosome>& chromosomes);
+		const RawChromosomes &chromosomes);
+
+	/**
+	 * @brief Creates an Organism with a populated genotype
+	 * @param parent1 One parent of the future organism
+	 * @param parent2 One parent of the future organism
+	 * @param crossoverCount The number of times a crossover occurs
+	 *        It is incremented on each occurrence
+	 * @return A shared_ptr to the created Organism
+	 */
+	shared_ptr<Organism> createOrganism(
+		shared_ptr<Organism> parent1,
+		shared_ptr<Organism> parent2,
+		int &crossoverCount);
 };
 

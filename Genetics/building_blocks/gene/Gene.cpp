@@ -8,6 +8,9 @@
 *******************************************************************/
 #include "Gene.h"
 
+#include <iostream>
+using std::cout;
+
 #include "MasterGeneIndex.h"
 
 Gene::Gene(std::shared_ptr<MasterGene> master, char a1, char a2)
@@ -42,6 +45,25 @@ string Gene::getZygosity() const {
 	return "heterozygous dominant";
 }
 
+void Gene::printDescription() const {
+	cout << "\t\t\tGene Type: " << _master->getTrait() << '\n';
+
+	string pair = getAllelesString();
+	for (int j = 0; j < pair.size(); ++j) {
+		cout << "\t\t\t\tAllele " << j + 1 << ": ";
+		if (isupper(pair[j])) {
+			cout << _master->getDominantAllele();
+		}
+		else {
+			cout << _master->getRecessiveAllele();
+		}
+		cout << "(" << pair[j] << ")\n";
+	}
+}
+
+/*
+This will be needed by the stat printer but is small enough in
+scope that the logic should just be put in that function
 string Gene::toString() const {
 	return getZygosity() + " (" + getPhenotype() + " " + getAllelesString() + ")";
-}
+}*/

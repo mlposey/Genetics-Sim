@@ -71,8 +71,8 @@ public:
 			 + string() += _allele2;
 	}
 
-	/// @return The fully qualified description of the gene
-	string toString() const;
+	/// Prints a full description of the Gene to stdout
+	void printDescription() const;
 
 private:
 	char

@@ -9,6 +9,7 @@
 #include "Organism.h"
 
 #include <iostream>
+#include "gene/MasterGeneIndex.h"
 using std::cout;
 
 #include "../utils/CustomExceptions.h"
@@ -37,5 +38,17 @@ Chromosome &Organism::serveChromosome() {
 }
 
 void Organism::printDescription() const {
-	// TODO
+	std::cout << "\tOrganism genus-species: "
+			  << getGenus() << " " << getSpecies() << '\n';
+	std::cout << "\tChromosomes:\n";
+
+	// Print the description of each chromosome in the organism
+	for (int i = 0; i < _chromosomes.size(); ++i) {
+		cout << "\t\tChromosome " << i + 1 << '\n';
+
+		// Print the description of each gene of the chromosome
+		for (auto &gene : _chromosomes[i]) {
+			gene.printDescription();
+		}
+	}
 }

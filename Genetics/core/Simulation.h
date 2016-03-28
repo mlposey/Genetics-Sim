@@ -11,7 +11,6 @@
 #include <string>
 using std::string;
 
-// #include "StatCounter.h"
 #include "../building_blocks/Organism.h"
 
 /**
@@ -48,7 +47,11 @@ private:
 
 	// These are the Organisms defined in the data file
 	std::shared_ptr<Organism> _parent1, _parent2;
+	std::vector<std::shared_ptr<Organism>> _children;
 
 	// How many offspring to create
 	int _offspringCount;
+
+	// The number of times a crossover occurred
+	int _crossoverCount;
 };

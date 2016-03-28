@@ -30,9 +30,6 @@
     <ClCompile Include="building_blocks\Organism.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="building_blocks\Chromosome.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="building_blocks\gene\Gene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -52,6 +49,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="building_blocks\OrganismFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="building_blocks\Chromosome.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

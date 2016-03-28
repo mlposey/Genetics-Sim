@@ -2,64 +2,35 @@
 
 #include <vector>
 #include "gene/Gene.h"
+#include <unordered_map>
 
 // A very basic representation of a chromosome that is used
 // by ChromosomeFactory to create Chromosome objects
 struct RawChromosome {
 	string strand1, strand2;
 };
+// A vector of RawChromosome objects
+typedef std::vector<RawChromosome> RawChromosomes;
 
-class Chromosome {
+class Chromosome : public std::vector<Gene> {
 public:
-    class const_iterator {
-    public:
-        const_iterator(std::vector<Gene>::const_iterator it,
-					   std::vector<Gene>::const_iterator end)
-			: _it(it)
-			, _end(end)
-		{ }
-
-		/**
-		 * @brief Compares two iterators for position equality
-		 * @return True if the iterators are at different positions in the
-		 *		   Chromosome.
-		 */
-        bool operator!=(const const_iterator &rhs) const;
-
-        /**
-		 * returns the symbol for a randomly chosen allele from the gene pair
-		 * @throws std::range_error if dereferencing end iterator
-		 */
-        char operator*() const;
-
-		/// Advances one Gene forward into the Chromosome
-        const_iterator &operator++();
-
-    private:
-		// A const_iterator the underlying Gene vector
-        std::vector<Gene>::const_iterator _it;
-
-		// The end iterator. Used for bounds checking
-		const std::vector<Gene>::const_iterator _end;
-    };
+	// The strands of a chromosome
+	enum class Strand {
+		STRAND1,
+		STRAND2
+	};
 
     /**
      * @brief Adds a Gene to the chromosome composition
+	 * This should be used instead of the inherited vector additions
      * @param gene The gene to insert into the chromosome
      */
     void addGene(const Gene &gene);
 
-	/// Acquires an iterator to the beginning of Chromosome strand
-    const_iterator begin() const;
-
-	/**
-	 * @brief Acquires an iterator to the end of the Chromosome strand
-	 * This element is theoretically one past the end and should not be
-	 * queried for data.
-	 */
-    const_iterator end() const;
+	/// Returns the strand that the allele is located on
+	Strand getStrand(char allele);
 
 private:
-	// The genes that make up the Chromosome
-    std::vector<Gene> _genes;
+	// Maps each allele character to the strand it resides on
+	std::unordered_map<char, Strand> _strandMap;
 };
