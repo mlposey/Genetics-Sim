@@ -1,0 +1,95 @@
+==============================================================
+|        MENDELIAN GENETICS SIMULATION DEMONSTRATION         |
+|            CS 307 -- Programming Assignment 2              |
+==============================================================
+
+Please enter the name of the simulation data file then press Enter:
+	
+Running Simulation...
+
+Master Genes:
+	Trait Name: Plant Stature
+		Dominant Name: Tall(T)
+		Recessive Name: Dwarf(t)
+		Chance of crossover: 5.2
+	Trait Name: Seed Texture
+		Dominant Name: Wrinkled(W)
+		Recessive Name: Smooth(w)
+		Chance of crossover: 4.3
+	Trait Name: Seed Color
+		Dominant Name: Green(S)
+		Recessive Name: Yellow(s)
+		Chance of crossover: 4.25
+	Trait Name: Flower Color
+		Dominant Name: Purple(C)
+		Recessive Name: White(c)
+		Chance of crossover: 5.75
+
+
+Sim parent 1
+	Organism genus-species: Pisum Sativum
+	Chromosomes:
+		Chromosome 1
+			Gene Type: Plant Stature
+				Allele 1: Tall(T)
+				Allele 2: Dwarf(t)
+			Gene Type: Flower Color
+				Allele 1: Purple(C)
+				Allele 2: White(c)
+		Chromosome 2
+			Gene Type: Seed Texture
+				Allele 1: Wrinkled(W)
+				Allele 2: Smooth(w)
+			Gene Type: Seed Color
+				Allele 1: Green(S)
+				Allele 2: Yellow(s)
+
+
+Sim parent 2
+	Organism genus-species: Pisum Sativum
+	Chromosomes:
+		Chromosome 1
+			Gene Type: Plant Stature
+				Allele 1: Tall(T)
+				Allele 2: Dwarf(t)
+			Gene Type: Flower Color
+				Allele 1: Purple(C)
+				Allele 2: White(c)
+		Chromosome 2
+			Gene Type: Seed Texture
+				Allele 1: Wrinkled(W)
+				Allele 2: Smooth(w)
+			Gene Type: Seed Color
+				Allele 1: Green(S)
+				Allele 2: Yellow(s)
+
+
+How many offspring do you want to generate? (Type the number then press Enter)
+-->
+
+======================= Results of this Run =======================
+
+Gene: Plant Stature
+	3 homozygous dominant (Tall TT)
+	10 heterozygous dominant (Tall Tt)
+	7 homozygous recessive (Dwarf tt)
+
+Gene: Flower Color
+	4 homozygous dominant (Purple CC)
+	12 heterozygous dominant (Purple Cc)
+	4 homozygous recessive (White cc)
+
+Gene: Seed Texture
+	4 homozygous dominant (Wrinkled WW)
+	13 heterozygous dominant (Wrinkled Ww)
+	3 homozygous recessive (Smooth ww)
+
+Gene: Seed Color
+	2 homozygous dominant (Green SS)
+	15 heterozygous dominant (Green Ss)
+	3 homozygous recessive (Yellow ss)
+
+
+
+A total of 6 offspring had at least one crossover gene.
+Press Enter to end this demonstration...
