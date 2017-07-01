@@ -3,3 +3,6 @@ docs/
 build/
 external/gtest/
 .idea/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
