@@ -43,6 +43,12 @@ set(SOURCE_FILES
 
 add_executable(genetics ${SOURCE_FILES})
 
+# The instructor provided test configurations in the form of .xml files.
+file(COPY
+        external/instructor_files/GeneticsSim2a.xml
+        external/instructor_files/GeneticsSim2b.xml
+     DESTINATION build/)
+
 # End main source setup
 # Begin test setup
 
