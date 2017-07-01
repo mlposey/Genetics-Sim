@@ -1,4 +1,5 @@
-CMakeFiles/*
-docs/*
-build/*
-external/gtest/*
+CMakeFiles/
+docs/
+build/
+external/gtest/
+.idea/
