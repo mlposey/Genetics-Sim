@@ -7,32 +7,28 @@ using std::string;
 #include "MasterGene.h"
 
 /**
- * @brief The Gene class handles pairs of Allele.
+ * @brief Gene handles pair of two alleles.
  *
- * Gene holds a pair of alleles that can be any combination of
- * dominant or recessive.
+ * The dominance and/or recessiveness of the alleles determines what trait
+ * the gene encodes.
  */
 class Gene
 {
 public:
 	/**
-	 * @brief Constructs a Gene object
-	 * @param master A shared_ptr to the MasterGene
+	 * @param master The MasterGene holding common data for genes of this type
 	 * @param a1 The symbol of one allele to be part of the gene pair
 	 * @param a2 The symbol of one allele to be part of the gene pair
 	 */
 	Gene(std::shared_ptr<MasterGene> master, char a1, char a2);
 
-	/**
-	 * @brief Picks a random Allele from the pair and returns it
-	 * @return An Allele from the pair
-	 */
+	 /// Picks a random Allele from the pair and returns it
 	char getRandomAllele() const;
 
-	/// @return The first of two alleles
+	/// @return The first allele in the pair
 	char first() const { return _allele1; }
 
-	/// @return The second of two alleles
+	/// @return The second allele in the pair
 	char second() const { return _allele2; }
 
 	/**
@@ -41,6 +37,7 @@ public:
 	 * The phenotype represents the visible Allele trait.
 	 * This should belong to the Allele that is dominant or default
 	 * to one of the recessives which should share the trait.
+	 *
 	 * @return The phenotype of the Gene as a string
 	 */
 	string getPhenotype() const;
@@ -53,6 +50,7 @@ public:
 	 *     1.) heterozygous dominant
 	 *     2.) homozygous recessive
 	 *     3.) homozgyous dominant
+	 *
 	 * @return The zygosity of the Gene as a string
 	 */
 	string getZygosity() const;
