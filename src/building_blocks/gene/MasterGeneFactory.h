@@ -10,11 +10,9 @@ class MasterGene;
 class GeneticsSimDataParser;
 
 /**
- * @brief The MasterGeneFactory class creates MasterGene objects from the data file
+ * @brief MasterGeneFactory creates MasterGene objects from a data file.
  *
- * MasterGeneFactory implements the singleton pattern and should be used to
- * create instances of MasterGene objects that mimic the information found within
- * the supplied data file.
+ * This singleton should be the sole means of creating MasterGene objects.
  * @see MasterGene
  */
 class MasterGeneFactory
