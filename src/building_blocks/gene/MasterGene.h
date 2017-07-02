@@ -3,6 +3,19 @@
 #include <string>
 using std::string;
 
+/**
+ * @brief MasterGene is the common instance of a specific Gene.
+ *
+ * Genes are implemented in a flyweight pattern. Common data is stored in a
+ * master instance (this class), while specific details are kept in Gene
+ * instances.
+ *
+ * When making future modifications, keep in mind that many Gene instances will
+ * rely on one instance of a MasterGene. And, in any case, you will likely not
+ * create MasterGene objects directly. Consult GeneFactory and
+ * MasterGeneFactory for a better idea of what creational responsibilities code
+ * additions require.
+ */
 class MasterGene
 {
 public:
@@ -40,6 +53,11 @@ public:
 		return _recessiveSymbol;
 	}
 
+	/**
+	 * @brief Returns the chance that an allele from this gene will cross over
+	 * @see OrganismFactory.createOrganism to better understand the concept
+	 * of allele crossover.
+	 */
 	double getCrossoverChance() const {
 		return _crossoverChance;
 	}
@@ -55,6 +73,7 @@ private:
 		_dominantSymbol,
 		_recessiveSymbol;
 
+	// The chance that an allele from this gene will cross over
 	double _crossoverChance;
 };
 
