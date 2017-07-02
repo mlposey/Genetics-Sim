@@ -1,21 +1,12 @@
-/*******************************************************************
-*   Allele.h
-*   CS 307 Programming Assignment 1
-*   Author: Marcus Posey
-*   Date Submitted: 02/23/2016
-*
-*   This program is entirely my own work.
-*******************************************************************/
 #pragma once
 #include <string>
 
 /**
  * @brief The Allele class models the alleles of a Gene
  *
- * This immutable representation of an allele holds information
- * regarding symbols (e.g. T or t), description of the allele
- * (e.g. tall), and whether the allele is dominant or not. It is
- * an essential part of the Gene class.
+ * An allele stores symbol information (e.g. T or t), the phenotype
+ * of the allele (e.g. tall), and whether the allele is dominant or not.
+ * Alleles are a component of Genes.
  * @see Gene
  */
 class Allele
@@ -24,9 +15,9 @@ public:
 	/**
 	 * @brief Constructs an Allele object
 	 * @param symbol The symbol for the allele
-	 * @param description What the allele represents
+	 * @param phenotype The physical trait that the allele encodes
 	 */
-	Allele(char symbol, const std::string &description);
+	Allele(char symbol, const std::string &phenotype);
 
 	/// @return True if the allele is dominant or false if it is recessive
 	bool isDominant() const { return isupper(_symbol) != 0; }
@@ -34,8 +25,8 @@ public:
 	/// @return The symbol of the allele (e.g. 'T' or 't')
 	char getSymbol() const { return _symbol; }
 
-	/// @return The description of the allele (e.g. "tall" or "short")
-	std::string getDescription() const { return _phenotype; }
+	/// @return The physical description of the allele (e.g. "tall" or "short")
+	std::string getPhenotype() const { return _phenotype; }
 
 private:
 	/*
