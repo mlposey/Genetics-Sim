@@ -85,7 +85,7 @@ endif()
 
 set(TEST_FILES
         tests/main.cpp
-        tests/utils.h)
+        tests/utils.h tests/AlleleTests.cpp)
 
 add_executable(tests ${TEST_FILES})
 target_link_libraries(tests pthread gtest)
