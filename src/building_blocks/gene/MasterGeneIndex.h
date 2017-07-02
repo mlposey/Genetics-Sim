@@ -166,6 +166,9 @@ public:
 	void loadFromFile(const std::string &filename,
 		std::function<void(shared_ptr<MasterGene>)> printer);
 
+	/// Adds a MasterGene to the index
+	void add(shared_ptr<MasterGene> gene);
+
 	/// Retrieves a MasterGene from the index
 	shared_ptr<MasterGene> get(char symbol);
 

@@ -15,16 +15,14 @@ char Gene::getRandomAllele() const {
 	return rand() % 2 == 0 ? _allele1 : _allele2;
 }
 
-// TODO: Test this method
 string Gene::getPhenotype() const {
 	MasterGeneIndex *index = MasterGeneIndex::getInstance();
-	return (_allele1 == _allele2 || isupper(_allele1)) ?
+	return (isupper(_allele1) || isupper(_allele2)) ?
 		index->get(_allele1)->getDominantAllele()
 		:
-		index->get(_allele2)->getRecessiveAllele();
+		index->get(_allele1)->getRecessiveAllele();
 }
 
-// TODO: Test this method
 string Gene::getZygosity() const {
 	if (_allele1 == _allele2) {
 		if (isupper(_allele1)) {

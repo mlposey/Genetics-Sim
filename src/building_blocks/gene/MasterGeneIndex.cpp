@@ -52,3 +52,7 @@ void MasterGeneIndex::loadFromFile(const std::string &filename,
 		printer(masterGene);
 	}
 }
+
+void MasterGeneIndex::add(shared_ptr<MasterGene> gene) {
+	_masterGenes.push_back(gene);
+}
