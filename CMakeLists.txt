@@ -12,8 +12,6 @@ set(SOURCE_FILES
         src/building_blocks/gene/GeneFactory.h
         src/building_blocks/gene/MasterGene.cpp
         src/building_blocks/gene/MasterGene.h
-        src/building_blocks/gene/MasterGeneFactory.cpp
-        src/building_blocks/gene/MasterGeneFactory.h
         src/building_blocks/gene/MasterGeneIndex.cpp
         src/building_blocks/gene/MasterGeneIndex.h
         src/building_blocks/Allele.cpp

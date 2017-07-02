@@ -14,7 +14,6 @@
 #include <ctime>
 
 #include "Simulation.h"
-#include "../building_blocks/gene/MasterGeneFactory.h"
 #include "../io/GeneticsSimDataParser.h"
 #include "../building_blocks/OrganismFactory.h"
 #include "../building_blocks/gene/MasterGeneIndex.h"
@@ -74,34 +73,28 @@ void Simulation::init() {
 }
 
 void Simulation::loadMasterGenes(const string &filename) {
-	MasterGeneFactory* mgFactory = MasterGeneFactory::getInstance();
-	mgFactory->setDataFile(filename);
-
-	if (!mgFactory->isInitialized()) {
-		// The file probably didn't exist
-		throw std::ifstream::failure(filename + " did not exist.");
-	}
-
 	MasterGeneIndex *index = MasterGeneIndex::getInstance();
 
 	cout << "Master Genes:\n";
 
-	// Load all of the master genes for later flyweight use by Gene objects
-	while (mgFactory->hasNext()) {
-		auto masterGene = mgFactory->createMasterGene();
-		
-		// Print the master gene details
-		cout << "\tTrait Name: " << masterGene->getTrait() << '\n';
-		cout << "\t\tDominant Name: " << masterGene->getDominantAllele() << "("
-			 << masterGene->getDominantSymbol() << ")\n";
-		cout << "\t\tRecessive Name: " << masterGene->getRecessiveAllele() << "("
-			 << masterGene->getRecessiveSymbol() << ")\n";
-		cout << "\t\tChance of Crossover: " << masterGene->getCrossoverChance()
-			 << "\n";
+	try {
+		index->loadFromFile(filename, [](shared_ptr<MasterGene> gene) {
+			cout << "\tTrait Name: " << gene->getTrait() << '\n';
 
-		// Add the master gene to the clustered index
-		index->add(masterGene);
+			cout << "\t\tDominant Name: " << gene->getDominantAllele() << "("
+				 << gene->getDominantSymbol() << ")\n";
+
+			cout << "\t\tRecessive Name: " << gene->getRecessiveAllele() << "("
+				 << gene->getRecessiveSymbol() << ")\n";
+
+			cout << "\t\tChance of Crossover: " << gene->getCrossoverChance()
+				 << "\n";
+		});
+	} catch (const std::ifstream::failure &e) {
+		std::cerr << e.what() << '\n';
+		exit(EXIT_FAILURE);
 	}
+
 	cout << "\n\n";
 }
 
