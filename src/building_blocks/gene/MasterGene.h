@@ -19,6 +19,25 @@ using std::string;
 class MasterGene
 {
 public:
+    /**
+     * @brief Creates a new MasterGene which Gene instances refer to.
+     *
+     * An example param list for a plant gene:
+     *      trait - Plant Stature
+     *      dominantAllele - Tall
+     *      recessiveAllele - Dwarf
+     *      dominantSymbol - T
+     *      recessiveSymbol - t
+     *      crossoverChance - 5.2
+     *
+     * @param trait The trait the gene causes in an organism
+     * @param dominantAllele The physical result of having a dominant allele
+     * @param recessiveAllele  The physical result of having a recessive allele
+     * @param dominantSymbol The symbol for dominance
+     * @param recessiveSymbol The symbol for recessiveness
+     * @param crossoverChance The chance that alleles cross over during
+     *  organism reproduction
+     */
 	MasterGene(const string &trait, const string &dominantAllele,
 		       const string &recessiveAllele, char dominantSymbol,
 			   char recessiveSymbol, double crossoverChance);
@@ -54,9 +73,9 @@ public:
 
 private:
 	string
-		_trait,
-		_dominantAllele,
-		_recessiveAllele;
+		_trait, // what trait the gene causes
+		_dominantAllele, // physical result of a dominant allele
+		_recessiveAllele; // physical result of a recessive allele
 	
 	// Symbols representing the dominant and recessive genes
 	char 
