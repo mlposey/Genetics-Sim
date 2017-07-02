@@ -3,6 +3,7 @@
 #include <iostream>
 using std::cout;
 
+#include "MasterGene.h"
 #include "MasterGeneIndex.h"
 
 Gene::Gene(std::shared_ptr<MasterGene> master, char a1, char a2)

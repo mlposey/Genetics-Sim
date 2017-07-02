@@ -3,8 +3,7 @@
 using std::string;
 
 #include <memory>
-
-#include "MasterGene.h"
+class MasterGene;
 
 /**
  * @brief Gene handles a pair of two alleles.
