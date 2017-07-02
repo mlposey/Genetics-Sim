@@ -1,3 +1,6 @@
+#include <string>
+using std::string;
+
 // Creates a custom std::runtime_error exception
 #define MAKE_EXCEPTION(NAME) \
 	class NAME : public std::runtime_error { \

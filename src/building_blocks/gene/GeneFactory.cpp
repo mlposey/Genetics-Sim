@@ -3,11 +3,12 @@
 #include "../../utils/CustomExceptions.h"
 
 Gene GeneFactory::createGene(char allele1, char allele2) {
-	auto masterGene = MasterGeneIndex::getInstance()->get(allele1);
-	if (masterGene == nullptr) {
-		// It doesn't matter which allele would not exist, since they both should
-		throw InvalidSymbolException("Allele '" + string() += allele1
-									 + "' does not belong to a MasterGene");
+	auto masterGene1 = MasterGeneIndex::getInstance()->get(allele1);
+	auto masterGene2 = MasterGeneIndex::getInstance()->get(allele2);
+
+	if (!masterGene1 || !masterGene2 || masterGene1 != masterGene2) {
+		throw InvalidSymbolException(string("Invalid allele combination: ") +
+			allele1 + " " + allele2);
 	}
-	return Gene(masterGene, allele1, allele2);
+	return Gene(masterGene1, allele1, allele2);
 }

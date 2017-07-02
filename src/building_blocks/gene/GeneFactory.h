@@ -15,6 +15,13 @@ class GeneFactory
 
 public:
 	/**
+	 * @brief Creates a Gene from alleles already loaded in a MasterGene
+	 *
+	 * The alleles must be of the same Gene type. Supplying alleles from
+	 * two different types of MasterGene is invalid. Further, the references
+	 * to the MasterGene are checked in MasterGeneIndex. Make sure the
+	 * MasterGene is stored there.
+	 *
 	 * @param allele1 A symbol for an allele
 	 * @param allele2 A symbol for an allele
 	 * @throws InvalidSymbolException
