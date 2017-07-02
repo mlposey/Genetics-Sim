@@ -2,7 +2,7 @@
 #include <string>
 
 /**
- * @brief The Allele class models the alleles of a Gene
+ * @brief The Allele class models the alleles of a Gene.
  *
  * An allele stores symbol information (e.g. T or t), the phenotype
  * of the allele (e.g. tall), and whether the allele is dominant or not.
@@ -35,6 +35,6 @@ private:
 	*/
 	char _symbol;
 
-	// The physical trait the Alelle represents
+	// The physical trait the Allele represents
 	std::string _phenotype;
 };
