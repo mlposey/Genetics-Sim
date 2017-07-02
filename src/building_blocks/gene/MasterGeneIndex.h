@@ -160,6 +160,8 @@ public:
 	 * @param filename The full pathname of the file
 	 * @param printer This function runs on each gene that is created
 	 * 	from the file
+	 *
+	 * @throws std::ifstream::failure if the file could not be read
 	 */
 	void loadFromFile(const std::string &filename,
 		std::function<void(shared_ptr<MasterGene>)> printer);
