@@ -3,7 +3,10 @@
 #include "../../utils/macros.h"
 
 /**
- * @brief The GeneFactory class is a singleton that creates Gene objects
+ * @brief GeneFactory is a singleton that creates Gene objects.
+ *
+ * This is the ideal method for creating Gene objects because it acquires a
+ * reference to the MasterGene for you.
  * @see Gene
  */
 class GeneFactory
@@ -12,10 +15,8 @@ class GeneFactory
 
 public:
 	/**
-	 * @brief Creates a Gene object with the given symbols
 	 * @param allele1 A symbol for an allele
 	 * @param allele2 A symbol for an allele
-	 * @return A Gene with the given symbols and associated MasterGene
 	 * @throws InvalidSymbolException
 	 */
 	Gene createGene(char allele1, char allele2);
