@@ -7,7 +7,7 @@ using std::string;
 #include "MasterGene.h"
 
 /**
- * @brief Gene handles pair of two alleles.
+ * @brief Gene handles a pair of two alleles.
  *
  * The dominance and/or recessiveness of the alleles determines what trait
  * the gene encodes.
