@@ -45,7 +45,7 @@ GeneticsSimDataParser *GeneticsSimDataParser::getInstance()
 //-----------------------------------
 // Initialize the data file
 //-----------------------------------
-void GeneticsSimDataParser::initDataFile(char *fileName)
+bool GeneticsSimDataParser::initDataFile(char *fileName)
 {
 	char line[128];
 	strcpy(m_sFileName, fileName);
@@ -85,13 +85,9 @@ void GeneticsSimDataParser::initDataFile(char *fileName)
 		}
 		inFile->close();	// Close the file
 		delete inFile;		// Destroy the ifstream object
+		return true;
 	}
-	else
-	{
-		cout << "Failed to open file\n";
-		cout << "Program terminated.\n\n";
-		exit(0);
-	}
+	return false;
 }
 
 //-----------------------------------

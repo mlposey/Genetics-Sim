@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <memory>
-#include "../src/io/GeneticsSimDataParser.cpp"
+#include "../external/instructor_files/GeneticsSimDataParser.cpp"
 #include "../src/building_blocks/gene/MasterGeneIndex.cpp"
 #include "../src/building_blocks/gene/Gene.cpp"
 #include "../src/building_blocks/gene/GeneFactory.cpp"

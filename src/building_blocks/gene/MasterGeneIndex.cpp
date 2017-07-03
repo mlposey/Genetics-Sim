@@ -1,7 +1,7 @@
 #include <algorithm>
 
 #include "MasterGeneIndex.h"
-#include "../../io/GeneticsSimDataParser.h"
+#include "../../../external/instructor_files/GeneticsSimDataParser.h"
 
 MasterGeneIndex* MasterGeneIndex::getInstance() {
 	static MasterGeneIndex *instance = new MasterGeneIndex();

@@ -32,7 +32,7 @@ class GeneticsSimDataParser
 	public:
 		~GeneticsSimDataParser();				// Destructor
 		static GeneticsSimDataParser *getInstance();	// Get the singleton instance
-		void initDataFile(char *fileName);
+		bool initDataFile(char *fileName);
 		int getChromosomeCount();
 		int getGeneCount();
 		char *getGenus();

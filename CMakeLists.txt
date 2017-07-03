@@ -26,15 +26,13 @@ set(SOURCE_FILES
         src/building_blocks/OrganismFactory.h
         src/core/Simulation.cpp
         src/core/Simulation.h
-        src/io/GeneticsSimDataParser.cpp
-        src/io/GeneticsSimDataParser.h
         src/sync/IObserver.h
         src/sync/Observable.h
         src/utils/CustomExceptions.h
         src/utils/macros.h
         src/genetics.cpp
-        # Probably not needed - instructor_files/GeneticsSimDataParser.cpp
-        # Probably not needed - instructor_files/GeneticsSimDataParser.h
+        external/instructor_files/GeneticsSimDataParser.cpp
+        external/instructor_files/GeneticsSimDataParser.h
         )
 
 add_executable(genetics ${SOURCE_FILES})

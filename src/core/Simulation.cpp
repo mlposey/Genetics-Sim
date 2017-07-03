@@ -14,7 +14,7 @@
 #include <ctime>
 
 #include "Simulation.h"
-#include "../io/GeneticsSimDataParser.h"
+#include "../../external/instructor_files/GeneticsSimDataParser.h"
 #include "../building_blocks/OrganismFactory.h"
 #include "../building_blocks/gene/MasterGeneIndex.h"
 
