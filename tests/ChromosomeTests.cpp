@@ -5,7 +5,7 @@
 // Chromosome.addGene should place the first allele of the gene on the strand
 // labeled Strand.STRAND1 and the second allele of the gene on the strand
 // labeled Strand.STRAND2.
-TEST(ChromosomeTests, ensureStrandPlacement) {
+TEST(ChromosomeTest, ensureStrandPlacement) {
     auto index = MasterGeneIndex::getInstance();
     index->clear();
 
