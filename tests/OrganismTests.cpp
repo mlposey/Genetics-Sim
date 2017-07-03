@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "core/Organism.cpp"
 #include "util/CustomExceptions.h"
+#include "util.h"
 
 class OrganismTest : public testing::Test {
 public:
@@ -18,14 +19,8 @@ TEST_F(OrganismTest, serveChromosome_empty) {
 // after the collection has been fully traversed.
 TEST_F(OrganismTest, serveChromosome_loop) {
     // Create chromosomes to add to the organism.
-    auto index = MasterGeneIndex::getInstance();
-    index->clear();
-
     char sym1 = 'T', sym2 = 't';
-    auto masterGene = std::make_shared<MasterGene>(
-            "", "", "", sym1, sym2, 3.3
-    );
-    index->add(masterGene);
+    auto masterGene = addMasterGeneToBlankIndex(sym1, sym2);
 
     Chromosome chromosome1, chromosome2;
     chromosome1.addGene({masterGene, sym1, sym2});

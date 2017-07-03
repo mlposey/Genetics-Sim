@@ -1,14 +1,11 @@
 #include <gtest/gtest.h>
 #include "core/gene/MasterGeneIndex.h"
+#include "util.h"
 
 class MasterGeneIndexTest : public testing::Test {
 public:
     MasterGeneIndexTest() {
-        index->clear();
-        masterGene = std::make_shared<MasterGene>(
-                "", "", "", sym1, sym2, 3.3
-        );
-        index->add(masterGene);
+        masterGene = addMasterGeneToBlankIndex(sym1, sym2);
     }
 
     MasterGeneIndex *index = MasterGeneIndex::getInstance();

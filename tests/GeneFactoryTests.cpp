@@ -3,16 +3,13 @@
 #include "util/CustomExceptions.h"
 #include "core/gene/GeneFactory.h"
 #include "core/gene/MasterGeneIndex.h"
+#include "util.h"
 
 
 class GeneFactoryTest : public testing::Test {
 public:
     GeneFactoryTest() {
-        auto index = MasterGeneIndex::getInstance();
-        index->clear();
-        index->add(std::make_shared<MasterGene>(
-                "", "", "", sym1, sym2, 0.0
-        ));
+        addMasterGeneToBlankIndex(sym1, sym2);
     }
 
     char sym1 = 'T', sym2 = 't';
