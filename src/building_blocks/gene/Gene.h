@@ -3,7 +3,7 @@
 using std::string;
 
 #include <memory>
-class MasterGene;
+#include "MasterGene.h"
 
 /**
  * @brief Gene handles a pair of two alleles.
@@ -54,11 +54,15 @@ public:
 	 */
 	string getZygosity() const;
 
-	/// @return The allele pair of the gene as a string
-	string getAllelesString() const {
-		return string() += _allele1
-			 + string() += _allele2;
-	}
+	/**
+	 * @brief Returns the allele pair of the gene as a string
+	 *
+	 * If the gene is heterozygous, the dominant allele is always first.
+	 */
+	string getAllelesString() const;
+
+	/// Returns the trait this gene encodes for
+	string getTrait() const { return _master->getTrait(); }
 
     /// Returns a string description of the Gene
     operator string() const;

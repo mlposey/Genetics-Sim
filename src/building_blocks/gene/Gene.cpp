@@ -3,7 +3,6 @@
 #include <iostream>
 using std::cout;
 
-#include "MasterGene.h"
 #include "MasterGeneIndex.h"
 
 Gene::Gene(std::shared_ptr<MasterGene> master, char a1, char a2)
@@ -36,6 +35,13 @@ string Gene::getZygosity() const {
 	return "heterozygous dominant";
 }
 
+string Gene::getAllelesString() const {
+	if (isupper(_allele1)) {
+		return string() + _allele1 + _allele2;
+	}
+	return string() + _allele2 + _allele1;
+}
+
 void Gene::printDescription() const {
 	cout << "\t\t\tGene Type: " << _master->getTrait() << '\n';
 
@@ -56,10 +62,3 @@ Gene::operator string() const {
     return getZygosity() + " (" + getPhenotype() + " " + getAllelesString() +
 			")";
 }
-
-/*
-This will be needed by the stat printer but is small enough in
-scope that the logic should just be put in that function
-string Gene::toString() const {
-	return getZygosity() + " (" + getPhenotype() + " " + getAllelesString() + ")";
-}*/

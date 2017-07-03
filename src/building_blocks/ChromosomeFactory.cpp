@@ -23,7 +23,7 @@ Chromosome ChromosomeFactory::createChromosome(
 
 Chromosome
 ChromosomeFactory::createChromosome(Chromosome &a, Chromosome &b,
-		int &crossovercount) {
+		bool &hasCrossoverOccurred) {
 	Chromosome offspring;
 
 	auto aIterator = a.begin();
@@ -35,8 +35,8 @@ ChromosomeFactory::createChromosome(Chromosome &a, Chromosome &b,
 		char a1 = aIterator->getRandomAllele();
 		char a2 = bIterator->getRandomAllele();
 
-		if (tryCrossover(a1, a, bIterator)) ++crossovercount;
-		if (tryCrossover(a2, b, aIterator)) ++crossovercount;
+		if (tryCrossover(a1, a, bIterator)) hasCrossoverOccurred = true;
+		if (tryCrossover(a2, b, aIterator)) hasCrossoverOccurred = true;
 
 		offspring.addGene(GeneFactory::getInstance()->createGene(a1, a2));
 	}
@@ -51,7 +51,7 @@ ChromosomeFactory::tryCrossover(char &parent1Allele,
 	const double crossoverChance = MasterGeneIndex::getInstance()->
 			get(parent1Allele)->getCrossoverChance();
 
-	if ((rand() % 101) > crossoverChance) {
+	if (100 * ((double)rand() / (double)RAND_MAX) <= crossoverChance) {
 		// Get the allele at the same spot on the other chromosome
 		auto strand = parent1Chromosome.getStrand(parent1Allele);
 		if (strand == Chromosome::Strand::STRAND1) {

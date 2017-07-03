@@ -22,8 +22,6 @@ shared_ptr<Organism> OrganismFactory::createOrganism(
 shared_ptr<Organism> OrganismFactory::createOrganism(
 		shared_ptr<Organism> parent1,
 		shared_ptr<Organism> parent2) {
-	srand(time(nullptr));
-
 	// TODO: Consider what happens when crossing different species.
 	auto child = make_shared<Organism>(
 			parent1->getGenus(),
@@ -32,13 +30,16 @@ shared_ptr<Organism> OrganismFactory::createOrganism(
 	);
 	auto factory = ChromosomeFactory::getInstance();
 
-	// Create chromosomes for the child using ones from the parents.
+    bool hasCrossoverOccurred = false;
+    
+    // Create chromosomes for the child using ones from the parents.
 	for (int i = 0; i < parent1->getChromosomeCount(); ++i) {
 		child->addChromosome(factory->createChromosome(
 				parent1->serveChromosome(),
 				parent2->serveChromosome(),
-				_crossoverCount
+				hasCrossoverOccurred
 		));
-	}
+    }
+    if (hasCrossoverOccurred) ++_crossoverCount;
     return child;
 }

@@ -33,11 +33,11 @@ public:
      * second parent.
      *
      * @param crossoverCount Chromosomal crossover is a process that can occur
-     * 	when creating a new chromosome. This variable will be incremented by
-     * 	one if it happens.
+     * 	when creating a new chromosome. This is set to true if crossover
+     * 	happens during creation.
      */
     Chromosome createChromosome(Chromosome &a, Chromosome &b,
-								int &crossoverCount);
+								bool &hasCrossoverOccurred);
 
 private:
 	/**

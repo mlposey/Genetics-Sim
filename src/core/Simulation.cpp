@@ -20,7 +20,6 @@ Simulation::Simulation()
 
 void Simulation::run() {
 	cout << "\nRunning Simulation...\n\n";
-	cout << "---------------------------------------------------\n";
 
 	OrganismFactory *factory = OrganismFactory::getInstance();
 
@@ -31,12 +30,13 @@ void Simulation::run() {
 
     _scoreboard.displayResults();
 
-	std::cout << "\nPress Enter to exit the simulation.\n";
+	std::cout << "\nPress Enter to exit the simulation.";
 	getchar();
 }
 
 void Simulation::init() {
-    GeneFactory::getInstance()->addObserver(_scoreboard);
+	srand(time(nullptr));
+	GeneFactory::getInstance()->addObserver(_scoreboard);
 
 	string input;
 	// Attempt to get a valid data file from the user
@@ -69,7 +69,7 @@ void Simulation::init() {
 void Simulation::loadMasterGenes(const string &filename) {
 	MasterGeneIndex *index = MasterGeneIndex::getInstance();
 
-	cout << "Master Genes:\n";
+	cout << "\nMaster Genes:\n";
 
 	try {
 		index->loadFromFile(filename, [](shared_ptr<MasterGene> gene) {
