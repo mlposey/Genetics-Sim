@@ -35,8 +35,6 @@ set(SOURCE_FILES
         src/genetics.cpp
         # Probably not needed - instructor_files/GeneticsSimDataParser.cpp
         # Probably not needed - instructor_files/GeneticsSimDataParser.h
-        # Probably not needed - ColemanXMLParser.cpp
-        # Probably not needed - ColemanXMLParser.h
         )
 
 add_executable(genetics ${SOURCE_FILES})
