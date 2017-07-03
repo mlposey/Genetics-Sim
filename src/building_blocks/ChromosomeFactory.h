@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../utils/macros.h"
+#include "../util/macros.h"
 #include "Chromosome.h"
 
 /**

@@ -4,7 +4,7 @@
 #include "gene/MasterGeneIndex.h"
 using std::cout;
 
-#include "../utils/CustomExceptions.h"
+#include "../util/CustomExceptions.h"
 
 Organism::Organism(const string& genus, const string& species, const string& name)
 	: _serveCounter(0)

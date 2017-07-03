@@ -26,10 +26,10 @@ set(SOURCE_FILES
         src/building_blocks/OrganismFactory.h
         src/core/Simulation.cpp
         src/core/Simulation.h
-        src/sync/IObserver.h
-        src/sync/Observable.h
-        src/utils/CustomExceptions.h
-        src/utils/macros.h
+        src/core/IObserver.h
+        src/core/Observable.h
+        src/util/CustomExceptions.h
+        src/util/macros.h
         src/genetics.cpp
         external/instructor_files/GeneticsSimDataParser.cpp
         external/instructor_files/GeneticsSimDataParser.h

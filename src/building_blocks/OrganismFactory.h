@@ -5,7 +5,7 @@ using std::shared_ptr;
 using std::make_shared;
 
 #include "Organism.h"
-#include "../utils/macros.h"
+#include "../util/macros.h"
 #include "ChromosomeFactory.h"
 
 /**

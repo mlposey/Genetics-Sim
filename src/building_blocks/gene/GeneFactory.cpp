@@ -1,6 +1,6 @@
 #include "GeneFactory.h"
 #include "MasterGeneIndex.h"
-#include "../../utils/CustomExceptions.h"
+#include "../../util/CustomExceptions.h"
 
 Gene GeneFactory::createGene(char allele1, char allele2) {
 	auto masterGene1 = MasterGeneIndex::getInstance()->get(allele1);

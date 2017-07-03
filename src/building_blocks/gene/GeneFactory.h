@@ -1,6 +1,6 @@
 #pragma once
 #include "Gene.h"
-#include "../../utils/macros.h"
+#include "../../util/macros.h"
 
 /**
  * @brief GeneFactory is a singleton that creates Gene objects.

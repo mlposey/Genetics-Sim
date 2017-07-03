@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <memory>
-#include "../src/utils/CustomExceptions.h"
+#include "../src/util/CustomExceptions.h"
 #include "../src/building_blocks/gene/GeneFactory.h"
 #include "../src/building_blocks/gene/MasterGeneIndex.h"
 
