@@ -1,5 +1,6 @@
 #include "ChromosomeFactory.h"
 #include "gene/GeneFactory.h"
+#include "gene/MasterGeneIndex.h"
 
 Chromosome ChromosomeFactory::createChromosome(
 		const std::pair<string,string> &chromesomeStrands) const {
@@ -18,4 +19,47 @@ Chromosome ChromosomeFactory::createChromosome(
 		}
 	}
     return chromosome;
+}
+
+Chromosome
+ChromosomeFactory::createChromosome(Chromosome &a, Chromosome &b,
+		int &crossovercount) {
+	Chromosome offspring;
+
+	auto aIterator = a.begin();
+	auto bIterator = b.begin();
+	const unsigned long length = a.size();
+
+	for (unsigned long i = 0; i < length; ++i, ++aIterator, ++bIterator) {
+		char a1 = aIterator->getRandomAllele();
+		char a2 = bIterator->getRandomAllele();
+
+		if (tryCrossover(a1, a, bIterator)) ++crossovercount;
+		if (tryCrossover(a2, b, aIterator)) ++crossovercount;
+
+		offspring.addGene(GeneFactory::getInstance()->createGene(a1, a2));
+	}
+
+    return offspring;
+}
+
+bool
+ChromosomeFactory::tryCrossover(char &parent1Allele,
+								Chromosome &parent1Chromosome,
+								Chromosome::iterator &parent2It) {
+	const double crossoverChance = MasterGeneIndex::getInstance()->
+			get(parent1Allele)->getCrossoverChance();
+
+	if ((rand() % 101) > crossoverChance) {
+		// Get the allele at the same spot on the other chromosome
+		auto strand = parent1Chromosome.getStrand(parent1Allele);
+		if (strand == Chromosome::Strand::STRAND1) {
+			parent1Allele = parent2It->first();
+		}
+		else {
+			parent1Allele = parent2It->second();
+		}
+		return true;
+	}
+	return false;
 }

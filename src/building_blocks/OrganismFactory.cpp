@@ -20,69 +20,26 @@ shared_ptr<Organism> OrganismFactory::createOrganism(
 }
 
 shared_ptr<Organism> OrganismFactory::createOrganism(
-	shared_ptr<Organism> parent1,
-	shared_ptr<Organism> parent2,
-	int &crossoverCount) {
+		shared_ptr<Organism> parent1,
+		shared_ptr<Organism> parent2,
+		int &crossoverCount) {
+	srand(time(nullptr));
 
-	ChromosomesStrands childChromosomes(parent1->getChromosomeCount());
+	// TODO: Consider what happens when crossing different species.
+	auto child = make_shared<Organism>(
+			parent1->getGenus(),
+			parent1->getSpecies(),
+			parent1->getName()
+	);
+	auto factory = ChromosomeFactory::getInstance();
+
+	// Create chromosomes for the child using ones from the parents.
 	for (int i = 0; i < parent1->getChromosomeCount(); ++i) {
-		auto& p1Chrom = parent1->serveChromosome();
-		auto& p2Chrom = parent2->serveChromosome();
-
-		// Acquire iterators to the collection of genes each chromosome has
-		auto p1It = p1Chrom.begin();
-		auto p2It = p2Chrom.begin();
-
-		for (int j = 0; j < p1Chrom.size(); ++j , ++p1It , ++p2It) {
-			// Get a random allele from each parent
-			char a1 = p1It->getRandomAllele();
-			char a2 = p2It->getRandomAllele();
-
-			// Determine if each allele should have crossed over
-			MasterGeneIndex* index = MasterGeneIndex::getInstance();
-			srand(time(nullptr));
-
-			int a1CrossoverChance = index->get(a1)->getCrossoverChance();
-			if ((rand() % 101) > a1CrossoverChance) {
-				// Get the allele at the same spot on the other chromosome
-				auto strand = p1Chrom.getStrand(a1);
-				if (strand == Chromosome::Strand::STRAND1) {
-					a1 = p2It->first();
-				}
-				else {
-					a1 = p2It->second();
-				}
-				++crossoverCount;
-			}
-
-			int a2CrossoverChance = index->get(a2)->getCrossoverChance();
-			if ((rand() % 101) > a2CrossoverChance) {
-				// Get the allele at the same spot on the other chromosome
-				auto strand = p2Chrom.getStrand(a2);
-				if (strand == Chromosome::Strand::STRAND1) {
-					a2 = p1It->first();
-				}
-				else {
-					a2 = p1It->second();
-				}
-				++crossoverCount;
-			}
-
-			childChromosomes[j].first += a1;
-			childChromosomes[j].second += a2;
-
-			// Add a trailing white space
-			if (j + 1 != p1Chrom.size()) {
-				childChromosomes[j].first += ' ';
-				childChromosomes[j].second += ' ';
-			}
-		}
+		child->addChromosome(factory->createChromosome(
+				parent1->serveChromosome(),
+				parent2->serveChromosome(),
+				crossoverCount
+		));
 	}
-
-    return createOrganism(
-        parent1->getGenus(),
-		parent1->getSpecies(),
-		parent1->getName(),
-		childChromosomes
-    );
+    return child;
 }

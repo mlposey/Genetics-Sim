@@ -23,6 +23,26 @@ public:
 	 */
 	Chromosome createChromosome(const std::pair<string,string>
 								&chromesomeStrands) const;
+
+    /**
+     * @brief Creates a new chromosome from two existing ones
+     *
+     * This is ideally used when creating an organism from two parents. Calls
+     * to this method would consistently have the first argument be a chromosome
+     * from the first parent and the second argument a chromosome from the
+     * second parent.
+     *
+     * @param crossoverCount Chromosomal crossover is a process that can occur
+     * 	when creating a new chromosome. This variable will be incremented by
+     * 	one if it happens.
+     */
+    Chromosome createChromosome(Chromosome &a, Chromosome &b,
+								int &crossoverCount);
+
+private:
+	bool tryCrossover(char &parent1Allele,
+					  Chromosome &parent1Chromosome,
+					  Chromosome::iterator &parent2It);
 };
 
 // A collection of string pairs that represent the strands of chromosomes
