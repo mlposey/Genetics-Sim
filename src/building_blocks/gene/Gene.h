@@ -60,6 +60,9 @@ public:
 			 + string() += _allele2;
 	}
 
+    /// Returns a string description of the Gene
+    operator string() const;
+
 	/// Prints a full description of the Gene to stdout
 	void printDescription() const;
 

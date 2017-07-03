@@ -52,6 +52,11 @@ void Gene::printDescription() const {
 	}
 }
 
+Gene::operator string() const {
+    return getZygosity() + " (" + getPhenotype() + " " + getAllelesString() +
+			")";
+}
+
 /*
 This will be needed by the stat printer but is small enough in
 scope that the logic should just be put in that function
