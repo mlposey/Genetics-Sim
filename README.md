@@ -1,6 +1,4 @@
 # A Genetics Simulator
-
-## Introduction
 This was a semester project for a course on object-oriented programming. The
 task was to build program that could read in genetic information from two
 parent organisms and then create a variable number of offspring. Doing so
