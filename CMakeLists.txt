@@ -6,34 +6,34 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
 set(CMAKE_CXX_STANDARD 14)
 
 set(SOURCE_FILES
-        src/building_blocks/gene/Gene.cpp
-        src/building_blocks/gene/Gene.h
-        src/building_blocks/gene/GeneFactory.cpp
-        src/building_blocks/gene/GeneFactory.h
-        src/building_blocks/gene/MasterGene.cpp
-        src/building_blocks/gene/MasterGene.h
-        src/building_blocks/gene/MasterGeneIndex.cpp
-        src/building_blocks/gene/MasterGeneIndex.h
-        src/building_blocks/Allele.cpp
-        src/building_blocks/Allele.h
-        src/building_blocks/Chromosome.cpp
-        src/building_blocks/Chromosome.h
-        src/building_blocks/ChromosomeFactory.cpp
-        src/building_blocks/ChromosomeFactory.h
-        src/building_blocks/Organism.cpp
-        src/building_blocks/Organism.h
-        src/building_blocks/OrganismFactory.cpp
-        src/building_blocks/OrganismFactory.h
-        src/core/Simulation.cpp
-        src/core/Simulation.h
-        src/core/IObserver.h
-        src/core/Observable.h
+        src/core/gene/Gene.cpp
+        src/core/gene/Gene.h
+        src/core/gene/GeneFactory.cpp
+        src/core/gene/GeneFactory.h
+        src/core/gene/MasterGene.cpp
+        src/core/gene/MasterGene.h
+        src/core/gene/MasterGeneIndex.cpp
+        src/core/gene/MasterGeneIndex.h
+        src/core/Allele.cpp
+        src/core/Allele.h
+        src/core/Chromosome.cpp
+        src/core/Chromosome.h
+        src/core/ChromosomeFactory.cpp
+        src/core/ChromosomeFactory.h
+        src/core/Organism.cpp
+        src/core/Organism.h
+        src/core/OrganismFactory.cpp
+        src/core/OrganismFactory.h
+        src/sim/Simulation.cpp
+        src/sim/Simulation.h
+        src/sim/IObserver.h
+        src/sim/Observable.h
         src/util/CustomExceptions.h
         src/util/macros.h
         src/genetics.cpp
         external/instructor_files/GeneticsSimDataParser.cpp
         external/instructor_files/GeneticsSimDataParser.h
-        src/core/Scoreboard.cpp src/core/Scoreboard.h)
+        src/sim/Scoreboard.cpp src/sim/Scoreboard.h)
 
 add_executable(genetics ${SOURCE_FILES})
 

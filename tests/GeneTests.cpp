@@ -1,9 +1,9 @@
 #include <gtest/gtest.h>
 #include <memory>
 #include "../external/instructor_files/GeneticsSimDataParser.cpp"
-#include "../src/building_blocks/gene/MasterGeneIndex.cpp"
-#include "../src/building_blocks/gene/Gene.cpp"
-#include "../src/building_blocks/gene/GeneFactory.cpp"
+#include "../src/core/gene/MasterGeneIndex.cpp"
+#include "../src/core/gene/Gene.cpp"
+#include "../src/core/gene/GeneFactory.cpp"
 
 
 class GeneTest : public testing::Test {

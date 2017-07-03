@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 #include <memory>
 #include "../src/util/CustomExceptions.h"
-#include "../src/building_blocks/gene/GeneFactory.h"
-#include "../src/building_blocks/gene/MasterGeneIndex.h"
+#include "../src/core/gene/GeneFactory.h"
+#include "../src/core/gene/MasterGeneIndex.h"
 
 
 class GeneFactoryTest : public testing::Test {};
