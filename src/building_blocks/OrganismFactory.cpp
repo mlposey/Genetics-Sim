@@ -7,7 +7,7 @@ shared_ptr<Organism> OrganismFactory::createOrganism(
 		const string &genus,
 		const string &species,
 		const string &name,
-		const ChromosomeStrands &chromosomes) {
+		const ChromosomesStrands &chromosomes) {
 
 	auto organism = make_shared<Organism>(genus, species, name);
 
@@ -26,7 +26,7 @@ shared_ptr<Organism> OrganismFactory::createOrganism(
 	shared_ptr<Organism> parent2,
 	int &crossoverCount) {
 
-	ChromosomeStrands childChromosomes(parent1->getChromosomeCount());
+	ChromosomesStrands childChromosomes(parent1->getChromosomeCount());
 	for (int i = 0; i < parent1->getChromosomeCount(); ++i) {
 		auto& p1Chrom = parent1->serveChromosome();
 		auto& p2Chrom = parent2->serveChromosome();

@@ -28,7 +28,7 @@ public:
 		const string& genus,
 		const string& species,
 		const string& name,
-		const ChromosomeStrands &chromosomes);
+		const ChromosomesStrands &chromosomes);
 
 	/**
 	 * @brief Creates an Organism with a populated genotype

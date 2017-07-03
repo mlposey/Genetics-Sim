@@ -104,7 +104,7 @@ void Simulation::loadParentData() {
 
 	// Creates a parent organism
 	auto createParent = [&](bool isParent1) {
-		ChromosomeStrands chromosomes(parser->getChromosomeCount());
+		ChromosomesStrands chromosomes(parser->getChromosomeCount());
 
 		// The chromosome information being displayed
 		int counter = 1;

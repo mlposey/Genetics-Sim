@@ -26,4 +26,4 @@ public:
 };
 
 // A collection of string pairs that represent the strands of chromosomes
-using ChromosomeStrands = std::vector<std::pair<string,string>>;
+using ChromosomesStrands = std::vector<std::pair<string,string>>;
