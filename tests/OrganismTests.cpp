@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 #include "core/Organism.cpp"
-#include "util/CustomExceptions.h"
 #include "util.h"
 
 class OrganismTest : public testing::Test {
