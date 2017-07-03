@@ -79,9 +79,10 @@ shared_ptr<Organism> OrganismFactory::createOrganism(
 		}
 	}
 
-		return createOrganism(
-			parent1->getGenus(),
-			parent1->getSpecies(),
-			parent1->getName(),
-			childChromosomes);
+    return createOrganism(
+        parent1->getGenus(),
+		parent1->getSpecies(),
+		parent1->getName(),
+		childChromosomes
+    );
 }
