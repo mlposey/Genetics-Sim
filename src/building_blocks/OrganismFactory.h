@@ -9,7 +9,13 @@ using std::make_shared;
 #include "ChromosomeFactory.h"
 
 /**
- * @brief The OrganismFactory class is used to create Organisms
+ * @brief OrganismFactory is the preferred method for creating Organisms
+ *
+ * Organism objects can be created in two ways:
+ * 	(1) Using gene information encoded as strings
+ * 	(2) Using two existing Organisms to create a new, random one
+ *
+ * @see Organism
  */
 class OrganismFactory
 {
@@ -17,7 +23,11 @@ class OrganismFactory
 
 public:
 	/**
-	 * @brief Creates an Organism with a populated genotype
+	 * @brief Creates an Organism using data from chromosome strands
+	 *
+	 * This method is ideal if loading information about an organism which
+	 * was already created.
+	 *
 	 * @param genus The genus of the organism
 	 * @param species The species of the organism
 	 * @param name The common name of the organism
@@ -31,11 +41,15 @@ public:
 		const ChromosomesStrands &chromosomes);
 
 	/**
-	 * @brief Creates an Organism with a populated genotype
+	 * @brief Creates an Organism that is an offspring of two parents
+	 *
+	 * This method is ideal if you want to create a new organism from two
+	 * existing ones.
+	 *
 	 * @param parent1 One parent of the future organism
 	 * @param parent2 One parent of the future organism
-	 * @param crossoverCount The number of times a crossover occurs
-	 *        It is incremented on each occurrence
+	 * @param crossoverCount The number of times a crossover occurs when
+	 * 	creating the new organism
 	 * @return A shared_ptr to the created Organism
 	 */
 	shared_ptr<Organism> createOrganism(
