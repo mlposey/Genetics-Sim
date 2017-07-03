@@ -15,23 +15,24 @@ using std::string;
 class Simulation
 {
 public:
-	/// Constructs a Simulation object and initializes the state of the program
 	Simulation();
 
 	/// Runs through the entirety of the simulation and then prints the results
 	void run();
 
 private:
+    /// Initializes the program using command-line input
 	void init();
 
 	/**
-	 * @brief Loads genes from the file into _masterGenes
+	 * @brief Populates the gene index with genes from the definition file
 	 *
 	 * @throws std::ifstream::failure if the file cannot be read
+	 * @see MasterGeneIndex
 	 */
 	void loadMasterGenes(const string &filename);
 
-	/// @brief Initializes two parent Organisms
+	/// Reads and stores parent data from the definition file
 	void loadParentData();
 
 	// Stores counts of unique genes and genotypes that are created
