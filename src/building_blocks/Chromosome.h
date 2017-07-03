@@ -12,6 +12,21 @@ struct RawChromosome {
 // A vector of RawChromosome objects
 typedef std::vector<RawChromosome> RawChromosomes;
 
+/**
+ * @brief Chromosome consists of genes placed on two strands.
+ *
+ * This illustration of chromosomes displays the concept:
+ *
+ *  - Chromosome -
+ * |S1 -------- S2|
+ * |--          --|
+ * | t - Gene - T |
+ * | t - Gene - t |
+ * | X - Gene - x |
+ * |--          --|
+ * |S1 -------- S2|
+ *
+ */
 class Chromosome : public std::vector<Gene> {
 public:
 	// The strands of a chromosome
@@ -22,7 +37,13 @@ public:
 
     /**
      * @brief Adds a Gene to the chromosome composition
-	 * This should be used instead of the inherited vector additions
+     *
+     * The first allele of the gene is placed on Strand 1 and the second
+     * allele on Strand 2.
+     *
+	 * Mistakenly using the vector addition methods instead of this one will
+     * result in alleles not being placed on their respective strands.
+     *
      * @param gene The gene to insert into the chromosome
      */
     void addGene(const Gene &gene);
