@@ -16,7 +16,9 @@ public:
 	/**
 	 * @param chromesomeStrands A pair of two strings which represent the first
 	 * 	and second strand of a chromosome. The sizes of each string in the
-	 * 	pair must match.
+	 * 	pair must match. If they do not, createChromosome will return a
+	 * 	Chromosome object with no Genes.
+	 *
 	 * @return A chromosome object created from the strand information
 	 */
 	Chromosome createChromosome(const std::pair<string,string>
