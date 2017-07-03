@@ -33,7 +33,7 @@ set(SOURCE_FILES
         src/genetics.cpp
         external/instructor_files/GeneticsSimDataParser.cpp
         external/instructor_files/GeneticsSimDataParser.h
-        )
+        src/core/Scoreboard.cpp src/core/Scoreboard.h)
 
 add_executable(genetics ${SOURCE_FILES})
 

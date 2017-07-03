@@ -4,6 +4,7 @@
 using std::string;
 
 #include "../building_blocks/Organism.h"
+#include "Scoreboard.h"
 
 /**
  * @brief Simulation simulates reproduction between organisms.
@@ -54,4 +55,6 @@ private:
 
 	// The number of times a crossover occurred
 	int _crossoverCount;
+
+	Scoreboard _scoreboard;
 };

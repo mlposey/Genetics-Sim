@@ -9,6 +9,7 @@
 #include "../../external/instructor_files/GeneticsSimDataParser.h"
 #include "../building_blocks/OrganismFactory.h"
 #include "../building_blocks/gene/MasterGeneIndex.h"
+#include "../building_blocks/gene/GeneFactory.h"
 
 Simulation::Simulation()
 	: _parent1(nullptr)
@@ -28,13 +29,16 @@ void Simulation::run() {
 		_children.push_back(factory->createOrganism(_parent1, _parent2));
 	}
 
+    _scoreboard.displayResults();
+
 	std::cout << "\nPress Enter to exit the simulation.\n";
 	getchar();
 }
 
 void Simulation::init() {
-	string input;
+    GeneFactory::getInstance()->addObserver(_scoreboard);
 
+	string input;
 	// Attempt to get a valid data file from the user
 	while (true) {
 		try {

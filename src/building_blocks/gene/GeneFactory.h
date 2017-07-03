@@ -1,6 +1,7 @@
 #pragma once
 #include "Gene.h"
 #include "../../util/macros.h"
+#include "../../core/Observable.h"
 
 /**
  * @brief GeneFactory is a singleton that creates Gene objects.
@@ -9,7 +10,7 @@
  * reference to the MasterGene for you.
  * @see Gene
  */
-class GeneFactory
+class GeneFactory : public Observable<Gene>
 {
 	SINGLETON(GeneFactory)
 

@@ -10,5 +10,8 @@ Gene GeneFactory::createGene(char allele1, char allele2) {
 		throw InvalidSymbolException(string("Invalid allele combination: ") +
 			allele1 + " " + allele2);
 	}
-	return Gene(masterGene1, allele1, allele2);
+
+	Gene gene(masterGene1, allele1, allele2);
+	notifyAll(gene);
+	return gene;
 }
