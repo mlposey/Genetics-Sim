@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.7)
 project(src)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
-INCLUDE_DIRECTORIES(src)
+INCLUDE_DIRECTORIES(src external)
 
 set(CMAKE_CXX_STANDARD 14)
 

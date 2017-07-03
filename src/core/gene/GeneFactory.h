@@ -1,7 +1,7 @@
 #pragma once
 #include "Gene.h"
-#include "../../util/macros.h"
-#include "../../sim/Observable.h"
+#include "util/macros.h"
+#include "sim/Observable.h"
 
 /**
  * @brief GeneFactory is a singleton that creates Gene objects.

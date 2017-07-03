@@ -6,10 +6,10 @@
 #include <ctime>
 
 #include "Simulation.h"
-#include "../../external/instructor_files/GeneticsSimDataParser.h"
-#include "../core/OrganismFactory.h"
-#include "../core/gene/MasterGeneIndex.h"
-#include "../core/gene/GeneFactory.h"
+#include "instructor_files/GeneticsSimDataParser.h"
+#include "core/OrganismFactory.h"
+#include "core/gene/MasterGeneIndex.h"
+#include "core/gene/GeneFactory.h"
 
 Simulation::Simulation()
     : _parent1(nullptr)

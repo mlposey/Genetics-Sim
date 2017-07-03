@@ -1,6 +1,6 @@
 #include "ChromosomeFactory.h"
-#include "gene/GeneFactory.h"
-#include "gene/MasterGeneIndex.h"
+#include "core/gene/GeneFactory.h"
+#include "core/gene/MasterGeneIndex.h"
 
 Chromosome ChromosomeFactory::createChromosome(
         const std::pair<string,string> &chromesomeStrands) const {

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Scoreboard.h"
-#include "../core/OrganismFactory.h"
+#include "core/OrganismFactory.h"
 
 void Scoreboard::notify(const Gene &gene) {
     _geneStats[gene.getTrait()][gene]++;

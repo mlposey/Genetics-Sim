@@ -3,7 +3,7 @@
 #include <string>
 using std::string;
 
-#include "../core/Organism.h"
+#include "core/Organism.h"
 #include "Scoreboard.h"
 
 /**

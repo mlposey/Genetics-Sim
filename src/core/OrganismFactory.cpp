@@ -1,7 +1,7 @@
 #include "OrganismFactory.h"
 #include "ChromosomeFactory.h"
 #include <ctime>
-#include "gene/MasterGeneIndex.h"
+#include "core/gene/MasterGeneIndex.h"
 
 shared_ptr<Organism> OrganismFactory::createOrganism(
         const string &genus,

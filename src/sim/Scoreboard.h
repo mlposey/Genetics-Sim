@@ -4,7 +4,7 @@ using std::unordered_map;
 #include <map>
 using std::map;
 #include "IObserver.h"
-#include "../core/gene/Gene.h"
+#include "core/gene/Gene.h"
 
 /// @brief Scoreboard keeps track of the genetic variations that are created.
 class Scoreboard : public IObserver<Gene> {
