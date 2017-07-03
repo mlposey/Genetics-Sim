@@ -14,13 +14,13 @@ file contains descriptions of:
 * genes that organism can have
 * two parents and the gene configurations which they are made of
 
-`external/instructor_files` contains two sample definition files that you can
+`external/instructor_files/` contains two sample definition files that you can
 use when running the program. If building from source, these files are copied
 to the build directory using CMake.
 
 ## The Reproduction Process
 Reproduction mimics genetic processes closely, with a few simplifications. In
-`src/core`, you will find models of components such as alleles, genes, chromosomes,
+`src/core/`, you will find models of components such as alleles, genes, chromosomes,
 and organisms. Organisms are composed of unpaired collections of chromosomes.
 This is slightly easier than the human case. From there, much is the same.
 
