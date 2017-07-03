@@ -6,7 +6,7 @@ using std::string;
 #include "../building_blocks/Organism.h"
 
 /**
- * @brief Simulation handles the main thread of execution for the program.
+ * @brief Simulation simulates reproduction between organisms.
  *
  * Simulation loads possible genetic configurations from a definition file and
  * creates the first two parents. It uses this initial data in combination with
