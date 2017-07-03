@@ -5,35 +5,38 @@
 #include "core/gene/MasterGeneIndex.h"
 
 
-class GeneFactoryTest : public testing::Test {};
+class GeneFactoryTest : public testing::Test {
+public:
+    GeneFactoryTest() {
+        auto index = MasterGeneIndex::getInstance();
+        index->clear();
+        index->add(std::make_shared<MasterGene>(
+                "", "", "", sym1, sym2, 0.0
+        ));
+    }
 
+    char sym1 = 'T', sym2 = 't';
+    GeneFactory *geneFactory = GeneFactory::getInstance();
+};
+
+// GeneFactory.createGene should not throw an exception if supplied two alleles
+// that belong to a MasterGene in the MasterGeneIndex.
 TEST_F(GeneFactoryTest, createGene_bothAllelesValid) {
-    MasterGeneIndex::getInstance()->add(std::make_shared<MasterGene>(
-            "", "", "", 'T', 't', 0.0
-    ));
-
-    EXPECT_NO_THROW(GeneFactory::getInstance()->createGene('t', 't'));
-    EXPECT_NO_THROW(GeneFactory::getInstance()->createGene('T', 'T'));
-    EXPECT_NO_THROW(GeneFactory::getInstance()->createGene('t', 'T'));
-    EXPECT_NO_THROW(GeneFactory::getInstance()->createGene('t', 'T'));
+    EXPECT_NO_THROW(geneFactory->createGene(sym1, sym1));
+    EXPECT_NO_THROW(geneFactory->createGene(sym2, sym2));
+    EXPECT_NO_THROW(geneFactory->createGene(sym2, sym1));
+    EXPECT_NO_THROW(geneFactory->createGene(sym1, sym2));
 }
 
+// GeneFactory.createGene should throw InvalidSymbolException if supplied one
+// allele that does not belong to a MasterGene in the MasterGeneIndex.
 TEST_F(GeneFactoryTest, createGene_oneInvalidAllele) {
-    MasterGeneIndex::getInstance()->add(std::make_shared<MasterGene>(
-            "", "", "", 'X', 'x', 0.0
-    ));
-
-    EXPECT_THROW(GeneFactory::getInstance()->createGene('w', 'X'),
-        InvalidSymbolException);
-    EXPECT_THROW(GeneFactory::getInstance()->createGene('X', 'w'),
-                 InvalidSymbolException);
+    EXPECT_THROW(geneFactory->createGene('w', sym1), InvalidSymbolException);
+    EXPECT_THROW(geneFactory->createGene(sym2, 'w'), InvalidSymbolException);
 }
 
+// GeneFactory.createGene should throw InvalidSymbolException if supplied two
+// alleles that do not belong to a MasterGene in the MasterGeneIndex.
 TEST_F(GeneFactoryTest, createGene_bothAllelesInvalid) {
-    MasterGeneIndex::getInstance()->add(std::make_shared<MasterGene>(
-            "", "", "", 'Q', 'q', 0.0
-    ));
-
-    EXPECT_THROW(GeneFactory::getInstance()->createGene('b', 'b'),
-                 InvalidSymbolException);
+    EXPECT_THROW(geneFactory->createGene('b', 'b'), InvalidSymbolException);
 }

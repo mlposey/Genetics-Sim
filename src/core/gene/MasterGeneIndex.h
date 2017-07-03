@@ -15,7 +15,7 @@ public:
     static MasterGeneIndex *getInstance();
 
     /// Removes all MasterGene objects from the index
-    void clearIndex() { _masterGenes.clear(); }
+    void clear() { _masterGenes.clear(); }
 
     /**
      * @brief Loads a collection of gene definitions from a data file

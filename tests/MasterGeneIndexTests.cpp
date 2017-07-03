@@ -4,7 +4,7 @@
 class MasterGeneIndexTest : public testing::Test {
 public:
     MasterGeneIndexTest() {
-        index->clearIndex();
+        index->clear();
         masterGene = std::make_shared<MasterGene>(
                 "", "", "", sym1, sym2, 3.3
         );
