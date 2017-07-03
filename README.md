@@ -48,4 +48,4 @@ This builds all projects. You can specify either `genetics` or `tests` to
 narrow compilation. E.g., `make -j4 tests`.
 
 A new directory, `build`, should now exist in the root. It contains the target
-executables.
+executables and two sample definition files.
