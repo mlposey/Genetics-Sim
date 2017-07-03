@@ -1,6 +1,4 @@
-#ifndef SRC_SCOREBOARD_H
-#define SRC_SCOREBOARD_H
-
+#pragma once
 #include <unordered_map>
 using std::unordered_map;
 #include <map>
@@ -28,5 +26,3 @@ private:
      */
     unordered_map<string, map<string, int>> _geneStats;
 };
-
-#endif //SRC_SCOREBOARD_H
