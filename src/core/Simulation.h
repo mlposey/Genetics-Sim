@@ -6,12 +6,11 @@ using std::string;
 #include "../building_blocks/Organism.h"
 
 /**
- * @brief The Simulation class handles the main thread of execution for the genetic simulation
-
- * Simulation invokes the necessary file parser to read the initial parent
- * states and uses this data to start the LoveChamber and StatCounter which
- * handle all reproduction and data collection
- * @see StatCounter
+ * @brief Simulation handles the main thread of execution for the program.
+ *
+ * Simulation loads possible genetic configurations from a definition file and
+ * creates the first two parents. It uses this initial data in combination with
+ * command-line input to simulate organism reproduction.
  */
 class Simulation
 {
@@ -27,7 +26,9 @@ private:
 
 	/**
 	 * @brief Loads genes from the file into _masterGenes
-	 * @throws ifstream::failure
+	 *
+	 * If the file cannot be read, the program will display a message to
+	 * standard error and then exit with a failing status.
 	 */
 	void loadMasterGenes(const string &filename);
 
