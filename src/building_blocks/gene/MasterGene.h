@@ -38,51 +38,51 @@ public:
      * @param crossoverChance The chance that alleles cross over during
      *  organism reproduction
      */
-	MasterGene(const string &trait, const string &dominantAllele,
-		       const string &recessiveAllele, char dominantSymbol,
-			   char recessiveSymbol, double crossoverChance);
+    MasterGene(const string &trait, const string &dominantAllele,
+               const string &recessiveAllele, char dominantSymbol,
+               char recessiveSymbol, double crossoverChance);
 
-	string getTrait() const {
-		return _trait;
-	}
+    string getTrait() const {
+        return _trait;
+    }
 
-	string getDominantAllele() const {
-		return _dominantAllele;
-	}
+    string getDominantAllele() const {
+        return _dominantAllele;
+    }
 
-	string getRecessiveAllele() const {
-		return _recessiveAllele;
-	}
+    string getRecessiveAllele() const {
+        return _recessiveAllele;
+    }
 
-	char getDominantSymbol() const {
-		return _dominantSymbol;
-	}
+    char getDominantSymbol() const {
+        return _dominantSymbol;
+    }
 
-	char getRecessiveSymbol() const {
-		return _recessiveSymbol;
-	}
+    char getRecessiveSymbol() const {
+        return _recessiveSymbol;
+    }
 
-	/**
-	 * @brief Returns the chance that an allele from this gene will cross over
-	 * @see OrganismFactory.createOrganism to better understand the concept
-	 * of allele crossover.
-	 */
-	double getCrossoverChance() const {
-		return _crossoverChance;
-	}
+    /**
+     * @brief Returns the chance that an allele from this gene will cross over
+     * @see OrganismFactory.createOrganism to better understand the concept
+     * of allele crossover.
+     */
+    double getCrossoverChance() const {
+        return _crossoverChance;
+    }
 
 private:
-	string
-		_trait, // what trait the gene causes
-		_dominantAllele, // physical result of a dominant allele
-		_recessiveAllele; // physical result of a recessive allele
-	
-	// Symbols representing the dominant and recessive genes
-	char 
-		_dominantSymbol,
-		_recessiveSymbol;
+    string
+        _trait, // what trait the gene causes
+        _dominantAllele, // physical result of a dominant allele
+        _recessiveAllele; // physical result of a recessive allele
+    
+    // Symbols representing the dominant and recessive genes
+    char 
+        _dominantSymbol,
+        _recessiveSymbol;
 
-	// The chance that an allele from this gene will cross over
-	double _crossoverChance;
+    // The chance that an allele from this gene will cross over
+    double _crossoverChance;
 };
 

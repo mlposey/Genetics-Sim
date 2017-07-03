@@ -14,66 +14,66 @@ using std::string;
 class Gene
 {
 public:
-	/**
-	 * @param master The MasterGene holding common data for genes of this type
-	 * @param a1 The symbol of one allele to be part of the gene pair
-	 * @param a2 The symbol of one allele to be part of the gene pair
-	 */
-	Gene(std::shared_ptr<MasterGene> master, char a1, char a2);
+    /**
+     * @param master The MasterGene holding common data for genes of this type
+     * @param a1 The symbol of one allele to be part of the gene pair
+     * @param a2 The symbol of one allele to be part of the gene pair
+     */
+    Gene(std::shared_ptr<MasterGene> master, char a1, char a2);
 
-	 /// Picks a random Allele from the pair and returns it
-	char getRandomAllele() const;
+     /// Picks a random Allele from the pair and returns it
+    char getRandomAllele() const;
 
-	/// @return The first allele in the pair
-	char first() const { return _allele1; }
+    /// @return The first allele in the pair
+    char first() const { return _allele1; }
 
-	/// @return The second allele in the pair
-	char second() const { return _allele2; }
+    /// @return The second allele in the pair
+    char second() const { return _allele2; }
 
-	/**
-	 * @brief Gets the phenotype of the Gene
-	 *
-	 * The phenotype represents the visible Allele trait.
-	 * This should belong to the Allele that is dominant or default
-	 * to one of the recessives which should share the trait.
-	 *
-	 * @return The phenotype of the Gene as a string
-	 */
-	string getPhenotype() const;
+    /**
+     * @brief Gets the phenotype of the Gene
+     *
+     * The phenotype represents the visible Allele trait.
+     * This should belong to the Allele that is dominant or default
+     * to one of the recessives which should share the trait.
+     *
+     * @return The phenotype of the Gene as a string
+     */
+    string getPhenotype() const;
 
-	/**
-	 * @brief Gets the zygosity of the Gene
-	 *
-	 * The zygosity of the gene represents the commonality of its Alleles.
-	 * It can be one of three values:
-	 *     1.) heterozygous dominant
-	 *     2.) homozygous recessive
-	 *     3.) homozgyous dominant
-	 *
-	 * @return The zygosity of the Gene as a string
-	 */
-	string getZygosity() const;
+    /**
+     * @brief Gets the zygosity of the Gene
+     *
+     * The zygosity of the gene represents the commonality of its Alleles.
+     * It can be one of three values:
+     *     1.) heterozygous dominant
+     *     2.) homozygous recessive
+     *     3.) homozgyous dominant
+     *
+     * @return The zygosity of the Gene as a string
+     */
+    string getZygosity() const;
 
-	/**
-	 * @brief Returns the allele pair of the gene as a string
-	 *
-	 * If the gene is heterozygous, the dominant allele is always first.
-	 */
-	string getAllelesString() const;
+    /**
+     * @brief Returns the allele pair of the gene as a string
+     *
+     * If the gene is heterozygous, the dominant allele is always first.
+     */
+    string getAllelesString() const;
 
-	/// Returns the trait this gene encodes for
-	string getTrait() const { return _master->getTrait(); }
+    /// Returns the trait this gene encodes for
+    string getTrait() const { return _master->getTrait(); }
 
     /// Returns a string description of the Gene
     operator string() const;
 
-	/// Prints a full description of the Gene to stdout
-	void printDescription() const;
+    /// Prints a full description of the Gene to stdout
+    void printDescription() const;
 
 private:
-	char
-		_allele1,  // The symbol for the first allele of the gene pair
-		_allele2;  // The symbol for the second allele of the gene pair
+    char
+        _allele1,  // The symbol for the first allele of the gene pair
+        _allele2;  // The symbol for the second allele of the gene pair
 
-	std::shared_ptr<MasterGene> _master;  // A shared_ptr to the MasterGene
+    std::shared_ptr<MasterGene> _master;  // A shared_ptr to the MasterGene
 };

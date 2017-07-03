@@ -12,29 +12,29 @@
 class Allele
 {
 public:
-	/**
-	 * @brief Constructs an Allele object
-	 * @param symbol The symbol for the allele
-	 * @param phenotype The physical trait that the allele encodes
-	 */
-	Allele(char symbol, const std::string &phenotype);
+    /**
+     * @brief Constructs an Allele object
+     * @param symbol The symbol for the allele
+     * @param phenotype The physical trait that the allele encodes
+     */
+    Allele(char symbol, const std::string &phenotype);
 
-	/// @return True if the allele is dominant or false if it is recessive
-	bool isDominant() const { return isupper(_symbol) != 0; }
+    /// @return True if the allele is dominant or false if it is recessive
+    bool isDominant() const { return isupper(_symbol) != 0; }
 
-	/// @return The symbol of the allele (e.g. 'T' or 't')
-	char getSymbol() const { return _symbol; }
+    /// @return The symbol of the allele (e.g. 'T' or 't')
+    char getSymbol() const { return _symbol; }
 
-	/// @return The physical description of the allele (e.g. "tall" or "short")
-	std::string getPhenotype() const { return _phenotype; }
+    /// @return The physical description of the allele (e.g. "tall" or "short")
+    std::string getPhenotype() const { return _phenotype; }
 
 private:
-	/*
-	  The symbol of the Allele. Capital letters represent a dominant Allele
-	  while lower case letters represent a recessive one.
-	*/
-	char _symbol;
+    /*
+      The symbol of the Allele. Capital letters represent a dominant Allele
+      while lower case letters represent a recessive one.
+    */
+    char _symbol;
 
-	// The physical trait the Allele represents
-	std::string _phenotype;
+    // The physical trait the Allele represents
+    std::string _phenotype;
 };

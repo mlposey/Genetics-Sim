@@ -1,6 +1,6 @@
 #include "core/Simulation.h"
 
 int main() {
-	Simulation().run();
-	return 0;
+    Simulation().run();
+    return 0;
 }
