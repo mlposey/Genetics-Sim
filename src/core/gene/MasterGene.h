@@ -42,6 +42,8 @@ public:
                const string &recessiveAllele, char dominantSymbol,
                char recessiveSymbol, double crossoverChance);
 
+    bool operator==(const MasterGene &rhs) const;
+
     string getTrait() const {
         return _trait;
     }

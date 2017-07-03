@@ -14,6 +14,9 @@ class MasterGeneIndex
 public:
     static MasterGeneIndex *getInstance();
 
+    /// Removes all MasterGene objects from the index
+    void clearIndex() { _masterGenes.clear(); }
+
     /**
      * @brief Loads a collection of gene definitions from a data file
      *
@@ -170,7 +173,7 @@ public:
     void add(shared_ptr<MasterGene> gene);
 
     /// Retrieves a MasterGene from the index
-    shared_ptr<MasterGene> get(char symbol);
+    shared_ptr<MasterGene> get(char allele);
 
 private:
     MasterGeneIndex() {}
