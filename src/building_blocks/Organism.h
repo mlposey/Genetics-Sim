@@ -57,7 +57,7 @@ public:
 	void printDescription() const;
 
 	/// Returns the number of Chromosomes in the Organism
-	int getChromosomeCount() const { return _chromosomes.size(); }
+	unsigned long getChromosomeCount() const { return _chromosomes.size(); }
 
 	/// Returns the Organism's collection of Chromosome objects
 	const std::vector<Chromosome> &getChromosomes() const { return _chromosomes; }
