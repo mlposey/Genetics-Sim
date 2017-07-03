@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../src/core/gene/MasterGene.cpp"
+#include "core/gene/MasterGene.cpp"
 
 // MasterGene.MasterGene should round negative crossover chances to zero
 // and keep values which were already positive.

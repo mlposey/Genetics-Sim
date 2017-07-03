@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../src/core/Allele.cpp"
+#include "core/Allele.cpp"
 
 // Allele.isDominant should identify uppercase symbols as dominant
 // and lowercase symbols as recessive.
