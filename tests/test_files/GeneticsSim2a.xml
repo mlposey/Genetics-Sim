@@ -1,4 +1,4 @@
-<!-- Sample data file for use in the Mendelian Genetics Simulation Program 1      -->
+<!-- Sample data file for use in the Mendelsrctics Simulation Program 2      -->
 <!-- Note: This file is not fully compatible with XML standards, but close enough -->
 <!--        for the purposes of this project                                      -->
 
@@ -13,6 +13,9 @@
 		<COMMON_NAME>
 			Pea Plant
 		</COMMON_NAME>
+		<CHROMOSOME_COUNT>
+			2
+		</CHROMOSOME_COUNT>
 	</ORGANISM>
 	<GENES>
 		<GENE>
@@ -31,6 +34,9 @@
 			<RECESSIVE_SYMBOL>
 				t
 			</RECESSIVE_SYMBOL>
+			<CROSSOVER_CHANCE>
+				5.2
+			</CROSSOVER_CHANCE>
 		</GENE>
 		<GENE>
 			<GENE_TRAIT>
@@ -48,6 +54,9 @@
 			<RECESSIVE_SYMBOL>
 				w
 			</RECESSIVE_SYMBOL>
+			<CROSSOVER_CHANCE>
+				4.3
+			</CROSSOVER_CHANCE>
 		</GENE>
 		<GENE>
 			<GENE_TRAIT>
@@ -65,6 +74,9 @@
 			<RECESSIVE_SYMBOL>
 				s
 			</RECESSIVE_SYMBOL>
+			<CROSSOVER_CHANCE>
+				4.25
+			</CROSSOVER_CHANCE>
 		</GENE>
 		<GENE>
 			<GENE_TRAIT>
@@ -82,18 +94,47 @@
 			<RECESSIVE_SYMBOL>
 				c
 			</RECESSIVE_SYMBOL>
+			<CROSSOVER_CHANCE>
+				5.75
+			</CROSSOVER_CHANCE>
 		</GENE>
 	</GENES>
 	<PARENTS>
 		<PARENT>
-			<GENOTYPE>
-				Tt Ww Ss Cc
-			</GENOTYPE>
+			<CHROMOSOME>
+				<STRAND1>
+					T C
+				</STRAND1>
+				<STRAND2>
+					t c
+				</STRAND2>
+			</CHROMOSOME>
+			<CHROMOSOME>
+				<STRAND1>
+					W S
+				</STRAND1>
+				<STRAND2>
+					w s
+				</STRAND2>
+			</CHROMOSOME>
 		</PARENT>
 		<PARENT>
-			<GENOTYPE>
-				Tt Ww Ss Cc
-			</GENOTYPE>
+			<CHROMOSOME>
+				<STRAND1>
+					T C
+				</STRAND1>
+				<STRAND2>
+					t c
+				</STRAND2>
+			</CHROMOSOME>
+			<CHROMOSOME>
+				<STRAND1>
+					W S
+				</STRAND1>
+				<STRAND2>
+					w s
+				</STRAND2>
+			</CHROMOSOME>
 		</PARENT>
 	</PARENTS>
-<MENDELIAN_GENETICS_SIM>
+</MENDELIAN_GENETICS_SIM>
