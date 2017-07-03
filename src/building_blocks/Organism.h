@@ -8,8 +8,10 @@ using std::string;
 /**
  * @brief Organism stores the genetic traits and structure of a living thing.
  *
- * The main purpose of the Organism is to store data such as the scientific
- * name and genotype. New organisms should be created with OrganismFactory.
+ * Organism allows you to manipulate genetic data such as chromosomes, genes,
+ * and alleles. Further, it categorizes this information in the form of common
+ * and scientific names, etc. New organisms should be created with
+ * OrganismFactory.
  *
  * @see Gene, OrganismFactory
  */
