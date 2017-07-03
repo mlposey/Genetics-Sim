@@ -81,10 +81,7 @@ void Simulation::loadMasterGenes(const string &filename) {
 			cout << "\t\tChance of Crossover: " << gene->getCrossoverChance()
 				 << "\n";
 		});
-	} catch (const std::ifstream::failure &e) {
-		std::cerr << e.what() << '\n';
-		exit(EXIT_FAILURE);
-	}
+	} catch (const std::ifstream::failure &e) { throw e; }
 
 	cout << "\n\n";
 }

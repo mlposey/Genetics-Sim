@@ -27,8 +27,7 @@ private:
 	/**
 	 * @brief Loads genes from the file into _masterGenes
 	 *
-	 * If the file cannot be read, the program will display a message to
-	 * standard error and then exit with a failing status.
+	 * @throws std::ifstream::failure if the file cannot be read
 	 */
 	void loadMasterGenes(const string &filename);
 
