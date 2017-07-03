@@ -32,8 +32,15 @@ private:
 	 */
 	void loadMasterGenes(const string &filename);
 
-	/// Reads and stores parent data from the definition file
+	/// Reads and stores data for two parents from the definition file
 	void loadParentData();
+
+    /**
+     * @brief Creates a parent using data from the definition file
+     *
+     * The file should only define two parents.
+     */
+    std::shared_ptr<Organism> createParent();
 
 	// Stores counts of unique genes and genotypes that are created
 	// StatCounter _statCounter;

@@ -11,7 +11,9 @@
 #include "../building_blocks/gene/MasterGeneIndex.h"
 
 Simulation::Simulation()
-	: _offspringCount(0) {
+	: _parent1(nullptr)
+    , _parent2(nullptr)
+    , _offspringCount(0) {
 	init();
 }
 
@@ -46,7 +48,6 @@ void Simulation::init() {
 
 			// Acquire the parent information and create two parent organisms
 			loadParentData();
-
 			break;
 		}
 		catch (std::ifstream::failure &e) {
@@ -87,44 +88,39 @@ void Simulation::loadMasterGenes(const string &filename) {
 }
 
 void Simulation::loadParentData() {
-	// The parser used to retrieve information about each organism
-	GeneticsSimDataParser *parser = GeneticsSimDataParser::getInstance();
-
-	// Creates a parent organism
-	auto createParent = [&](bool isParent1) {
-		ChromosomesStrands chromosomes(parser->getChromosomeCount());
-
-		// The chromosome information being displayed
-		int counter = 1;
-		
-		// Convert the data file's chars to raw chromosomes
-		for (auto &s : chromosomes) {
-			// Two strands, each with a max length of 128 chars
-			char buffer[2][128];
-			isParent1 ? parser->getP1Chromosome(buffer[0], buffer[1]):
-			parser->getP2Chromosome(buffer[0], buffer[1]);
-			s.first = buffer[0];
-			s.second = buffer[1];
-
-			++counter;
-		}
-
-		auto &p = isParent1 ? _parent1 : _parent2;
-
-		// Use the raw chromosomes to create an Organism
-		p = OrganismFactory::getInstance()->createOrganism(
-			parser->getGenus(),
-			parser->getSpecies(),
-			parser->getCommonName(),
-			chromosomes);
-	};
-
 	cout << "Sim Parent 1\n";
-	createParent(true);
+	_parent1 = createParent();
 	_parent1->printDescription();
 	cout << "\n\n";
 
 	cout << "Sim Parent 2\n";
-	createParent(false);
+	_parent2 = createParent();
 	_parent2->printDescription();
+}
+
+std::shared_ptr<Organism> Simulation::createParent() {
+    GeneticsSimDataParser *parser = GeneticsSimDataParser::getInstance();
+    ChromosomesStrands chromosomes(parser->getChromosomeCount());
+
+    const bool isParent1Created = _parent1 != nullptr;
+
+    // Convert the data file's chars to raw chromosomes
+    for (auto &s : chromosomes) {
+        // Two strands, each with a max length of 128 chars
+        char buffer[2][128];
+
+        if (!isParent1Created) parser->getP1Chromosome(buffer[0], buffer[1]);
+        else parser->getP2Chromosome(buffer[0], buffer[1]);
+
+        s.first = buffer[0];
+        s.second = buffer[1];
+    }
+
+    // Use the raw chromosomes to create an Organism
+    return OrganismFactory::getInstance()->createOrganism(
+            parser->getGenus(),
+            parser->getSpecies(),
+            parser->getCommonName(),
+            chromosomes
+	);
 }
