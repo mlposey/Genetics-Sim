@@ -45,6 +45,7 @@ public:
 	 * will reset the position to the beginning.
 	 *
 	 * @return the next chromosome in the organism's genotype
+	 * @throws EmptyContainerException if the organism has no chromosomes
 	 */
 	Chromosome &serveChromosome();
 
