@@ -80,7 +80,7 @@ endif()
 
 set(TEST_FILES
         tests/main.cpp
-        tests/AlleleTests.cpp tests/MasterGeneTests.cpp tests/GeneTests.cpp tests/GeneFactoryTests.cpp tests/MasterGeneIndexTests.cpp)
+        tests/AlleleTests.cpp tests/MasterGeneTests.cpp tests/GeneTests.cpp tests/GeneFactoryTests.cpp tests/MasterGeneIndexTests.cpp tests/ChromosomeTests.cpp)
 
 add_executable(tests ${TEST_FILES})
 target_link_libraries(tests pthread gtest)
