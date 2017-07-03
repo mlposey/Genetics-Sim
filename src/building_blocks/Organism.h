@@ -60,9 +60,6 @@ public:
 	/// Returns the number of Chromosomes in the Organism
 	unsigned long getChromosomeCount() const { return _chromosomes.size(); }
 
-	/// Returns the Organism's collection of Chromosome objects
-	const std::vector<Chromosome> &getChromosomes() const { return _chromosomes; }
-
 	/// Returns the genus of the the Organism as a string
 	string getGenus() const { return _genus; }
 
