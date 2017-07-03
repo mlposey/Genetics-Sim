@@ -40,6 +40,14 @@ public:
 								int &crossoverCount);
 
 private:
+	/**
+	 * @brief Attempts a chromosomal crossover
+	 *
+	 * @param parent1Allele An allele from the first parent
+	 * @param parent1Chromosome The chromosome where the allele resides
+	 * @param parent2It This should be aligned with the allele from parent1
+	 * @return true if crossover occurred; false otherwise
+	 */
 	bool tryCrossover(char &parent1Allele,
 					  Chromosome &parent1Chromosome,
 					  Chromosome::iterator &parent2It);
