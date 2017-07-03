@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.7)
 project(src)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
+INCLUDE_DIRECTORIES(src)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -79,7 +80,7 @@ endif()
 
 set(TEST_FILES
         tests/main.cpp
-        tests/AlleleTests.cpp tests/MasterGeneTests.cpp tests/GeneTests.cpp tests/GeneFactoryTests.cpp)
+        tests/AlleleTests.cpp tests/MasterGeneTests.cpp tests/GeneTests.cpp tests/GeneFactoryTests.cpp tests/MasterGeneIndexTests.cpp)
 
 add_executable(tests ${TEST_FILES})
 target_link_libraries(tests pthread gtest)
