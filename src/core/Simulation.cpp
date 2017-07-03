@@ -10,8 +10,6 @@
 #include "../building_blocks/OrganismFactory.h"
 #include "../building_blocks/gene/MasterGeneIndex.h"
 
-
-
 Simulation::Simulation()
 	: _offspringCount(0) {
 	init();
