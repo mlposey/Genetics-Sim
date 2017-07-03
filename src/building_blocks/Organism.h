@@ -6,12 +6,12 @@
 using std::string;
 
 /**
- * @brief The Organism class represents a living thing
+ * @brief Organism stores the genetic traits and structure of a living thing.
  *
- * The main purpose of the Organism is to store categorical information,
- * such as scientific name, as well as the genotype. New organisms should be
- * created with OrganismFactory.
- * @see Gene
+ * The main purpose of the Organism is to store data such as the scientific
+ * name and genotype. New organisms should be created with OrganismFactory.
+ *
+ * @see Gene, OrganismFactory
  */
 class Organism
 {
@@ -19,8 +19,9 @@ public:
 	/**
 	 * @brief Constructs an Organism with an initial genus, species, and name
 	 *
-	 * The initial state is an Organism without Chromosomes. They can be added
-	 * using ::addChromosome.
+	 * Newly-constructed Organisms have no Chromosomes. They can be added
+	 * with ::addChromosome.
+	 *
 	 * @param genus the genus of the organism
 	 * @param species the species of the organism
 	 * @param name the common name of the organism
@@ -35,11 +36,12 @@ public:
 	void addChromosome(const Chromosome &c);
 
 	/**
-	 * @brief Retrieves the next Chromosome
+	 * @brief Retrieves the next unprocessed Chromosome
 	 *
-	 * Repeated calls to ::serveChromosome will iterate through the Organism's list of
-	 * Chromosomes. When the list has been fully traversed, the position returns to
-	 * zero.
+	 * Organisms are composed of many chromosomes. serveChromosome iterates
+	 * through them. After all chromosomes are processed, calling this method
+	 * will reset the position to the beginning.
+	 *
 	 * @return the next chromosome in the organism's genotype
 	 */
 	Chromosome &serveChromosome();
