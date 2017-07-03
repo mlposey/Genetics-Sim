@@ -6,6 +6,7 @@ using std::make_shared;
 
 #include "Organism.h"
 #include "../utils/macros.h"
+#include "ChromosomeFactory.h"
 
 /**
  * @brief The OrganismFactory class is used to create Organisms
@@ -27,7 +28,7 @@ public:
 		const string& genus,
 		const string& species,
 		const string& name,
-		const RawChromosomes &chromosomes);
+		const ChromosomeStrands &chromosomes);
 
 	/**
 	 * @brief Creates an Organism with a populated genotype

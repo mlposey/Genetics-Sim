@@ -104,7 +104,7 @@ void Simulation::loadParentData() {
 
 	// Creates a parent organism
 	auto createParent = [&](bool isParent1) {
-		RawChromosomes chromosomes(parser->getChromosomeCount());
+		ChromosomeStrands chromosomes(parser->getChromosomeCount());
 
 		// The chromosome information being displayed
 		int counter = 1;
@@ -115,8 +115,8 @@ void Simulation::loadParentData() {
 			char buffer[2][128];
 			isParent1 ? parser->getP1Chromosome(buffer[0], buffer[1]):
 			parser->getP2Chromosome(buffer[0], buffer[1]);
-			s.strand1 = buffer[0];
-			s.strand2 = buffer[1];
+			s.first = buffer[0];
+			s.second = buffer[1];
 
 			++counter;
 		}

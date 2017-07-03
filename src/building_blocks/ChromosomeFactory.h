@@ -4,7 +4,8 @@
 #include "Chromosome.h"
 
 /**
- * @brief The ChromosomeFactory class creates Chromosome objects
+ * @brief ChromosomeFactory creates Chromosome objects.
+ *
  * @see Chromosome
  */
 class ChromosomeFactory
@@ -13,9 +14,14 @@ class ChromosomeFactory
 
 public:
 	/**
-	 * @brief Creates and returns a Chromosome object
-	 * @param rc A RawChromosome containing basic strand information
-	 * @return A chromosome object containing information from rc
+	 * @param chromesomeStrands A pair of two strings which represent the first
+	 * 	and second strand of a chromosome. The sizes of each string in the
+	 * 	pair must match.
+	 * @return A chromosome object created from the strand information
 	 */
-	Chromosome createChromosome(const RawChromosome &rc) const;
+	Chromosome createChromosome(const std::pair<string,string>
+								&chromesomeStrands) const;
 };
+
+// A collection of string pairs that represent the strands of chromosomes
+using ChromosomeStrands = std::vector<std::pair<string,string>>;

@@ -4,14 +4,6 @@
 #include "gene/Gene.h"
 #include <unordered_map>
 
-// A very basic representation of a chromosome that is used
-// by ChromosomeFactory to create Chromosome objects
-struct RawChromosome {
-	string strand1, strand2;
-};
-// A vector of RawChromosome objects
-typedef std::vector<RawChromosome> RawChromosomes;
-
 /**
  * @brief Chromosome consists of genes placed on two strands.
  *
