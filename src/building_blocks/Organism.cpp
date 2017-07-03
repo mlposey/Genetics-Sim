@@ -30,9 +30,8 @@ Chromosome &Organism::serveChromosome() {
 }
 
 void Organism::printDescription() const {
-	std::cout << "\tOrganism genus-species: "
-			  << getGenus() << " " << getSpecies() << '\n';
-	std::cout << "\tChromosomes:\n";
+	std::cout << "\tOrganism genus-species: " << getGenus() << " "
+			  << getSpecies() << '\n' << "\tChromosomes:\n";
 
 	// Print the description of each chromosome in the organism
 	for (int i = 0; i < _chromosomes.size(); ++i) {
