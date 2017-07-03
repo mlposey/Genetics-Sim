@@ -21,7 +21,7 @@ typedef std::vector<RawChromosome> RawChromosomes;
  * |S1 -------- S2|
  * |--          --|
  * | t - Gene - T |
- * | t - Gene - t |
+ * | q - Gene - q |
  * | X - Gene - x |
  * |--          --|
  * |S1 -------- S2|
