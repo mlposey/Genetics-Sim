@@ -49,3 +49,16 @@ narrow compilation. E.g., `make -j4 tests`.
 
 A new directory, `build`, should now exist in the root. It contains the target
 executables and two sample definition files.
+
+## Generating The Documentation
+Class documentation can be generated using Doxygen--a free tool that allows
+you to create Javadoc-style documentation for C++ source code. You can read
+more about Doxygen [here](http://www.stack.nl/~dimitri/doxygen/).
+
+Once installed, cd into the root directory of this project and run the doxygen
+command on the `doxyconfig` file:
+```
+doxygen doxyconfig
+```
+This will generate html (and latex) files and place them in `docs/`. Navigate
+to `docs/html/index.html` to get started.
