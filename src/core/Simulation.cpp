@@ -102,21 +102,19 @@ std::shared_ptr<Organism> Simulation::createParent() {
     GeneticsSimDataParser *parser = GeneticsSimDataParser::getInstance();
     ChromosomesStrands chromosomes(parser->getChromosomeCount());
 
-    const bool isParent1Created = _parent1 != nullptr;
-
-    // Convert the data file's chars to raw chromosomes
+    // Convert the data file's chars to pairs of chromosome strands.
     for (auto &s : chromosomes) {
         // Two strands, each with a max length of 128 chars
         char buffer[2][128];
 
-        if (!isParent1Created) parser->getP1Chromosome(buffer[0], buffer[1]);
+        // Has the first parent been created yet?
+        if (!_parent1) parser->getP1Chromosome(buffer[0], buffer[1]);
         else parser->getP2Chromosome(buffer[0], buffer[1]);
 
         s.first = buffer[0];
         s.second = buffer[1];
     }
 
-    // Use the raw chromosomes to create an Organism
     return OrganismFactory::getInstance()->createOrganism(
             parser->getGenus(),
             parser->getSpecies(),
