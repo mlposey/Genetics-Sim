@@ -30,6 +30,7 @@ ChromosomeFactory::createChromosome(Chromosome &a, Chromosome &b,
 	auto bIterator = b.begin();
 	const unsigned long length = a.size();
 
+    // Create the offspring's genes using those from its parents.
 	for (unsigned long i = 0; i < length; ++i, ++aIterator, ++bIterator) {
 		char a1 = aIterator->getRandomAllele();
 		char a2 = bIterator->getRandomAllele();
