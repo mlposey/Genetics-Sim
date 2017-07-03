@@ -1,6 +1,6 @@
 #pragma once
 #include "Gene.h"
-#include "util/macros.h"
+#include "util/Macros.h"
 #include "sim/Observable.h"
 
 /**

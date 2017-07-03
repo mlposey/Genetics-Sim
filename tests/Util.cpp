@@ -1,4 +1,4 @@
-#include "util.h"
+#include "Util.h"
 #include "core/gene/MasterGeneIndex.h"
 
 shared_ptr<MasterGene> addMasterGeneToBlankIndex(char allele1, char allele2) {

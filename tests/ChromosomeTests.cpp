@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "core/Chromosome.cpp"
-#include "util.h"
+#include "Util.h"
 
 // Chromosome.addGene should place the first allele of the gene on the strand
 // labeled Strand.STRAND1 and the second allele of the gene on the strand

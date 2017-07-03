@@ -30,7 +30,7 @@ set(SOURCE_FILES
         src/sim/IObserver.h
         src/sim/Observable.h
         src/util/CustomExceptions.h
-        src/util/macros.h
+        src/util/Macros.h
         src/genetics.cpp
         external/instructor_files/GeneticsSimDataParser.cpp
         external/instructor_files/GeneticsSimDataParser.h
@@ -80,7 +80,7 @@ endif()
 
 set(TEST_FILES
         tests/main.cpp
-        tests/AlleleTests.cpp tests/MasterGeneTests.cpp tests/GeneTests.cpp tests/GeneFactoryTests.cpp tests/MasterGeneIndexTests.cpp tests/ChromosomeTests.cpp tests/OrganismTests.cpp tests/util.cpp tests/util.h)
+        tests/AlleleTests.cpp tests/MasterGeneTests.cpp tests/GeneTests.cpp tests/GeneFactoryTests.cpp tests/MasterGeneIndexTests.cpp tests/ChromosomeTests.cpp tests/OrganismTests.cpp tests/Util.cpp tests/Util.h)
 
 add_executable(tests ${TEST_FILES})
 target_link_libraries(tests pthread gtest)

@@ -3,7 +3,7 @@
 #include "util/CustomExceptions.h"
 #include "core/gene/GeneFactory.h"
 #include "core/gene/MasterGeneIndex.h"
-#include "util.h"
+#include "Util.h"
 
 
 class GeneFactoryTest : public testing::Test {

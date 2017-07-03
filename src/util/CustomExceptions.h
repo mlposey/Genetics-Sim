@@ -1,6 +1,6 @@
 #pragma once
 #include <stdexcept>
-#include "macros.h"
+#include "Macros.h"
 
 /**
  * @brief The InvalidSymbolException class is an exception for invalid allele symbols

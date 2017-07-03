@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include "core/gene/MasterGeneIndex.h"
-#include "util.h"
+#include "Util.h"
 
 class MasterGeneIndexTest : public testing::Test {
 public:
