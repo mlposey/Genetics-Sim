@@ -34,7 +34,7 @@ program exit.
 
 ## Building The Code
 Final development has been done using CMake 3.7 as the build system. There
-are two executables of interest: `genetics` and `tests`. The former is the
+are two build targets of interest: `genetics` and `tests`. The former is the
 program itself and the latter builds the test suit. All tests were written using
 [Google Test](https://github.com/google/googletest), which CMake will pull from
 the GitHub repository and build as part of the process.
