@@ -53,8 +53,13 @@ public:
 	 * @return A shared_ptr to the created Organism
 	 */
 	shared_ptr<Organism> createOrganism(
-		shared_ptr<Organism> parent1,
-		shared_ptr<Organism> parent2,
-		int &crossoverCount);
+			shared_ptr<Organism> parent1,
+			shared_ptr<Organism> parent2);
+
+	int getCrossoverCount() const { return _crossoverCount; }
+
+private:
+	// The number of times organism creation triggered chromosomal crossover
+	int _crossoverCount = 0;
 };
 

@@ -25,9 +25,7 @@ void Simulation::run() {
 
 	// Create _offspringCount number of offspring 
 	for (int count = 0; count < _offspringCount; ++count) {
-		_children.push_back(factory->createOrganism(
-				_parent1, _parent2, _crossoverCount)
-		);
+		_children.push_back(factory->createOrganism(_parent1, _parent2));
 	}
 
 	std::cout << "\nPress Enter to exit the simulation.\n";

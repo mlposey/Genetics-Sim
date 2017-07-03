@@ -21,8 +21,7 @@ shared_ptr<Organism> OrganismFactory::createOrganism(
 
 shared_ptr<Organism> OrganismFactory::createOrganism(
 		shared_ptr<Organism> parent1,
-		shared_ptr<Organism> parent2,
-		int &crossoverCount) {
+		shared_ptr<Organism> parent2) {
 	srand(time(nullptr));
 
 	// TODO: Consider what happens when crossing different species.
@@ -38,7 +37,7 @@ shared_ptr<Organism> OrganismFactory::createOrganism(
 		child->addChromosome(factory->createChromosome(
 				parent1->serveChromosome(),
 				parent2->serveChromosome(),
-				crossoverCount
+				_crossoverCount
 		));
 	}
     return child;
